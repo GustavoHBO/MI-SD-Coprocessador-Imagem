@@ -1,0 +1,1342 @@
+TimeQuest Timing Analyzer report for FPGA_TOP_MIV
+Thu Jun  7 15:19:13 2018
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 13. Slow 1200mV 85C Model Setup: 'clock_50MHz'
+ 14. Slow 1200mV 85C Model Hold: 'clock_50MHz'
+ 15. Slow 1200mV 85C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 16. Slow 1200mV 85C Model Minimum Pulse Width: 'clock_50MHz'
+ 17. Slow 1200mV 85C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 18. Setup Times
+ 19. Hold Times
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Slow 1200mV 85C Model Metastability Report
+ 23. Slow 1200mV 0C Model Fmax Summary
+ 24. Slow 1200mV 0C Model Setup Summary
+ 25. Slow 1200mV 0C Model Hold Summary
+ 26. Slow 1200mV 0C Model Recovery Summary
+ 27. Slow 1200mV 0C Model Removal Summary
+ 28. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 29. Slow 1200mV 0C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 30. Slow 1200mV 0C Model Setup: 'clock_50MHz'
+ 31. Slow 1200mV 0C Model Hold: 'clock_50MHz'
+ 32. Slow 1200mV 0C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 33. Slow 1200mV 0C Model Minimum Pulse Width: 'clock_50MHz'
+ 34. Slow 1200mV 0C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Slow 1200mV 0C Model Metastability Report
+ 40. Fast 1200mV 0C Model Setup Summary
+ 41. Fast 1200mV 0C Model Hold Summary
+ 42. Fast 1200mV 0C Model Recovery Summary
+ 43. Fast 1200mV 0C Model Removal Summary
+ 44. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 45. Fast 1200mV 0C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 46. Fast 1200mV 0C Model Setup: 'clock_50MHz'
+ 47. Fast 1200mV 0C Model Hold: 'clock_50MHz'
+ 48. Fast 1200mV 0C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 49. Fast 1200mV 0C Model Minimum Pulse Width: 'clock_50MHz'
+ 50. Fast 1200mV 0C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'
+ 51. Setup Times
+ 52. Hold Times
+ 53. Clock to Output Times
+ 54. Minimum Clock to Output Times
+ 55. Fast 1200mV 0C Model Metastability Report
+ 56. Multicorner Timing Analysis Summary
+ 57. Setup Times
+ 58. Hold Times
+ 59. Clock to Output Times
+ 60. Minimum Clock to Output Times
+ 61. Board Trace Model Assignments
+ 62. Input Transition Times
+ 63. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 64. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 65. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 66. Setup Transfers
+ 67. Hold Transfers
+ 68. Report TCCS
+ 69. Report RSKM
+ 70. Unconstrained Paths
+ 71. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; FPGA_TOP_MIV                                                      ;
+; Device Family      ; Cyclone IV E                                                      ;
+; Device Name        ; EP4CE30F23C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                           ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+; Clock Name                      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                             ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+; clock_50MHz                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock_50MHz }                     ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Lab2Lock:Lab2LockFSM|state.IDLE } ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                         ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+; 533.62 MHz ; 250.0 MHz       ; clock_50MHz ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++----------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                      ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; Lab2Lock:Lab2LockFSM|state.IDLE ; -3.750 ; -7.286        ;
+; clock_50MHz                     ; -0.874 ; -3.751        ;
++---------------------------------+--------+---------------+
+
+
++---------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                      ;
++---------------------------------+-------+---------------+
+; Clock                           ; Slack ; End Point TNS ;
++---------------------------------+-------+---------------+
+; clock_50MHz                     ; 0.008 ; 0.000         ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 3.115 ; 0.000         ;
++---------------------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary        ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; clock_50MHz                     ; -3.000 ; -13.280       ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.389  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                 ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; -3.750 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -2.639     ; 0.732      ;
+; -3.536 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -2.624     ; 0.877      ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'clock_50MHz'                                                                                                                                          ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; -0.874 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.801      ;
+; -0.874 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.801      ;
+; -0.754 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.681      ;
+; -0.616 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.543      ;
+; -0.604 ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.072     ; 1.530      ;
+; -0.406 ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.051     ; 1.353      ;
+; -0.241 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.168      ;
+; -0.239 ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.166      ;
+; -0.207 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.071     ; 1.134      ;
+; -0.105 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.707      ; 1.810      ;
+; -0.015 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.500        ; 2.575      ; 3.320      ;
+; 0.100  ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.707      ; 1.605      ;
+; 0.180  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.707      ; 1.525      ;
+; 0.221  ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.043     ; 0.734      ;
+; 0.362  ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.707      ; 1.343      ;
+; 0.363  ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.707      ; 1.342      ;
+; 0.489  ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 1.000        ; 2.575      ; 3.316      ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'clock_50MHz'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; 0.008 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.000        ; 2.673      ; 3.119      ;
+; 0.133 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.937      ; 1.256      ;
+; 0.134 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.937      ; 1.257      ;
+; 0.276 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.937      ; 1.399      ;
+; 0.277 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.937      ; 1.400      ;
+; 0.330 ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.937      ; 1.453      ;
+; 0.440 ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.043      ; 0.669      ;
+; 0.532 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; -0.500       ; 2.673      ; 3.143      ;
+; 0.716 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 0.973      ;
+; 0.731 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 0.988      ;
+; 0.793 ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.072      ; 1.051      ;
+; 0.965 ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.051      ; 1.202      ;
+; 1.147 ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 1.404      ;
+; 1.177 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 1.434      ;
+; 1.299 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 1.556      ;
+; 1.539 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 1.796      ;
+; 1.539 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.071      ; 1.796      ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                 ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; 3.115 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -2.472     ; 0.663      ;
+; 3.209 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -2.454     ; 0.775      ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'clock_50MHz'                                                                       ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_50MHz ; Rise       ; clock_50MHz                             ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.181  ; 0.369        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; 0.181  ; 0.369        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; 0.181  ; 0.369        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; 0.181  ; 0.369        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.182  ; 0.370        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; 0.182  ; 0.370        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; 0.232  ; 0.420        ; 0.188          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; 0.319  ; 0.319        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; 0.334  ; 0.334        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 0.358  ; 0.578        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; 0.358  ; 0.578        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.384  ; 0.384        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
+; 0.409  ; 0.629        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; 0.409  ; 0.629        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; 0.409  ; 0.629        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; 0.409  ; 0.629        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.410  ; 0.630        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; 0.410  ; 0.630        ; 0.220          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.613  ; 0.613        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.613  ; 0.613        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; 0.665  ; 0.665        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 0.681  ; 0.681        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                            ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                           ; Clock Edge ; Target                        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; 0.389 ; 0.389        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
+; 0.415 ; 0.415        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.419 ; 0.419        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.424 ; 0.424        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
+; 0.425 ; 0.425        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.426 ; 0.426        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.434 ; 0.434        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.455 ; 0.455        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.543 ; 0.543        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.563 ; 0.563        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.572 ; 0.572        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.572 ; 0.572        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.573 ; 0.573        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
+; 0.579 ; 0.579        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.583 ; 0.583        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.608 ; 0.608        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++------------+-------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+-------------+-------+-------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; 2.699 ; 3.111 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; 2.699 ; 3.111 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; 2.503 ; 2.994 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; 2.725 ; 3.083 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; 2.060 ; 2.426 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; 2.547 ; 3.029 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; 2.725 ; 3.083 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; 2.355 ; 2.739 ; Rise       ; clock_50MHz     ;
++------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++------------+-------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+-------------+--------+--------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; -0.524 ; -0.925 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; -0.524 ; -0.925 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; -1.428 ; -1.899 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; -1.040 ; -1.404 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; -1.040 ; -1.404 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; -1.478 ; -1.898 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; -1.605 ; -2.001 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; -1.316 ; -1.719 ; Rise       ; clock_50MHz     ;
++------------+-------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 10.102 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 8.370  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 10.102 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.031  ; 8.984  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 6.292  ; 6.258  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 10.296 ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.339  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 10.296 ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 14.082 ; 14.294 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 11.243 ; 11.308 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 11.555 ; 11.443 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 14.082 ; 14.294 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 8.055  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 8.055  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 9.721  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.695  ; 8.644  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 6.068  ; 6.029  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.033  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.033  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.912  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 9.789  ; 9.848  ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 9.789  ; 9.848  ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 11.138 ; 11.026 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 12.678 ; 12.949 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name  ; Note                                                          ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+; 584.8 MHz ; 250.0 MHz       ; clock_50MHz ; limit due to minimum period restriction (max I/O toggle rate) ;
++-----------+-----------------+-------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                       ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; Lab2Lock:Lab2LockFSM|state.IDLE ; -3.354 ; -6.492        ;
+; clock_50MHz                     ; -0.710 ; -2.884        ;
++---------------------------------+--------+---------------+
+
+
++---------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                       ;
++---------------------------------+-------+---------------+
+; Clock                           ; Slack ; End Point TNS ;
++---------------------------------+-------+---------------+
+; clock_50MHz                     ; 0.050 ; 0.000         ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 2.842 ; 0.000         ;
++---------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary         ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; clock_50MHz                     ; -3.000 ; -13.280       ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.374  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                  ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; -3.354 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -2.401     ; 0.663      ;
+; -3.138 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -2.403     ; 0.794      ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'clock_50MHz'                                                                                                                                           ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; -0.710 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.645      ;
+; -0.710 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.645      ;
+; -0.612 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.547      ;
+; -0.475 ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.410      ;
+; -0.457 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.392      ;
+; -0.266 ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.045     ; 1.220      ;
+; -0.113 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.048      ;
+; -0.111 ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.046      ;
+; -0.081 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.064     ; 1.016      ;
+; 0.027  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.654      ; 1.626      ;
+; 0.044  ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.500        ; 2.341      ; 3.009      ;
+; 0.210  ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.654      ; 1.443      ;
+; 0.285  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.654      ; 1.368      ;
+; 0.301  ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.039     ; 0.659      ;
+; 0.433  ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.654      ; 1.220      ;
+; 0.434  ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.654      ; 1.219      ;
+; 0.491  ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 1.000        ; 2.341      ; 3.062      ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'clock_50MHz'                                                                                                                                           ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; 0.050 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.000        ; 2.428      ; 2.882      ;
+; 0.110 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.860      ; 1.141      ;
+; 0.111 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.860      ; 1.142      ;
+; 0.264 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.860      ; 1.295      ;
+; 0.265 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.860      ; 1.296      ;
+; 0.313 ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.860      ; 1.344      ;
+; 0.387 ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.039      ; 0.597      ;
+; 0.518 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; -0.500       ; 2.428      ; 2.850      ;
+; 0.651 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 0.886      ;
+; 0.665 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 0.900      ;
+; 0.738 ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 0.973      ;
+; 0.889 ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.045      ; 1.105      ;
+; 1.039 ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 1.274      ;
+; 1.092 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 1.327      ;
+; 1.175 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 1.410      ;
+; 1.412 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 1.647      ;
+; 1.412 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.064      ; 1.647      ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                  ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; 2.842 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -2.251     ; 0.611      ;
+; 2.939 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -2.249     ; 0.710      ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'clock_50MHz'                                                                        ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_50MHz ; Rise       ; clock_50MHz                             ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.139  ; 0.325        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; 0.139  ; 0.325        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; 0.185  ; 0.371        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; 0.185  ; 0.371        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; 0.186  ; 0.372        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; 0.186  ; 0.372        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; 0.186  ; 0.372        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; 0.186  ; 0.372        ; 0.186          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.286  ; 0.286        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.286  ; 0.286        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
+; 0.328  ; 0.328        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; 0.333  ; 0.333        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; 0.336  ; 0.336        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; 0.336  ; 0.336        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; 0.409  ; 0.627        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.456  ; 0.674        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; 0.456  ; 0.674        ; 0.218          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.664  ; 0.664        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; 0.664  ; 0.664        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; 0.666  ; 0.666        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; 0.667  ; 0.667        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; 0.667  ; 0.667        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; 0.672  ; 0.672        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
+; 0.713  ; 0.713        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.713  ; 0.713        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                             ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                           ; Clock Edge ; Target                        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; 0.374 ; 0.374        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
+; 0.408 ; 0.408        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.427 ; 0.427        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.435 ; 0.435        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.436 ; 0.436        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.441 ; 0.441        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
+; 0.449 ; 0.449        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.469 ; 0.469        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.528 ; 0.528        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.546 ; 0.546        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.554 ; 0.554        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
+; 0.562 ; 0.562        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.562 ; 0.562        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.571 ; 0.571        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.590 ; 0.590        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.624 ; 0.624        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++------------+-------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+-------------+-------+-------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; 2.405 ; 2.691 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; 2.405 ; 2.691 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; 2.214 ; 2.574 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; 2.407 ; 2.659 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; 1.798 ; 2.073 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; 2.246 ; 2.610 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; 2.407 ; 2.659 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; 2.053 ; 2.361 ; Rise       ; clock_50MHz     ;
++------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++------------+-------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+-------------+--------+--------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; -0.407 ; -0.691 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; -0.407 ; -0.691 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; -1.227 ; -1.583 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; -0.898 ; -1.117 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; -0.898 ; -1.117 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; -1.286 ; -1.568 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; -1.375 ; -1.686 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; -1.095 ; -1.445 ; Rise       ; clock_50MHz     ;
++------------+-------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 9.138  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 7.570  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 9.138  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.312  ; 8.075  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.770  ; 5.625  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.487  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 7.619  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.487  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 12.552 ; 13.036 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 10.337 ; 10.175 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 10.655 ; 10.304 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 12.552 ; 13.036 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 7.269  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 7.269  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 8.776  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 7.984  ; 7.752  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.549  ; 5.404  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 7.322  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 7.322  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.116  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 8.972  ; 8.828  ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 8.972  ; 8.828  ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 10.256 ; 9.912  ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 11.254 ; 11.789 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                       ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; Lab2Lock:Lab2LockFSM|state.IDLE ; -1.434 ; -2.724        ;
+; clock_50MHz                     ; 0.097  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++----------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                        ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; clock_50MHz                     ; -0.066 ; -0.172        ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.599  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary         ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; clock_50MHz                     ; -3.000 ; -12.918       ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.444  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                  ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; -1.434 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -1.403     ; 0.350      ;
+; -1.290 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 1.000        ; -1.363     ; 0.411      ;
++--------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'clock_50MHz'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; 0.097 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.854      ;
+; 0.097 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.854      ;
+; 0.171 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.500        ; 1.260      ; 1.681      ;
+; 0.192 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.759      ;
+; 0.221 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.730      ;
+; 0.264 ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.037     ; 0.686      ;
+; 0.321 ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.024     ; 0.642      ;
+; 0.385 ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.566      ;
+; 0.389 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.562      ;
+; 0.407 ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.036     ; 0.544      ;
+; 0.525 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.415      ; 0.877      ;
+; 0.615 ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; -0.022     ; 0.350      ;
+; 0.637 ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.415      ; 0.765      ;
+; 0.665 ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.415      ; 0.737      ;
+; 0.750 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.415      ; 0.652      ;
+; 0.752 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 1.000        ; 0.415      ; 0.650      ;
+; 0.783 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 1.000        ; 1.260      ; 1.569      ;
++-------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'clock_50MHz'                                                                                                                                            ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock                    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+; -0.066 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.539      ; 0.557      ;
+; -0.065 ; Lab2Lock:Lab2LockFSM|state.OK           ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.539      ; 0.558      ;
+; -0.041 ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; 0.000        ; 1.312      ; 1.480      ;
+; 0.003  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.539      ; 0.626      ;
+; 0.004  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.539      ; 0.627      ;
+; 0.027  ; Lab2Lock:Lab2LockFSM|state.BAD1         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.539      ; 0.650      ;
+; 0.201  ; Lab2Lock:Lab2LockFSM|state.OPEN         ; Lab2Lock:Lab2LockFSM|state.OPEN         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.022      ; 0.307      ;
+; 0.329  ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.449      ;
+; 0.339  ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.459      ;
+; 0.352  ; LevelToPulse:LockEnterPulse|state.SOLTO ; LevelToPulse:LockEnterPulse|state.IDLE  ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.037      ; 0.473      ;
+; 0.436  ; Lab2Lock:Lab2LockFSM|state.BAD2         ; Lab2Lock:Lab2LockFSM|state.BAD2         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.024      ; 0.544      ;
+; 0.516  ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.636      ;
+; 0.536  ; LevelToPulse:LockEnterPulse|state.IDLE  ; LevelToPulse:LockEnterPulse|state.SOLTO ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.656      ;
+; 0.571  ; Lab2Lock:Lab2LockFSM|state.IDLE         ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz ; -0.500       ; 1.312      ; 1.592      ;
+; 0.607  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.LOCKED       ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.727      ;
+; 0.713  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.OK           ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.833      ;
+; 0.713  ; LevelToPulse:LockEnterPulse|state.SOLTO ; Lab2Lock:Lab2LockFSM|state.BAD1         ; clock_50MHz                     ; clock_50MHz ; 0.000        ; 0.036      ; 0.833      ;
++--------+-----------------------------------------+-----------------------------------------+---------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                                                                  ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                   ; Launch Clock ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+; 1.599 ; Lab2Lock:Lab2LockFSM|state.BAD2 ; Lab2Lock:Lab2LockFSM|Fail ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -1.315     ; 0.304      ;
+; 1.610 ; Lab2Lock:Lab2LockFSM|state.OPEN ; Lab2Lock:Lab2LockFSM|Open ; clock_50MHz  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 0.000        ; -1.274     ; 0.356      ;
++-------+---------------------------------+---------------------------+--------------+---------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'clock_50MHz'                                                                        ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock       ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; clock_50MHz ; Rise       ; clock_50MHz                             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; -0.226 ; -0.042       ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; -0.076 ; 0.108        ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; -0.076 ; 0.108        ; 0.184          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; -0.052 ; -0.052       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; -0.047 ; -0.047       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; -0.038 ; -0.038       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; -0.038 ; -0.038       ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 0.102  ; 0.102        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.102  ; 0.102        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock_50MHz ; Rise       ; clock_50MHz~input|i                     ;
+; 0.671  ; 0.887        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD2         ;
+; 0.671  ; 0.887        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OPEN         ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.BAD1         ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE         ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.LOCKED       ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2Lock:Lab2LockFSM|state.OK           ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.IDLE  ;
+; 0.825  ; 1.041        ; 0.216          ; High Pulse Width ; clock_50MHz ; Rise       ; LevelToPulse:LockEnterPulse|state.SOLTO ;
+; 0.891  ; 0.891        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD2|clk              ;
+; 0.891  ; 0.891        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OPEN|clk              ;
+; 1.037  ; 1.037        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|inclk[0]       ;
+; 1.037  ; 1.037        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~inputclkctrl|outclk         ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.BAD1|clk              ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.IDLE|clk              ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.LOCKED|clk            ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; Lab2LockFSM|state.OK|clk                ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.IDLE|clk           ;
+; 1.046  ; 1.046        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; LockEnterPulse|state.SOLTO|clk          ;
+; 1.052  ; 1.052        ; 0.000          ; High Pulse Width ; clock_50MHz ; Rise       ; clock_50MHz~input|o                     ;
++--------+--------------+----------------+------------------+-------------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'Lab2Lock:Lab2LockFSM|state.IDLE'                                                             ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                           ; Clock Edge ; Target                        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+; 0.444 ; 0.444        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
+; 0.450 ; 0.450        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.455 ; 0.455        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.461 ; 0.461        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.461 ; 0.461        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.466 ; 0.466        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.478 ; 0.478        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
+; 0.483 ; 0.483        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|state.IDLE|q      ;
+; 0.516 ; 0.516        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|Open|datad        ;
+; 0.520 ; 0.520        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Open     ;
+; 0.533 ; 0.533        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|combout ;
+; 0.537 ; 0.537        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr0~0|datad   ;
+; 0.538 ; 0.538        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|WideOr6~0|datad   ;
+; 0.543 ; 0.543        ; 0.000          ; Low Pulse Width  ; Lab2Lock:Lab2LockFSM|state.IDLE ; Fall       ; Lab2LockFSM|WideOr6~0|combout ;
+; 0.547 ; 0.547        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2Lock:Lab2LockFSM|Fail     ;
+; 0.553 ; 0.553        ; 0.000          ; High Pulse Width ; Lab2Lock:Lab2LockFSM|state.IDLE ; Rise       ; Lab2LockFSM|Fail|datac        ;
++-------+--------------+----------------+------------------+---------------------------------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++------------+-------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+-------------+-------+-------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; 1.296 ; 2.059 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; 1.296 ; 2.059 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; 1.186 ; 2.012 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; 1.326 ; 2.076 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; 1.006 ; 1.718 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; 1.262 ; 2.061 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; 1.326 ; 2.076 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; 1.167 ; 1.896 ; Rise       ; clock_50MHz     ;
++------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++------------+-------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+-------------+--------+--------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; -0.180 ; -0.922 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; -0.180 ; -0.922 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; -0.701 ; -1.487 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; -0.389 ; -1.161 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; -0.389 ; -1.161 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; -0.635 ; -1.438 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; -0.707 ; -1.440 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; -0.586 ; -1.291 ; Rise       ; clock_50MHz     ;
++------------+-------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                       ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 5.592 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 4.585 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 5.592 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.768 ; 5.073 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 3.373 ; 3.487 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.442 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.532 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.442 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 8.015 ; 7.873 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 5.881 ; 6.143 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 5.942 ; 6.264 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 8.015 ; 7.873 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                               ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 4.421 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 4.421 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 5.388 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.601 ; 4.890 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 3.261 ; 3.367 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.373 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.373 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.247 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 5.084 ; 5.322 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 5.084 ; 5.322 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 5.732 ; 6.038 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 7.238 ; 7.129 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                            ;
++----------------------------------+---------+--------+----------+---------+---------------------+
+; Clock                            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack                 ; -3.750  ; -0.066 ; N/A      ; N/A     ; -3.000              ;
+;  Lab2Lock:Lab2LockFSM|state.IDLE ; -3.750  ; 1.599  ; N/A      ; N/A     ; 0.374               ;
+;  clock_50MHz                     ; -0.874  ; -0.066 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS                  ; -11.037 ; -0.172 ; 0.0      ; 0.0     ; -13.28              ;
+;  Lab2Lock:Lab2LockFSM|state.IDLE ; -7.286  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  clock_50MHz                     ; -3.751  ; -0.172 ; N/A      ; N/A     ; -13.280             ;
++----------------------------------+---------+--------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++------------+-------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+-------------+-------+-------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; 2.699 ; 3.111 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; 2.699 ; 3.111 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; 2.503 ; 2.994 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; 2.725 ; 3.083 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; 2.060 ; 2.426 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; 2.547 ; 3.029 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; 2.725 ; 3.083 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; 2.355 ; 2.739 ; Rise       ; clock_50MHz     ;
++------------+-------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++------------+-------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port  ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+-------------+--------+--------+------------+-----------------+
+; KEY[*]     ; clock_50MHz ; -0.180 ; -0.691 ; Rise       ; clock_50MHz     ;
+;  KEY[0]    ; clock_50MHz ; -0.180 ; -0.691 ; Rise       ; clock_50MHz     ;
+;  KEY[11]   ; clock_50MHz ; -0.701 ; -1.487 ; Rise       ; clock_50MHz     ;
+; Switch[*]  ; clock_50MHz ; -0.389 ; -1.117 ; Rise       ; clock_50MHz     ;
+;  Switch[0] ; clock_50MHz ; -0.389 ; -1.117 ; Rise       ; clock_50MHz     ;
+;  Switch[1] ; clock_50MHz ; -0.635 ; -1.438 ; Rise       ; clock_50MHz     ;
+;  Switch[2] ; clock_50MHz ; -0.707 ; -1.440 ; Rise       ; clock_50MHz     ;
+;  Switch[3] ; clock_50MHz ; -0.586 ; -1.291 ; Rise       ; clock_50MHz     ;
++------------+-------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                         ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise   ; Fall   ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 10.102 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 8.370  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;        ; 10.102 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 9.031  ; 8.984  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 6.292  ; 6.258  ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 10.296 ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 8.339  ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 10.296 ;        ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 14.082 ; 14.294 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 11.243 ; 11.308 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 11.555 ; 11.443 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 14.082 ; 14.294 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+--------+--------+------------+---------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                               ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; Data Port  ; Clock Port                      ; Rise  ; Fall  ; Clock Edge ; Clock Reference                 ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 4.421 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 4.421 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ;       ; 5.388 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_B      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.601 ; 4.890 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LED_R      ; Lab2Lock:Lab2LockFSM|state.IDLE ; 3.261 ; 3.367 ; Rise       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.373 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[0] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 4.373 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+;  LEDM_R[1] ; Lab2Lock:Lab2LockFSM|state.IDLE ; 5.247 ;       ; Fall       ; Lab2Lock:Lab2LockFSM|state.IDLE ;
+; LEDM_R[*]  ; clock_50MHz                     ; 5.084 ; 5.322 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[0] ; clock_50MHz                     ; 5.084 ; 5.322 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[1] ; clock_50MHz                     ; 5.732 ; 6.038 ; Rise       ; clock_50MHz                     ;
+;  LEDM_R[2] ; clock_50MHz                     ; 7.238 ; 7.129 ; Rise       ; clock_50MHz                     ;
++------------+---------------------------------+-------+-------+------------+---------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; LED_G         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED_R         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LED_B         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_C[0]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_C[1]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_C[2]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_C[3]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_C[4]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[0]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[1]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[2]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[3]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[4]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[5]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[6]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDM_R[7]     ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; KEY[1]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[2]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[3]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[4]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[5]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[6]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[7]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[8]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[9]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[10]                 ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; Switch[1]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; Switch[0]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; Switch[2]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; Switch[3]               ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[0]                  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; clock_50MHz             ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[11]                 ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_DATA0~          ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED_G         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.09 V              ; -0.00967 V          ; 0.275 V                              ; 0.248 V                              ; 4.77e-09 s                  ; 3.67e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 1.66e-08 V                  ; 3.09 V             ; -0.00967 V         ; 0.275 V                             ; 0.248 V                             ; 4.77e-09 s                 ; 3.67e-09 s                 ; No                        ; No                        ;
+; LED_R         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LED_B         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_C[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.15e-08 V                   ; 3.13 V              ; -0.0435 V           ; 0.253 V                              ; 0.222 V                              ; 1.12e-09 s                  ; 8.7e-10 s                   ; No                         ; Yes                        ; 3.08 V                      ; 1.15e-08 V                  ; 3.13 V             ; -0.0435 V          ; 0.253 V                             ; 0.222 V                             ; 1.12e-09 s                 ; 8.7e-10 s                  ; No                        ; Yes                       ;
+; LEDM_C[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.15e-08 V                   ; 3.13 V              ; -0.0435 V           ; 0.253 V                              ; 0.222 V                              ; 1.12e-09 s                  ; 8.7e-10 s                   ; No                         ; Yes                        ; 3.08 V                      ; 1.15e-08 V                  ; 3.13 V             ; -0.0435 V          ; 0.253 V                             ; 0.222 V                             ; 1.12e-09 s                 ; 8.7e-10 s                  ; No                        ; Yes                       ;
+; LEDM_C[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.15e-08 V                   ; 3.13 V              ; -0.0435 V           ; 0.253 V                              ; 0.222 V                              ; 1.12e-09 s                  ; 8.7e-10 s                   ; No                         ; Yes                        ; 3.08 V                      ; 1.15e-08 V                  ; 3.13 V             ; -0.0435 V          ; 0.253 V                             ; 0.222 V                             ; 1.12e-09 s                 ; 8.7e-10 s                  ; No                        ; Yes                       ;
+; LEDM_C[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.15e-08 V                   ; 3.13 V              ; -0.0435 V           ; 0.253 V                              ; 0.222 V                              ; 1.12e-09 s                  ; 8.7e-10 s                   ; No                         ; Yes                        ; 3.08 V                      ; 1.15e-08 V                  ; 3.13 V             ; -0.0435 V          ; 0.253 V                             ; 0.222 V                             ; 1.12e-09 s                 ; 8.7e-10 s                  ; No                        ; Yes                       ;
+; LEDM_C[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.15e-08 V                   ; 3.13 V              ; -0.0435 V           ; 0.253 V                              ; 0.222 V                              ; 1.12e-09 s                  ; 8.7e-10 s                   ; No                         ; Yes                        ; 3.08 V                      ; 1.15e-08 V                  ; 3.13 V             ; -0.0435 V          ; 0.253 V                             ; 0.222 V                             ; 1.12e-09 s                 ; 8.7e-10 s                  ; No                        ; Yes                       ;
+; LEDM_R[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.09 V              ; -0.00967 V          ; 0.275 V                              ; 0.248 V                              ; 4.77e-09 s                  ; 3.67e-09 s                  ; No                         ; No                         ; 3.08 V                      ; 1.66e-08 V                  ; 3.09 V             ; -0.00967 V         ; 0.275 V                             ; 0.248 V                             ; 4.77e-09 s                 ; 3.67e-09 s                 ; No                        ; No                        ;
+; LEDM_R[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[5]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[6]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[7]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-08 V                   ; 3.15 V              ; -0.0712 V           ; 0.183 V                              ; 0.24 V                               ; 6.39e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.66e-08 V                  ; 3.15 V             ; -0.0712 V          ; 0.183 V                             ; 0.24 V                              ; 6.39e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.15e-09 V                   ; 3.18 V              ; -0.0303 V           ; 0.317 V                              ; 0.07 V                               ; 3.25e-10 s                  ; 3.88e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 6.15e-09 V                  ; 3.18 V             ; -0.0303 V          ; 0.317 V                             ; 0.07 V                              ; 3.25e-10 s                 ; 3.88e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.29e-09 V                   ; 2.36 V              ; -0.00431 V          ; 0.132 V                              ; 0.013 V                              ; 6.77e-10 s                  ; 8.36e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.29e-09 V                  ; 2.36 V             ; -0.00431 V         ; 0.132 V                             ; 0.013 V                             ; 6.77e-10 s                 ; 8.36e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED_G         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.08 V              ; -0.00526 V          ; 0.269 V                              ; 0.255 V                              ; 5.53e-09 s                  ; 4.48e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.08 V             ; -0.00526 V         ; 0.269 V                             ; 0.255 V                             ; 5.53e-09 s                 ; 4.48e-09 s                 ; Yes                       ; Yes                       ;
+; LED_R         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LED_B         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_C[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.32e-06 V                   ; 3.11 V              ; -0.0307 V           ; 0.25 V                               ; 0.249 V                              ; 1.34e-09 s                  ; 1.09e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.32e-06 V                  ; 3.11 V             ; -0.0307 V          ; 0.25 V                              ; 0.249 V                             ; 1.34e-09 s                 ; 1.09e-09 s                 ; No                        ; Yes                       ;
+; LEDM_C[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.32e-06 V                   ; 3.11 V              ; -0.0307 V           ; 0.25 V                               ; 0.249 V                              ; 1.34e-09 s                  ; 1.09e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.32e-06 V                  ; 3.11 V             ; -0.0307 V          ; 0.25 V                              ; 0.249 V                             ; 1.34e-09 s                 ; 1.09e-09 s                 ; No                        ; Yes                       ;
+; LEDM_C[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.32e-06 V                   ; 3.11 V              ; -0.0307 V           ; 0.25 V                               ; 0.249 V                              ; 1.34e-09 s                  ; 1.09e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.32e-06 V                  ; 3.11 V             ; -0.0307 V          ; 0.25 V                              ; 0.249 V                             ; 1.34e-09 s                 ; 1.09e-09 s                 ; No                        ; Yes                       ;
+; LEDM_C[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.32e-06 V                   ; 3.11 V              ; -0.0307 V           ; 0.25 V                               ; 0.249 V                              ; 1.34e-09 s                  ; 1.09e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.32e-06 V                  ; 3.11 V             ; -0.0307 V          ; 0.25 V                              ; 0.249 V                             ; 1.34e-09 s                 ; 1.09e-09 s                 ; No                        ; Yes                       ;
+; LEDM_C[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.32e-06 V                   ; 3.11 V              ; -0.0307 V           ; 0.25 V                               ; 0.249 V                              ; 1.34e-09 s                  ; 1.09e-09 s                  ; No                         ; Yes                        ; 3.08 V                      ; 1.32e-06 V                  ; 3.11 V             ; -0.0307 V          ; 0.25 V                              ; 0.249 V                             ; 1.34e-09 s                 ; 1.09e-09 s                 ; No                        ; Yes                       ;
+; LEDM_R[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.08 V              ; -0.00526 V          ; 0.269 V                              ; 0.255 V                              ; 5.53e-09 s                  ; 4.48e-09 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.08 V             ; -0.00526 V         ; 0.269 V                             ; 0.255 V                             ; 5.53e-09 s                 ; 4.48e-09 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[5]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[6]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; LEDM_R[7]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.97e-06 V                   ; 3.13 V              ; -0.0528 V           ; 0.261 V                              ; 0.188 V                              ; 6.81e-10 s                  ; 6.23e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.97e-06 V                  ; 3.13 V             ; -0.0528 V          ; 0.261 V                             ; 0.188 V                             ; 6.81e-10 s                 ; 6.23e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 6.52e-07 V                   ; 3.14 V              ; -0.0428 V           ; 0.161 V                              ; 0.071 V                              ; 4.71e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 6.52e-07 V                  ; 3.14 V             ; -0.0428 V          ; 0.161 V                             ; 0.071 V                             ; 4.71e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.08e-07 V                   ; 2.34 V              ; -0.00367 V          ; 0.099 V                              ; 0.024 V                              ; 7.72e-10 s                  ; 1.04e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.08e-07 V                  ; 2.34 V             ; -0.00367 V         ; 0.099 V                             ; 0.024 V                             ; 7.72e-10 s                 ; 1.04e-09 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LED_G         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.48 V              ; -0.014 V            ; 0.359 V                              ; 0.292 V                              ; 3.93e-09 s                  ; 3.26e-09 s                  ; No                         ; No                         ; 3.46 V                      ; 1.92e-07 V                  ; 3.48 V             ; -0.014 V           ; 0.359 V                             ; 0.292 V                             ; 3.93e-09 s                 ; 3.26e-09 s                 ; No                        ; No                        ;
+; LED_R         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LED_B         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_C[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.3e-07 V                    ; 3.55 V              ; -0.053 V            ; 0.335 V                              ; 0.361 V                              ; 9.06e-10 s                  ; 7.36e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.3e-07 V                   ; 3.55 V             ; -0.053 V           ; 0.335 V                             ; 0.361 V                             ; 9.06e-10 s                 ; 7.36e-10 s                 ; No                        ; No                        ;
+; LEDM_C[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.3e-07 V                    ; 3.55 V              ; -0.053 V            ; 0.335 V                              ; 0.361 V                              ; 9.06e-10 s                  ; 7.36e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.3e-07 V                   ; 3.55 V             ; -0.053 V           ; 0.335 V                             ; 0.361 V                             ; 9.06e-10 s                 ; 7.36e-10 s                 ; No                        ; No                        ;
+; LEDM_C[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.3e-07 V                    ; 3.55 V              ; -0.053 V            ; 0.335 V                              ; 0.361 V                              ; 9.06e-10 s                  ; 7.36e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.3e-07 V                   ; 3.55 V             ; -0.053 V           ; 0.335 V                             ; 0.361 V                             ; 9.06e-10 s                 ; 7.36e-10 s                 ; No                        ; No                        ;
+; LEDM_C[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.3e-07 V                    ; 3.55 V              ; -0.053 V            ; 0.335 V                              ; 0.361 V                              ; 9.06e-10 s                  ; 7.36e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.3e-07 V                   ; 3.55 V             ; -0.053 V           ; 0.335 V                             ; 0.361 V                             ; 9.06e-10 s                 ; 7.36e-10 s                 ; No                        ; No                        ;
+; LEDM_C[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.3e-07 V                    ; 3.55 V              ; -0.053 V            ; 0.335 V                              ; 0.361 V                              ; 9.06e-10 s                  ; 7.36e-10 s                  ; No                         ; No                         ; 3.46 V                      ; 1.3e-07 V                   ; 3.55 V             ; -0.053 V           ; 0.335 V                             ; 0.361 V                             ; 9.06e-10 s                 ; 7.36e-10 s                 ; No                        ; No                        ;
+; LEDM_R[0]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[1]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[2]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.48 V              ; -0.014 V            ; 0.359 V                              ; 0.292 V                              ; 3.93e-09 s                  ; 3.26e-09 s                  ; No                         ; No                         ; 3.46 V                      ; 1.92e-07 V                  ; 3.48 V             ; -0.014 V           ; 0.359 V                             ; 0.292 V                             ; 3.93e-09 s                 ; 3.26e-09 s                 ; No                        ; No                        ;
+; LEDM_R[3]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[4]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[5]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[6]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; LEDM_R[7]     ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 1.92e-07 V                   ; 3.58 V              ; -0.0891 V           ; 0.324 V                              ; 0.191 V                              ; 4.6e-10 s                   ; 4.21e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 1.92e-07 V                  ; 3.58 V             ; -0.0891 V          ; 0.324 V                             ; 0.191 V                             ; 4.6e-10 s                  ; 4.21e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 6.59e-08 V                   ; 3.58 V              ; -0.0703 V           ; 0.234 V                              ; 0.091 V                              ; 2.93e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 3.46 V                      ; 6.59e-08 V                  ; 3.58 V             ; -0.0703 V          ; 0.234 V                             ; 0.091 V                             ; 2.93e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.52e-08 V                   ; 2.7 V               ; -0.0198 V           ; 0.2 V                                ; 0.049 V                              ; 4.85e-10 s                  ; 6.73e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.52e-08 V                  ; 2.7 V              ; -0.0198 V          ; 0.2 V                               ; 0.049 V                             ; 4.85e-10 s                 ; 6.73e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                               ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; clock_50MHz                     ; clock_50MHz                     ; 16       ; 0        ; 0        ; 0        ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz                     ; 1        ; 1        ; 0        ; 0        ;
+; clock_50MHz                     ; Lab2Lock:Lab2LockFSM|state.IDLE ; 2        ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; clock_50MHz                     ; clock_50MHz                     ; 16       ; 0        ; 0        ; 0        ;
+; Lab2Lock:Lab2LockFSM|state.IDLE ; clock_50MHz                     ; 1        ; 1        ; 0        ; 0        ;
+; clock_50MHz                     ; Lab2Lock:Lab2LockFSM|state.IDLE ; 2        ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 26    ; 26   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jun  7 15:19:07 2018
+Info: Command: quartus_sta FPGA_TOP_MIV -c FPGA_TOP_MIV
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 2 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'FPGA_TOP_MIV.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock_50MHz clock_50MHz
+    Info (332105): create_clock -period 1.000 -name Lab2Lock:Lab2LockFSM|state.IDLE Lab2Lock:Lab2LockFSM|state.IDLE
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.750
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.750        -7.286 Lab2Lock:Lab2LockFSM|state.IDLE 
+    Info (332119):    -0.874        -3.751 clock_50MHz 
+Info (332146): Worst-case hold slack is 0.008
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.008         0.000 clock_50MHz 
+    Info (332119):     3.115         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -13.280 clock_50MHz 
+    Info (332119):     0.389         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -3.354
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.354        -6.492 Lab2Lock:Lab2LockFSM|state.IDLE 
+    Info (332119):    -0.710        -2.884 clock_50MHz 
+Info (332146): Worst-case hold slack is 0.050
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.050         0.000 clock_50MHz 
+    Info (332119):     2.842         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -13.280 clock_50MHz 
+    Info (332119):     0.374         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.434
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.434        -2.724 Lab2Lock:Lab2LockFSM|state.IDLE 
+    Info (332119):     0.097         0.000 clock_50MHz 
+Info (332146): Worst-case hold slack is -0.066
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.066        -0.172 clock_50MHz 
+    Info (332119):     1.599         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -12.918 clock_50MHz 
+    Info (332119):     0.444         0.000 Lab2Lock:Lab2LockFSM|state.IDLE 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 368 megabytes
+    Info: Processing ended: Thu Jun  7 15:19:13 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
+
+

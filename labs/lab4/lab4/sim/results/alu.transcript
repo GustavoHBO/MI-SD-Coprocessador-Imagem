@@ -1,0 +1,418 @@
+Reading /opt/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+
+# 10.1d
+
+proc start {m} {vsim work.$m}
+set MODULE ALUTestbench
+# ALUTestbench
+start $MODULE
+# vsim work.ALUTestbench 
+# Loading work.ALUTestbench
+# Loading work.ALUdec
+# Loading work.ALU
+add wave $MODULE/*
+add wave $MODULE/DUT1/*
+add wave $MODULE/DUT2/*
+run 100us
+# PASS: opcode 100000, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 010110
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101100
+# 	A: 0xb1f05663, B: 0xfffffb0d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001001
+# 	A: 0xb2c28465, B: 0xffffd212, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 010001
+# 	A: 0x86d7cd0d, B: 0xfffff176, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 111101
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001111
+# 	A: 0xe33724c6, B: 0xffff84c5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101111
+# 	A: 0xf2aff7e5, B: 0xfffff277, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 011011
+# 	A: 0xc7ecdb8f, B: 0xffffe9f2, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001011
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 010000
+# 	A: 0xde8e28bd, B: 0xffffd82d, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001110
+# 	A: 0xb1ef6263, B: 0xffff870a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 100001
+# 	A: 0x90642120, B: 0xffffc5aa, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101000
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 111010
+# 	A: 0xa9a7d653, B: 0xffffdd6b, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001111
+# 	A: 0x81174a02, B: 0xffffbeae, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 111011
+# 	A: 0xe7c572cf, B: 0xffffc923, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 001011
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 100001
+# 	A: 0xc52e618a, B: 0xffffb341, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 011100
+# 	A: 0xbc20f378, B: 0xffff9289, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101011
+# 	A: 0xdb0265b6, B: 0xfffff9c6, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101010
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 101110
+# 	A: 0xb897be71, B: 0xffffc185, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 000110
+# 	A: 0x9dcc603b, B: 0xffffb33a, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 100010
+# 	A: 0x8aaa4b15, B: 0xffff9bf1, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100000, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100001, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100011, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100100, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 100101, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101000, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101001, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# PASS: opcode 101011, funct 000100
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xxxxxxxxx, REFout: 0xxxxxxxxx
+# FAIL: Incorrect result for opcode 000000, funct: 100001:
+# 	A: 0x0000000a, B: 0x00000006, DUTout: 0xxxxxxxxx, REFout: 0x00000010
