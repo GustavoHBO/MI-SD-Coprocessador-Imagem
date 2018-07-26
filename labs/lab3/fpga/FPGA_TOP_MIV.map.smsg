@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Lab2Lock.v(61): object "Open" differs only in case from object "OPEN" in the same scope
+Info (10281): Verilog HDL Declaration information at Lab2Lock.v(60): object "State" differs only in case from object "state" in the same scope

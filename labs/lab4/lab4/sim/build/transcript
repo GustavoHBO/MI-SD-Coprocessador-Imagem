@@ -1,0 +1,5 @@
+# OpenFile ../results/alu.wlf 
+add wave -position insertpoint  \
+alu:/ALUTestbench/funct
+add wave -position insertpoint  \
+alu:/ALUTestbench/opcode
