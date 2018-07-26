@@ -1,0 +1,43 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart/" --report-file="bsf:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.bsf" --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE10F17C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.qsys"
+Progress: Loading UART/uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: uart.rs232_0: rs232_0.avalon_rs232_slave must be connected to an Avalon-MM master
+Warning: uart.rs232_0: rs232_0.external_interface must be exported, or connected to a matching conduit.
+Warning: uart.rs232_0: Interrupt sender rs232_0.interrupt is not connected to an interrupt receiver
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart/synthesis/" --file-set=QUARTUS_SYNTH --report-file="html:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.html" --report-file="sopcinfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.sopcinfo" --report-file="cmp:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.cmp" --report-file="qip:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart/synthesis/uart.qip" --report-file=svd --report-file="regmap:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart/synthesis/uart.regmap" --report-file="debuginfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart/synthesis/uart.debuginfo" --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE10F17C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/uart.qsys" --language=VERILOG
+Progress: Loading UART/uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: uart.rs232_0: rs232_0.avalon_rs232_slave must be connected to an Avalon-MM master
+Warning: uart.rs232_0: rs232_0.external_interface must be exported, or connected to a matching conduit.
+Warning: uart.rs232_0: Interrupt sender rs232_0.interrupt is not connected to an interrupt receiver
+Info: uart: Generating uart "uart" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 2 modules, 2 connections
+Info: No custom instruction connections, skipping transform 
+Info: reset_adaptation_transform: After transform: 3 modules, 4 connections
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "uart" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: rst_controller: "uart" instantiated altera_reset_controller "rst_controller"
+Info: uart: Done "uart" with 3 modules, 9 files, 61543 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

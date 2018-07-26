@@ -10,9 +10,12 @@ void sobel_filtering( )
      /* Input: image1[y][x] ---- Outout: image2[y][x] */
 {
   /* Definition of Sobel filter in horizontal direction */
-  int weight[3][3] = {{ -1,  0,  1 },
-                      { -2,  0,  2 },
-                      { -1,  0,  1 }};
+  int weight[3][3] = {{ -1, 0, 1 },
+                      { -2, 0, 2 },
+                      { -1, 0, 1 }};
+  int weightY[3][3] = {{ 1, 2, 1 },
+                       { 0, 0, 0 },
+                       {-1,-2,-1 }};
   double pixel_value;
   double min, max;
   int x, y, i, j;  /* Loop variable */
@@ -31,6 +34,7 @@ void sobel_filtering( )
       }
       if (pixel_value < min) min = pixel_value;
       if (pixel_value > max) max = pixel_value;
+      image2[y][x] = (unsigned char)pixel_value;
     }
   }
   if ((int)(max - min) == 0) {
@@ -47,16 +51,14 @@ void sobel_filtering( )
     }
   }
   /* Generation of image2 after linear transformtion */
-  for (y = 1; y < y_size1 - 1; y++) {
-    for (x = 1; x < x_size1 - 1; x++) {
-      pixel_value = 0.0;
-      for (j = -1; j <= 1; j++) {
-	    for (i = -1; i <= 1; i++) {
-	      pixel_value += weight[j + 1][i + 1] * image1[y + j][x + i];
-	    }
-      }
-      pixel_value = MAX_BRIGHTNESS * (pixel_value - min) / (max - min);
-      image2[y][x] = (unsigned char)pixel_value;
+  for (y = 1; y < y_size1-1; y++) {
+    for (x = 1; x < x_size1-1; x++) {
+      
+      image2[y][x] = (unsigned char)(126 * (((2*(image1[y-1][x] + image1[y-1][x+1] - image1[y][x-1] + image1[y][x+1] - image1[y+1][x-1] - image1[y+1][x])) - min) / (max - min)));
+      
+      //pixel_value = MAX_BRIGHTNESS * ((pixel_value - min) / (max - min));
+      //pixel_value = pixel_value/300;
+      //image2[y][x] += (unsigned char)pixel_value;
     }
   }
 }
