@@ -1,0 +1,21 @@
+set_global_assignment -entity "Project_uart" -library "Project_uart" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "Project_uart" -library "Project_uart" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "Project_uart" -library "Project_uart" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "Project_uart" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../Project_uart.sopcinfo"]
+set_global_assignment -entity "Project_uart" -library "Project_uart" -name SLD_INFO "QSYS_NAME Project_uart HAS_SOPCINFO 1 GENERATION_ID 1532833125"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "Project_uart" -name MISC_FILE [file join $::quartus(qip_path) "../../../Project_uart.qsys"]
+
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "Project_uart.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "Project_uart" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_counters.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_in_deserializer.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_rs232_out_serializer.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_up_sync_fifo.v"]
+set_global_assignment -library "Project_uart" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Project_uart_rs232_0.v"]
+
+set_global_assignment -entity "altera_reset_controller" -library "Project_uart" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "Project_uart" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_reset_controller" -library "Project_uart" -name IP_TOOL_ENV "Qsys"

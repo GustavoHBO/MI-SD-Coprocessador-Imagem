@@ -1,0 +1,21 @@
+module Uart_test(
+	input clk_50M,
+	input 
+);
+
+
+    Project_uart u0 (
+        .clk_clk                 (<connected-to-clk_clk>),                 //           clk.clk
+        .reset_reset_n           (<connected-to-reset_reset_n>),           //         reset.reset_n
+        .control_uart_address    (<connected-to-control_uart_address>),    //  control_uart.address
+        .control_uart_chipselect (<connected-to-control_uart_chipselect>), //              .chipselect
+        .control_uart_byteenable (<connected-to-control_uart_byteenable>), //              .byteenable
+        .control_uart_read       (<connected-to-control_uart_read>),       //              .read
+        .control_uart_write      (<connected-to-control_uart_write>),      //              .write
+        .control_uart_writedata  (<connected-to-control_uart_writedata>),  //              .writedata
+        .control_uart_readdata   (<connected-to-control_uart_readdata>),   //              .readdata
+        .external_uart_RXD       (<connected-to-external_uart_RXD>),       // external_uart.RXD
+        .external_uart_TXD       (<connected-to-external_uart_TXD>)        //              .TXD
+    );
+
+endmodule 

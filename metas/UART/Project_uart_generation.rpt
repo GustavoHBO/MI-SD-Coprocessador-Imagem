@@ -1,0 +1,41 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/" --report-file="bsf:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.bsf" --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.qsys"
+Progress: Loading UART/Project_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Warning: Ingoring duplicate connection clk_0.clk_reset/rs232_0.clock_reset_reset
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Project_uart.rs232_0: Interrupt sender rs232_0.interrupt is not connected to an interrupt receiver
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/" --file-set=QUARTUS_SYNTH --report-file="html:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.html" --report-file="sopcinfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.sopcinfo" --report-file="cmp:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.cmp" --report-file="qip:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.qip" --report-file=svd --report-file="regmap:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.regmap" --report-file="debuginfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.debuginfo" --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=Unknown --system-info=DEVICE_SPEEDGRADE=Unknown --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.qsys" --language=VERILOG
+Progress: Loading UART/Project_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Warning: Ingoring duplicate connection clk_0.clk_reset/rs232_0.clock_reset_reset
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Project_uart.rs232_0: Interrupt sender rs232_0.interrupt is not connected to an interrupt receiver
+Info: Project_uart: Generating Project_uart "Project_uart" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 2 modules, 2 connections
+Info: No custom instruction connections, skipping transform 
+Info: reset_adaptation_transform: After transform: 3 modules, 4 connections
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "Project_uart" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: rst_controller: "Project_uart" instantiated altera_reset_controller "rst_controller"
+Info: Project_uart: Done "Project_uart" with 3 modules, 9 files, 62258 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

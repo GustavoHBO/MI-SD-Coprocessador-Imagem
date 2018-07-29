@@ -1,0 +1,45 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/" --report-file="bsf:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.bsf" --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE10F17C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.qsys"
+Progress: Loading UART/Project_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Adding uart_0 [altera_avalon_uart 13.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Project_uart.uart_0: Interrupt sender uart_0.irq is not connected to an interrupt receiver
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/" --output-directory="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/" --file-set=QUARTUS_SYNTH --report-file="html:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.html" --report-file="sopcinfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.sopcinfo" --report-file="cmp:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.cmp" --report-file="qip:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.qip" --report-file=svd --report-file="regmap:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.regmap" --report-file="debuginfo:/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.debuginfo" --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE10F17C8 --system-info=DEVICE_SPEEDGRADE=8 --component-file="/home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart.qsys" --language=VERILOG
+Progress: Loading UART/Project_uart.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 13.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Progress: Parameterizing module rs232_0
+Progress: Adding uart_0 [altera_avalon_uart 13.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: Project_uart.uart_0: Interrupt sender uart_0.irq is not connected to an interrupt receiver
+Info: Project_uart: Generating Project_uart "Project_uart" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 2 modules, 2 connections
+Info: No custom instruction connections, skipping transform 
+Info: reset_adaptation_transform: After transform: 3 modules, 4 connections
+Info: uart_0: Starting RTL generation for module 'Project_uart_uart_0'
+Info: uart_0:   Generation command is [exec /home/gaut/Programs/altera/13.1/quartus/linux/perl/bin/perl -I /home/gaut/Programs/altera/13.1/quartus/linux/perl/lib -I /home/gaut/Programs/altera/13.1/quartus/sopc_builder/bin/europa -I /home/gaut/Programs/altera/13.1/quartus/sopc_builder/bin/perl_lib -I /home/gaut/Programs/altera/13.1/quartus/sopc_builder/bin -I /home/gaut/Programs/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/gaut/Programs/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- /home/gaut/Programs/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=Project_uart_uart_0 --dir=/tmp/alt7738_7228876739082780461.dir/0001_uart_0_gen/ --quartus_dir=/home/gaut/Programs/altera/13.1/quartus --verilog --config=/tmp/alt7738_7228876739082780461.dir/0001_uart_0_gen//Project_uart_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0: Done RTL generation for module 'Project_uart_uart_0'
+Info: uart_0: "Project_uart" instantiated altera_avalon_uart "uart_0"
+Info: rst_controller: "Project_uart" instantiated altera_reset_controller "rst_controller"
+Info: Project_uart: Done "Project_uart" with 3 modules, 5 files, 50426 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
