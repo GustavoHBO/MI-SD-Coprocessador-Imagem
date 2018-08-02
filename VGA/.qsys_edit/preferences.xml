@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="47" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="183" />
+   <clocksource preferredWidth="183" />
+   <frequency preferredWidth="163" />
+  </columns>
+ </clocktable>
+ <window width="1456" height="886" x="-8" y="-8" />
+ <library
+   expandedCategories="Library/University Program/Memory,Project,Library/Memories and Memory Controllers/On-Chip,Library,Library/Memories and Memory Controllers/External Memory Interfaces/Memory Models,Library/Verification,Library/Memories and Memory Controllers,Library/University Program,Library/Qsys Interconnect/Memory-Mapped,Library/Qsys Interconnect,Library/Verification/Simulation,Library/Bridges/Memory-Mapped,Library/Bridges,Library/Memories and Memory Controllers/External Memory Interfaces" />
+</preferences>
