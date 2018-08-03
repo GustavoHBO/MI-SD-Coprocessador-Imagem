@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="VGA">
 	</PROJECT>
 </LOG_ROOT>
+=======
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="VGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|VGADemo|controlador_ram:controlador_ram|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_iln1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
+>>>>>>> ac1a6383334e61969ddfbc91bd057c6723e877ec

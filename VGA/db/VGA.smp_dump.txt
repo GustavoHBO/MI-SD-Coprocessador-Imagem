@@ -1,0 +1,5 @@
+
+State Machine - |VGADemo|Escrever:Escrever|state
+Name state.FIM 
+state.MANDAR_PIXEL 0 
+state.FIM 1 
