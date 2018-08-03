@@ -5,14 +5,14 @@ module divisor_clock(
 
 input clk;
 reg clk_in;
-reg contador = 0;
-output reg clk_out;
+reg [0: 1] contador = 0;
+output clk_out;
 
 
 always @ (posedge clk) begin 
-    if (contador == 1'b1) begin 
+    if (contador == 2'd2) begin 
         clk_out <= ~clk_out;
-        contador <= 1'd0;
+        contador <= 2'd0;
     end 
     else begin 
         contador <= contador + 1;
