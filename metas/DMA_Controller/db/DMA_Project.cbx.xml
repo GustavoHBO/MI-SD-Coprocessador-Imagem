@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DMA_Project">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DMA_Project|dma_controller:dma_0|dma_controller_dma_0:dma_0|dma_controller_dma_0_fifo_module:the_dma_controller_dma_0_fifo_module|dma_controller_dma_0_fifo_module_fifo_ram_module:dma_controller_dma_0_fifo_module_fifo_ram|lpm_ram_dp:lpm_ram_dp_component|altdpram:sram|lpm_decode:wdecoder" CBX_FILE_NAME="decode_gvf.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DMA_Project|dma_controller:dma_0|dma_controller_dma_0:dma_0|dma_controller_dma_0_fifo_module:the_dma_controller_dma_0_fifo_module|dma_controller_dma_0_fifo_module_fifo_ram_module:dma_controller_dma_0_fifo_module_fifo_ram|lpm_ram_dp:lpm_ram_dp_component|altdpram:sram|lpm_mux:mux" CBX_FILE_NAME="mux_hrc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DMA_Project|dma_controller:dma_0|dma_controller_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_1la2.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

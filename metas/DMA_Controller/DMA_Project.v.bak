@@ -1,0 +1,34 @@
+module DMA_Controller(
+	input clk_50M,
+	input reset,
+	input button,
+	input button2,
+	output [3:0]led
+);
+	 DMA_Module dma_0 (
+		  .clk_clk                (clk_50M),                //         clk.clk
+		  .reset_reset_n          (reset),          //       reset.reset_n
+		  .control_dma_address    (address),    // control_dma.address
+		  .control_dma_chipselect (button2), //            .chipselect
+		  .control_dma_readdata   (dma_readdata),   //            .readdata
+		  .control_dma_write_n    (dma_write_n),    //            .write_n
+		  .control_dma_writedata  (dma_writedata)   //            .writedata
+	 );
+	reg [3:0] leds =4'b0;
+	reg [1:0] count = 2'b0;
+	reg [3:0] address = 4'b0;
+	
+	reg dma_chipselect; //            .chipselect
+	reg [31:0] dma_readdata;   //            .readdata
+	reg dma_write_n;    //            .write_n
+	reg [31:0] dma_writedata;   //            .writedata
+	
+	assign led = leds;
+	
+	always@(posedge clk_50M)begin
+		if(button)begin
+			leds <= control_dma_readdata[31:28];
+		end
+	end
+
+endmodule 

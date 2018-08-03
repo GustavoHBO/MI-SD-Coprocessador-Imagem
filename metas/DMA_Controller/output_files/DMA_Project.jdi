@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="c0e314f98a799dde28fc"/>
+  </project>
+  <file_info>
+    <file device="EP4CE10F17C8" path="DMA_Project.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="dma_controller:dma_0" name="dma_0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME dma_controller HAS_SOPCINFO 1 GENERATION_ID 1533303289"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
