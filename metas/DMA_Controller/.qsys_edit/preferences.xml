@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="47" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="166" />
+   <clocksource preferredWidth="166" />
+   <frequency preferredWidth="146" />
+  </columns>
+ </clocktable>
+ <window width="1100" height="764" x="0" y="14" />
+ <library
+   expandedCategories="Library/Memories and Memory Controllers/External Memory Interfaces,Library/Bridges/Memory-Mapped,Project,Library/Memories and Memory Controllers,Library/University Program,Library/Qsys Interconnect/Memory-Mapped,Library/Verification/Simulation,Library/Bridges,Library/Qsys Interconnect,Library/Memories and Memory Controllers/External Memory Interfaces/Memory Models,Library/Memories and Memory Controllers/On-Chip,Library/Verification,Library,Library/University Program/Memory" />
+ <hdlexample language="VERILOG" />
+</preferences>
