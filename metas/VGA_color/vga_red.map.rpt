@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_red
-Sun Jul 29 14:10:13 2018
+Mon Jul 30 00:47:48 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -45,13 +45,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jul 29 14:10:13 2018      ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 30 00:47:48 2018      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; vga_red                                    ;
 ; Top-level Entity Name              ; vga_red                                    ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 55                                         ;
-;     Total combinational functions  ; 55                                         ;
+; Total logic elements               ; 46                                         ;
+;     Total combinational functions  ; 46                                         ;
 ;     Dedicated logic registers      ; 22                                         ;
 ; Total registers                    ; 22                                         ;
 ; Total pins                         ; 16                                         ;
@@ -180,16 +180,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------------------------------------------+
 ; Resource                                    ; Usage                                              ;
 +---------------------------------------------+----------------------------------------------------+
-; Estimated Total logic elements              ; 55                                                 ;
+; Estimated Total logic elements              ; 46                                                 ;
 ;                                             ;                                                    ;
-; Total combinational functions               ; 55                                                 ;
+; Total combinational functions               ; 46                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                    ;
 ;     -- 4 input functions                    ; 24                                                 ;
-;     -- 3 input functions                    ; 5                                                  ;
-;     -- <=2 input functions                  ; 26                                                 ;
+;     -- 3 input functions                    ; 0                                                  ;
+;     -- <=2 input functions                  ; 22                                                 ;
 ;                                             ;                                                    ;
 ; Logic elements by mode                      ;                                                    ;
-;     -- normal mode                          ; 37                                                 ;
+;     -- normal mode                          ; 28                                                 ;
 ;     -- arithmetic mode                      ; 18                                                 ;
 ;                                             ;                                                    ;
 ; Total registers                             ; 22                                                 ;
@@ -203,8 +203,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                                                    ;
 ; Maximum fan-out node                        ; vga_pll:vga_pll_inst|altpll:altpll_component|_clk0 ;
 ; Maximum fan-out                             ; 23                                                 ;
-; Total fan-out                               ; 249                                                ;
-; Average fan-out                             ; 2.26                                               ;
+; Total fan-out                               ; 224                                                ;
+; Average fan-out                             ; 2.22                                               ;
 +---------------------------------------------+----------------------------------------------------+
 
 
@@ -213,7 +213,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
-; |vga_red                        ; 55 (55)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |vga_red                                              ; work         ;
+; |vga_red                        ; 46 (46)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |vga_red                                              ; work         ;
 ;    |vga_pll:vga_pll_inst|       ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_red|vga_pll:vga_pll_inst                         ; work         ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vga_red|vga_pll:vga_pll_inst|altpll:altpll_component ; work         ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
@@ -659,20 +659,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Jul 29 14:10:10 2018
+    Info: Processing started: Mon Jul 30 00:47:46 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_red -c vga_red
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file vga_red.v
     Info (12023): Found entity 1: vga_red
 Info (12021): Found 1 design units, including 1 entities, in source file vga_pll.v
     Info (12023): Found entity 1: vga_pll
-Warning (10236): Verilog HDL Implicit Net warning at vga_red.v(107): created implicit net for "clk0"
+Warning (10236): Verilog HDL Implicit Net warning at vga_red.v(116): created implicit net for "clk0"
 Info (12127): Elaborating entity "vga_red" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at vga_red.v(85): object "shape" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at vga_red.v(61): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at vga_red.v(90): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at vga_red.v(91): truncated value with size 32 to match size of target (1)
-Warning (10034): Output port "rgb_r" at vga_red.v(26) has no driver
+Warning (10036): Verilog HDL or VHDL warning at vga_red.v(85): object "valid" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_red.v(89): object "shape" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at vga_red.v(65): truncated value with size 32 to match size of target (10)
 Info (12128): Elaborating entity "vga_pll" for hierarchy "vga_pll:vga_pll_inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "vga_pll:vga_pll_inst|altpll:altpll_component"
 Info (12130): Elaborated megafunction instantiation "vga_pll:vga_pll_inst|altpll:altpll_component"
@@ -730,27 +728,29 @@ Info (12133): Instantiated megafunction "vga_pll:vga_pll_inst|altpll:altpll_comp
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rgb_r" is stuck at GND
-    Warning (13410): Pin "vga_r0" is stuck at VCC
-    Warning (13410): Pin "vga_r1" is stuck at VCC
-    Warning (13410): Pin "vga_r2" is stuck at VCC
-    Warning (13410): Pin "vga_g0" is stuck at VCC
-    Warning (13410): Pin "vga_g1" is stuck at VCC
-    Warning (13410): Pin "vga_g2" is stuck at VCC
-    Warning (13410): Pin "vga_b0" is stuck at VCC
-    Warning (13410): Pin "vga_b1" is stuck at VCC
-    Warning (13410): Pin "vga_b2" is stuck at VCC
+    Warning (13410): Pin "rgb_g" is stuck at GND
+    Warning (13410): Pin "rgb_b" is stuck at GND
+    Warning (13410): Pin "vga_r0" is stuck at GND
+    Warning (13410): Pin "vga_r1" is stuck at GND
+    Warning (13410): Pin "vga_r2" is stuck at GND
+    Warning (13410): Pin "vga_g0" is stuck at GND
+    Warning (13410): Pin "vga_g1" is stuck at GND
+    Warning (13410): Pin "vga_g2" is stuck at GND
+    Warning (13410): Pin "vga_b0" is stuck at GND
+    Warning (13410): Pin "vga_b1" is stuck at GND
+    Warning (13410): Pin "vga_b2" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 72 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 55 logic cells
+    Info (21061): Implemented 46 logic cells
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 18 warnings
     Info: Peak virtual memory: 693 megabytes
-    Info: Processing ended: Sun Jul 29 14:10:13 2018
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Mon Jul 30 00:47:48 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 
 

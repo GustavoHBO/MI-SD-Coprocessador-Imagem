@@ -48,6 +48,10 @@ reg clkout_r_r;
 reg [9:0] HMAX = 10'd800;
 reg [10:0] VMAX = 11'd630;
 
+reg regR = 1'b0;
+reg regG = 1'b0;
+reg regB = 1'b0;
+
 always@(posedge clk0 or negedge reset)
 	if(!reset) h_cnt<=10'd0;
 	else if(h_cnt==HMAX) h_cnt<=10'd0;
@@ -87,10 +91,15 @@ assign shape=(v_cnt>=100)&&(v_cnt<400);
 
 	
 //assign rgb_r=valid?1:0;
-assign rgb_g=valid?1:0;
-assign rgb_b=valid?1:0;
+//assign rgb_g=valid?1:0;
+//assign rgb_b=valid?1:0;
 
-reg test = 1'b1;
+
+assign rgb_r = regR;
+assign rgb_g = regG;
+assign rgb_b = regB;
+
+reg test = 1'b0;
 
 assign vga_r0 = test;
 assign vga_r1 = test;

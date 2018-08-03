@@ -25,17 +25,17 @@ reset => v_cnt[9].ACLR
 hys <= hys_r.DB_MAX_OUTPUT_PORT_TYPE
 vys <= vys_r.DB_MAX_OUTPUT_PORT_TYPE
 rgb_r <= <GND>
-rgb_g <= valid.DB_MAX_OUTPUT_PORT_TYPE
-rgb_b <= valid.DB_MAX_OUTPUT_PORT_TYPE
-vga_r0 <= <VCC>
-vga_r1 <= <VCC>
-vga_r2 <= <VCC>
-vga_g0 <= <VCC>
-vga_g1 <= <VCC>
-vga_g2 <= <VCC>
-vga_b0 <= <VCC>
-vga_b1 <= <VCC>
-vga_b2 <= <VCC>
+rgb_g <= <GND>
+rgb_b <= <GND>
+vga_r0 <= <GND>
+vga_r1 <= <GND>
+vga_r2 <= <GND>
+vga_g0 <= <GND>
+vga_g1 <= <GND>
+vga_g2 <= <GND>
+vga_b0 <= <GND>
+vga_b1 <= <GND>
+vga_b2 <= <GND>
 
 
 |vga_red|vga_pll:vga_pll_inst
