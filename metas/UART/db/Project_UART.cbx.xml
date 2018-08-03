@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Project_UART">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_a341.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO" CBX_FILE_NAME="scfifo_a341.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

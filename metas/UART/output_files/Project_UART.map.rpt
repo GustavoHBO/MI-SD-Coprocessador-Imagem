@@ -1,0 +1,937 @@
+Analysis & Synthesis report for Project_UART
+Sat Jul 28 23:58:51 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Protected by Synthesis
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram
+ 16. Source assignments for Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram
+ 17. Source assignments for Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 18. Source assignments for Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 19. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0
+ 20. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer
+ 21. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters
+ 22. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO
+ 23. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO
+ 24. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer
+ 25. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters
+ 26. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO
+ 27. Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO
+ 28. Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller
+ 29. Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1
+ 30. Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1
+ 31. scfifo Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+ 33. Port Connectivity Checks: "Project_uart:u0|altera_reset_controller:rst_controller"
+ 34. Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters"
+ 35. Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters"
+ 36. Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0"
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Jul 28 23:58:51 2018      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Project_UART                               ;
+; Top-level Entity Name              ; Uart_test                                  ;
+; Family                             ; Cyclone IV E                               ;
+; Total logic elements               ; 156                                        ;
+;     Total combinational functions  ; 152                                        ;
+;     Dedicated logic registers      ; 120                                        ;
+; Total registers                    ; 120                                        ;
+; Total pins                         ; 81                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 2,048                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                                      ; Uart_test          ; Project_UART       ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                            ;
++---------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                    ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                     ; Library ;
++---------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Project_uart/synthesis/submodules/Project_uart_rs232_0.v            ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/Project_uart_rs232_0.v            ;         ;
+; Project_uart/synthesis/submodules/altera_up_sync_fifo.v             ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_up_sync_fifo.v             ;         ;
+; Project_uart/synthesis/submodules/altera_up_rs232_out_serializer.v  ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_up_rs232_out_serializer.v  ;         ;
+; Project_uart/synthesis/submodules/altera_up_rs232_in_deserializer.v ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_up_rs232_in_deserializer.v ;         ;
+; Project_uart/synthesis/submodules/altera_up_rs232_counters.v        ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_up_rs232_counters.v        ;         ;
+; Project_uart/synthesis/submodules/altera_reset_synchronizer.v       ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_reset_synchronizer.v       ;         ;
+; Project_uart/synthesis/submodules/altera_reset_controller.v         ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/submodules/altera_reset_controller.v         ;         ;
+; Project_uart/synthesis/Project_uart.v                               ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Project_uart/synthesis/Project_uart.v                               ;         ;
+; Uart_test.v                                                         ; yes             ; User Verilog HDL File        ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/Uart_test.v                                                         ;         ;
+; scfifo.tdf                                                          ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/scfifo.tdf                                                                       ;         ;
+; a_regfifo.inc                                                       ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_regfifo.inc                                                                    ;         ;
+; a_dpfifo.inc                                                        ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_dpfifo.inc                                                                     ;         ;
+; a_i2fifo.inc                                                        ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_i2fifo.inc                                                                     ;         ;
+; a_fffifo.inc                                                        ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_fffifo.inc                                                                     ;         ;
+; a_f2fifo.inc                                                        ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_f2fifo.inc                                                                     ;         ;
+; aglobal131.inc                                                      ; yes             ; Megafunction                 ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                                   ;         ;
+; db/scfifo_a341.tdf                                                  ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/scfifo_a341.tdf                                                  ;         ;
+; db/a_dpfifo_tq31.tdf                                                ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/a_dpfifo_tq31.tdf                                                ;         ;
+; db/altsyncram_je81.tdf                                              ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/altsyncram_je81.tdf                                              ;         ;
+; db/cmpr_ks8.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/cmpr_ks8.tdf                                                     ;         ;
+; db/cntr_v9b.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/cntr_v9b.tdf                                                     ;         ;
+; db/cntr_ca7.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/cntr_ca7.tdf                                                     ;         ;
+; db/cntr_0ab.tdf                                                     ; yes             ; Auto-Generated Megafunction  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/UART/db/cntr_0ab.tdf                                                     ;         ;
++---------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 156           ;
+;                                             ;               ;
+; Total combinational functions               ; 152           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 35            ;
+;     -- 3 input functions                    ; 33            ;
+;     -- <=2 input functions                  ; 84            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 113           ;
+;     -- arithmetic mode                      ; 39            ;
+;                                             ;               ;
+; Total registers                             ; 120           ;
+;     -- Dedicated logic registers            ; 120           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 81            ;
+; Total memory bits                           ; 2048          ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; clk_50M~input ;
+; Maximum fan-out                             ; 136           ;
+; Total fan-out                               ; 1054          ;
+; Average fan-out                             ; 2.34          ;
++---------------------------------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                          ;
++------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                            ; Library Name ;
++------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Uart_test                                                       ; 152 (1)           ; 120 (0)      ; 2048        ; 0            ; 0       ; 0         ; 81   ; 0            ; |Uart_test                                                                                                                                                                                                                                     ; work         ;
+;    |Project_uart:u0|                                             ; 151 (0)           ; 120 (0)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0                                                                                                                                                                                                                     ; work         ;
+;       |Project_uart_rs232_0:rs232_0|                             ; 151 (18)          ; 117 (17)     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0                                                                                                                                                                                        ; work         ;
+;          |altera_up_rs232_in_deserializer:RS232_In_Deserializer| ; 62 (20)           ; 50 (18)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer                                                                                                                                  ; work         ;
+;             |altera_up_rs232_counters:RS232_In_Counters|         ; 24 (24)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters                                                                                       ; work         ;
+;             |altera_up_sync_fifo:RS232_In_FIFO|                  ; 18 (0)            ; 17 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO                                                                                                ; work         ;
+;                |scfifo:Sync_FIFO|                                ; 18 (0)            ; 17 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO                                                                               ; work         ;
+;                   |scfifo_a341:auto_generated|                   ; 18 (0)            ; 17 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated                                                    ; work         ;
+;                      |a_dpfifo_tq31:dpfifo|                      ; 18 (2)            ; 17 (3)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo                               ; work         ;
+;                         |altsyncram_je81:FIFOram|                ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram       ; work         ;
+;                         |cmpr_ks8:almost_full_comparer|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cmpr_ks8:almost_full_comparer ; work         ;
+;                         |cntr_0ab:wr_ptr|                        ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr               ; work         ;
+;                         |cntr_ca7:usedw_counter|                 ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_ca7:usedw_counter        ; work         ;
+;          |altera_up_rs232_out_serializer:RS232_Out_Serializer|   ; 71 (14)           ; 50 (11)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer                                                                                                                                    ; work         ;
+;             |altera_up_rs232_counters:RS232_Out_Counters|        ; 24 (24)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters                                                                                        ; work         ;
+;             |altera_up_sync_fifo:RS232_Out_FIFO|                 ; 33 (0)            ; 24 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO                                                                                                 ; work         ;
+;                |scfifo:Sync_FIFO|                                ; 33 (0)            ; 24 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO                                                                                ; work         ;
+;                   |scfifo_a341:auto_generated|                   ; 33 (0)            ; 24 (0)       ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated                                                     ; work         ;
+;                      |a_dpfifo_tq31:dpfifo|                      ; 33 (17)           ; 24 (11)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo                                ; work         ;
+;                         |altsyncram_je81:FIFOram|                ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram        ; work         ;
+;                         |cmpr_ks8:three_comparison|              ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cmpr_ks8:three_comparison      ; work         ;
+;                         |cntr_ca7:usedw_counter|                 ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_ca7:usedw_counter         ; work         ;
+;                         |cntr_v9b:rd_ptr_msb|                    ; 7 (7)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_v9b:rd_ptr_msb            ; work         ;
+;       |altera_reset_controller:rst_controller|                   ; 0 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|altera_reset_controller:rst_controller                                                                                                                                                                              ; work         ;
+;          |altera_reset_synchronizer:alt_rst_sync_uq1|            ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Uart_test|Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                                                                   ; work         ;
++------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                                                             ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                                                                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram|ALTSYNCRAM  ; AUTO ; Simple Dual Port ; 128          ; 8            ; 128          ; 8            ; 1024 ; None ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                                                                                                                            ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0] ; yes                                                              ; yes                                        ;
+; Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1] ; yes                                                              ; yes                                        ;
++------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                                                                                   ; Reason for Removal                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[0..4]                                                                                                                         ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_interrupt                                                                                                                                                                                    ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[5..7]                                                                                                                         ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|read_interrupt                                                                                                                                                                                     ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_fifo_write_en                                                                                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                                                                                                                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|data_to_uart[0..7]                                                                                                                                                                                 ; Stuck at GND due to stuck port data_in                                                                                                                                                                                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|read_interrupt_en                                                                                                                                                                                  ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_interrupt_en                                                                                                                                                                                 ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|full_dff                                   ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|rd_ptr_lsb                                ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|usedw_is_2_dff                            ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_v9b:rd_ptr_msb|counter_reg_bit[0..5] ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[0..6]      ; Stuck at GND due to stuck port data_in                                                                                                                                                                                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|low_addressa[0..5]                        ; Merged with Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|low_addressa[6] ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|readdata[8,9,11..14,24..31]                                                                                                                                                                        ; Merged with Project_uart:u0|Project_uart_rs232_0:rs232_0|readdata[10]                                                                                                                                                             ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|readdata[10]                                                                                                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                                                                                                                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|low_addressa[6]                           ; Stuck at GND due to stuck port data_in                                                                                                                                                                                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|usedw_is_1_dff                            ; Lost fanout                                                                                                                                                                                                                       ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|usedw_is_0_dff                             ; Merged with Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|empty_dff        ;
+; Total Number of Removed Registers = 61                                                                                                                                                                                                          ;                                                                                                                                                                                                                                   ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                        ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                                                                                                   ;
++----------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_fifo_write_en                                                     ; Stuck at GND              ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[6], ;
+;                                                                                                                      ; due to stuck port data_in ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[5], ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[4], ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[3], ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr|counter_reg_bit[2]  ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_interrupt                                                         ; Lost Fanouts              ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[6],                                                                                                                    ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[5],                                                                                                                    ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[7],                                                                                                                    ;
+;                                                                                                                      ;                           ; Project_uart:u0|Project_uart_rs232_0:rs232_0|write_interrupt_en                                                                                                                                                                          ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|fifo_write_space[4] ; Lost Fanouts              ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|full_dff                            ;
+; Project_uart:u0|Project_uart_rs232_0:rs232_0|read_interrupt                                                          ; Lost Fanouts              ; Project_uart:u0|Project_uart_rs232_0:rs232_0|read_interrupt_en                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 120   ;
+; Number of registers using Synchronous Clear  ; 23    ;
+; Number of registers using Synchronous Load   ; 36    ;
+; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                         ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain_out ; 101     ;
+; Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[0]  ; 1       ;
+; Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1|altera_reset_synchronizer_int_chain[1]  ; 1       ;
+; Total number of inverted registers = 3                                                                                                    ;         ;
++-------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|readdata[0]                                                                                                      ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|data_in_shift_reg[8]                                       ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|data_out_shift_reg[3]                                        ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters|baud_counter[4]  ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters|baud_counter[4] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters|bit_counter[2]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Uart_test|Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters|bit_counter[2]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                     ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                      ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                                                                                                                    ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                                                                                                                     ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++-------------------+-------+------+---------------------------------------------------------------------------------------+
+; Assignment        ; Value ; From ; To                                                                                    ;
++-------------------+-------+------+---------------------------------------------------------------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                                ;
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                                ;
++-------------------+-------+------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
++-------------------+-------+------+-------------------------------------------------------------------------------------------+
+; Assignment        ; Value ; From ; To                                                                                        ;
++-------------------+-------+------+-------------------------------------------------------------------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[0]                                                    ;
+; PRESERVE_REGISTER ; on    ; -    ; altera_reset_synchronizer_int_chain[1]                                                    ;
++-------------------+-------+------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0 ;
++----------------------+-------+------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                       ;
++----------------------+-------+------------------------------------------------------------+
+; CW                   ; 9     ; Signed Integer                                             ;
+; BAUD_TICK_COUNT      ; 434   ; Signed Integer                                             ;
+; HALF_BAUD_TICK_COUNT ; 217   ; Signed Integer                                             ;
+; TDW                  ; 10    ; Signed Integer                                             ;
+; DW                   ; 8     ; Signed Integer                                             ;
+; ODD_PARITY           ; 0     ; Unsigned Binary                                            ;
++----------------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                                                             ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------+
+; CW                   ; 9     ; Signed Integer                                                                                                   ;
+; BAUD_TICK_COUNT      ; 434   ; Signed Integer                                                                                                   ;
+; HALF_BAUD_TICK_COUNT ; 217   ; Signed Integer                                                                                                   ;
+; TDW                  ; 10    ; Signed Integer                                                                                                   ;
+; DW                   ; 7     ; Signed Integer                                                                                                   ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters ;
++----------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                                                                                                        ;
++----------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CW                   ; 9     ; Signed Integer                                                                                                                                              ;
+; BAUD_TICK_COUNT      ; 434   ; Signed Integer                                                                                                                                              ;
+; HALF_BAUD_TICK_COUNT ; 217   ; Signed Integer                                                                                                                                              ;
+; TDW                  ; 10    ; Signed Integer                                                                                                                                              ;
++----------------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; DW             ; 7     ; Signed Integer                                                                                                                                           ;
+; DATA_DEPTH     ; 128   ; Signed Integer                                                                                                                                           ;
+; AW             ; 6     ; Signed Integer                                                                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO ;
++-------------------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value        ; Type                                                                                                                                                      ;
++-------------------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON           ; AUTO_CARRY                                                                                                                                                ;
+; IGNORE_CARRY_BUFFERS    ; OFF          ; IGNORE_CARRY                                                                                                                                              ;
+; AUTO_CASCADE_CHAINS     ; ON           ; AUTO_CASCADE                                                                                                                                              ;
+; IGNORE_CASCADE_BUFFERS  ; OFF          ; IGNORE_CASCADE                                                                                                                                            ;
+; lpm_width               ; 8            ; Signed Integer                                                                                                                                            ;
+; LPM_NUMWORDS            ; 128          ; Signed Integer                                                                                                                                            ;
+; LPM_WIDTHU              ; 7            ; Signed Integer                                                                                                                                            ;
+; LPM_SHOWAHEAD           ; ON           ; Untyped                                                                                                                                                   ;
+; UNDERFLOW_CHECKING      ; OFF          ; Untyped                                                                                                                                                   ;
+; OVERFLOW_CHECKING       ; OFF          ; Untyped                                                                                                                                                   ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF          ; Untyped                                                                                                                                                   ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF          ; Untyped                                                                                                                                                   ;
+; ALMOST_FULL_VALUE       ; 0            ; Untyped                                                                                                                                                   ;
+; ALMOST_EMPTY_VALUE      ; 0            ; Untyped                                                                                                                                                   ;
+; USE_EAB                 ; ON           ; Untyped                                                                                                                                                   ;
+; MAXIMIZE_SPEED          ; 5            ; Untyped                                                                                                                                                   ;
+; DEVICE_FAMILY           ; Cyclone IV E ; Untyped                                                                                                                                                   ;
+; OPTIMIZE_FOR_SPEED      ; 5            ; Untyped                                                                                                                                                   ;
+; CBXI_PARAMETER          ; scfifo_a341  ; Untyped                                                                                                                                                   ;
++-------------------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer ;
++----------------------+-------+----------------------------------------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                                                           ;
++----------------------+-------+----------------------------------------------------------------------------------------------------------------+
+; CW                   ; 9     ; Signed Integer                                                                                                 ;
+; BAUD_TICK_COUNT      ; 434   ; Signed Integer                                                                                                 ;
+; HALF_BAUD_TICK_COUNT ; 217   ; Signed Integer                                                                                                 ;
+; TDW                  ; 10    ; Signed Integer                                                                                                 ;
+; DW                   ; 7     ; Signed Integer                                                                                                 ;
++----------------------+-------+----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name       ; Value ; Type                                                                                                                                                       ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CW                   ; 9     ; Signed Integer                                                                                                                                             ;
+; BAUD_TICK_COUNT      ; 434   ; Signed Integer                                                                                                                                             ;
+; HALF_BAUD_TICK_COUNT ; 217   ; Signed Integer                                                                                                                                             ;
+; TDW                  ; 10    ; Signed Integer                                                                                                                                             ;
++----------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                    ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; DW             ; 7     ; Signed Integer                                                                                                                                          ;
+; DATA_DEPTH     ; 128   ; Signed Integer                                                                                                                                          ;
+; AW             ; 6     ; Signed Integer                                                                                                                                          ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO ;
++-------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value        ; Type                                                                                                                                                     ;
++-------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON           ; AUTO_CARRY                                                                                                                                               ;
+; IGNORE_CARRY_BUFFERS    ; OFF          ; IGNORE_CARRY                                                                                                                                             ;
+; AUTO_CASCADE_CHAINS     ; ON           ; AUTO_CASCADE                                                                                                                                             ;
+; IGNORE_CASCADE_BUFFERS  ; OFF          ; IGNORE_CASCADE                                                                                                                                           ;
+; lpm_width               ; 8            ; Signed Integer                                                                                                                                           ;
+; LPM_NUMWORDS            ; 128          ; Signed Integer                                                                                                                                           ;
+; LPM_WIDTHU              ; 7            ; Signed Integer                                                                                                                                           ;
+; LPM_SHOWAHEAD           ; ON           ; Untyped                                                                                                                                                  ;
+; UNDERFLOW_CHECKING      ; OFF          ; Untyped                                                                                                                                                  ;
+; OVERFLOW_CHECKING       ; OFF          ; Untyped                                                                                                                                                  ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF          ; Untyped                                                                                                                                                  ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF          ; Untyped                                                                                                                                                  ;
+; ALMOST_FULL_VALUE       ; 0            ; Untyped                                                                                                                                                  ;
+; ALMOST_EMPTY_VALUE      ; 0            ; Untyped                                                                                                                                                  ;
+; USE_EAB                 ; ON           ; Untyped                                                                                                                                                  ;
+; MAXIMIZE_SPEED          ; 5            ; Untyped                                                                                                                                                  ;
+; DEVICE_FAMILY           ; Cyclone IV E ; Untyped                                                                                                                                                  ;
+; OPTIMIZE_FOR_SPEED      ; 5            ; Untyped                                                                                                                                                  ;
+; CBXI_PARAMETER          ; scfifo_a341  ; Untyped                                                                                                                                                  ;
++-------------------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller ;
++---------------------------+----------+--------------------------------------------------------------+
+; Parameter Name            ; Value    ; Type                                                         ;
++---------------------------+----------+--------------------------------------------------------------+
+; NUM_RESET_INPUTS          ; 1        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN0     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN1     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN2     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN3     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN4     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN5     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN6     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN7     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN8     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN9     ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN10    ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN11    ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN12    ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN13    ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN14    ; 0        ; Signed Integer                                               ;
+; USE_RESET_REQUEST_IN15    ; 0        ; Signed Integer                                               ;
+; OUTPUT_RESET_SYNC_EDGES   ; deassert ; String                                                       ;
+; SYNC_DEPTH                ; 2        ; Signed Integer                                               ;
+; RESET_REQUEST_PRESENT     ; 0        ; Signed Integer                                               ;
+; RESET_REQ_WAIT_TIME       ; 1        ; Signed Integer                                               ;
+; MIN_RST_ASSERTION_TIME    ; 3        ; Signed Integer                                               ;
+; RESET_REQ_EARLY_DSRT_TIME ; 1        ; Signed Integer                                               ;
+; ADAPT_RESET_REQUEST       ; 0        ; Signed Integer                                               ;
++---------------------------+----------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1 ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                  ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; ASYNC_RESET    ; 1     ; Unsigned Binary                                                                                                       ;
+; DEPTH          ; 2     ; Signed Integer                                                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1 ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+; ASYNC_RESET    ; 0     ; Signed Integer                                                                                                            ;
+; DEPTH          ; 2     ; Signed Integer                                                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                                                                                                                       ;
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                       ; Value                                                                                                                                                 ;
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Number of entity instances ; 2                                                                                                                                                     ;
+; Entity Instance            ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO ;
+;     -- FIFO Type           ; Single Clock                                                                                                                                          ;
+;     -- lpm_width           ; 8                                                                                                                                                     ;
+;     -- LPM_NUMWORDS        ; 128                                                                                                                                                   ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                                                                                    ;
+;     -- USE_EAB             ; ON                                                                                                                                                    ;
+; Entity Instance            ; Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_sync_fifo:RS232_Out_FIFO|scfifo:Sync_FIFO  ;
+;     -- FIFO Type           ; Single Clock                                                                                                                                          ;
+;     -- lpm_width           ; 8                                                                                                                                                     ;
+;     -- LPM_NUMWORDS        ; 128                                                                                                                                                   ;
+;     -- LPM_SHOWAHEAD       ; ON                                                                                                                                                    ;
+;     -- USE_EAB             ; ON                                                                                                                                                    ;
++----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1" ;
++----------+-------+----------+-----------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                             ;
++----------+-------+----------+-----------------------------------------------------------------------------------------------------+
+; reset_in ; Input ; Info     ; Stuck at GND                                                                                        ;
++----------+-------+----------+-----------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Project_uart:u0|altera_reset_controller:rst_controller" ;
++----------------+--------+----------+-----------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                       ;
++----------------+--------+----------+-----------------------------------------------+
+; reset_req      ; Output ; Info     ; Explicitly unconnected                        ;
+; reset_req_in0  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in1      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in1  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in2      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in2  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in3      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in3  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in4      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in4  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in5      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in5  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in6      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in6  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in7      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in7  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in8      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in8  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in9      ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in9  ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in10     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in10 ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in11     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in11 ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in12     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in12 ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in13     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in13 ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in14     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in14 ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_in15     ; Input  ; Info     ; Stuck at GND                                  ;
+; reset_req_in15 ; Input  ; Info     ; Stuck at GND                                  ;
++----------------+--------+----------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer|altera_up_rs232_counters:RS232_Out_Counters" ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                                                                    ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+; baud_clock_falling_edge ; Output ; Info     ; Explicitly unconnected                                                                                                     ;
++-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters" ;
++------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; Port                   ; Type   ; Severity ; Details                                                                                                                      ;
++------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+; baud_clock_rising_edge ; Output ; Info     ; Explicitly unconnected                                                                                                       ;
++------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "Project_uart:u0|Project_uart_rs232_0:rs232_0" ;
++------+--------+----------+-----------------------------------------------+
+; Port ; Type   ; Severity ; Details                                       ;
++------+--------+----------+-----------------------------------------------+
+; irq  ; Output ; Info     ; Explicitly unconnected                        ;
++------+--------+----------+-----------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Sat Jul 28 23:58:39 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project_UART -c Project_UART
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12248): Elaborating Qsys system entity "Project_uart.qsys"
+Info (12250): 2018.07.28.23:58:43 Progress: Loading UART/Project_uart.qsys
+Info (12250): 2018.07.28.23:58:43 Progress: Reading input file
+Info (12250): 2018.07.28.23:58:43 Progress: Adding clk_0 [clock_source 13.1]
+Info (12250): 2018.07.28.23:58:44 Progress: Parameterizing module clk_0
+Info (12250): 2018.07.28.23:58:44 Progress: Adding uart_0 [altera_avalon_uart 13.1]
+Info (12250): 2018.07.28.23:58:44 Progress: Parameterizing module uart_0
+Info (12250): 2018.07.28.23:58:44 Progress: Adding rs232_0 [altera_up_avalon_rs232 13.0]
+Info (12250): 2018.07.28.23:58:44 Progress: Parameterizing module rs232_0
+Info (12250): 2018.07.28.23:58:44 Progress: Building connections
+Info (12250): 2018.07.28.23:58:45 Progress: Parameterizing connections
+Info (12250): 2018.07.28.23:58:45 Progress: Validating
+Info (12250): 2018.07.28.23:58:45 Progress: Done reading input file
+Warning (12251): Project_uart.rs232_0: Interrupt sender rs232_0.interrupt is not connected to an interrupt receiver
+Info (12250): Project_uart: Generating Project_uart "Project_uart" for QUARTUS_SYNTH
+Info (12250): Pipeline_bridge_swap_transform: After transform: 2 modules, 2 connections
+Info (12250): No custom instruction connections, skipping transform 
+Info (12250): Reset_adaptation_transform: After transform: 3 modules, 4 connections
+Info (12250): Rs232_0: Starting Generation of RS232 UART
+Info (12250): Rs232_0: "Project_uart" instantiated altera_up_avalon_rs232 "rs232_0"
+Info (12250): Rst_controller: "Project_uart" instantiated altera_reset_controller "rst_controller"
+Info (12250): Project_uart: Done "Project_uart" with 3 modules, 9 files, 62159 bytes
+Info (12249): Finished elaborating Qsys system entity "Project_uart.qsys"
+Info (12021): Found 5 design units, including 5 entities, in source file Project_uart/synthesis/submodules/Project_uart_uart_0.v
+    Info (12023): Found entity 1: Project_uart_uart_0_tx
+    Info (12023): Found entity 2: Project_uart_uart_0_rx_stimulus_source
+    Info (12023): Found entity 3: Project_uart_uart_0_rx
+    Info (12023): Found entity 4: Project_uart_uart_0_regs
+    Info (12023): Found entity 5: Project_uart_uart_0
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/Project_uart_rs232_0.v
+    Info (12023): Found entity 1: Project_uart_rs232_0
+Warning (10275): Verilog HDL Module Instantiation warning at altera_up_sync_fifo.v(157): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_up_sync_fifo.v
+    Info (12023): Found entity 1: altera_up_sync_fifo
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_up_rs232_out_serializer.v
+    Info (12023): Found entity 1: altera_up_rs232_out_serializer
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_up_rs232_in_deserializer.v
+    Info (12023): Found entity 1: altera_up_rs232_in_deserializer
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_up_rs232_counters.v
+    Info (12023): Found entity 1: altera_up_rs232_counters
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file Project_uart/synthesis/Project_uart.v
+    Info (12023): Found entity 1: Project_uart
+Info (12021): Found 1 design units, including 1 entities, in source file Uart_test.v
+    Info (12023): Found entity 1: Uart_test
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/Project_uart.v
+    Info (12023): Found entity 1: Project_uart
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/Project_uart_rs232_0.v
+    Info (12023): Found entity 1: Project_uart_rs232_0
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_up_rs232_counters.v
+    Info (12023): Found entity 1: altera_up_rs232_counters
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_up_rs232_in_deserializer.v
+    Info (12023): Found entity 1: altera_up_rs232_in_deserializer
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_up_rs232_out_serializer.v
+    Info (12023): Found entity 1: altera_up_rs232_out_serializer
+Warning (10275): Verilog HDL Module Instantiation warning at altera_up_sync_fifo.v(157): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/Project_uart/submodules/altera_up_sync_fifo.v
+    Info (12023): Found entity 1: altera_up_sync_fifo
+Info (12127): Elaborating entity "Uart_test" for the top level hierarchy
+Warning (10034): Output port "led[3]" at Uart_test.v(15) has no driver
+Info (12128): Elaborating entity "Project_uart" for hierarchy "Project_uart:u0"
+Info (12128): Elaborating entity "Project_uart_rs232_0" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0"
+Warning (10036): Verilog HDL or VHDL warning at Project_uart_rs232_0.v(123): object "write_data_parity" assigned a value but never read
+Info (12128): Elaborating entity "altera_up_rs232_in_deserializer" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer"
+Info (12128): Elaborating entity "altera_up_rs232_counters" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_rs232_counters:RS232_In_Counters"
+Warning (10230): Verilog HDL assignment warning at altera_up_rs232_counters.v(124): truncated value with size 32 to match size of target (9)
+Info (12128): Elaborating entity "altera_up_sync_fifo" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO"
+Info (12128): Elaborating entity "scfifo" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO"
+Info (12130): Elaborated megafunction instantiation "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO"
+Info (12133): Instantiated megafunction "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO" with the following parameter:
+    Info (12134): Parameter "add_ram_output_register" = "OFF"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_numwords" = "128"
+    Info (12134): Parameter "lpm_showahead" = "ON"
+    Info (12134): Parameter "lpm_type" = "scfifo"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_widthu" = "7"
+    Info (12134): Parameter "overflow_checking" = "OFF"
+    Info (12134): Parameter "underflow_checking" = "OFF"
+    Info (12134): Parameter "use_eab" = "ON"
+Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_a341.tdf
+    Info (12023): Found entity 1: scfifo_a341
+Info (12128): Elaborating entity "scfifo_a341" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_tq31.tdf
+    Info (12023): Found entity 1: a_dpfifo_tq31
+Info (12128): Elaborating entity "a_dpfifo_tq31" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_je81.tdf
+    Info (12023): Found entity 1: altsyncram_je81
+Info (12128): Elaborating entity "altsyncram_je81" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|altsyncram_je81:FIFOram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ks8.tdf
+    Info (12023): Found entity 1: cmpr_ks8
+Info (12128): Elaborating entity "cmpr_ks8" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cmpr_ks8:almost_full_comparer"
+Info (12128): Elaborating entity "cmpr_ks8" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cmpr_ks8:three_comparison"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_v9b.tdf
+    Info (12023): Found entity 1: cntr_v9b
+Info (12128): Elaborating entity "cntr_v9b" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_v9b:rd_ptr_msb"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ca7.tdf
+    Info (12023): Found entity 1: cntr_ca7
+Info (12128): Elaborating entity "cntr_ca7" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_ca7:usedw_counter"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_0ab.tdf
+    Info (12023): Found entity 1: cntr_0ab
+Info (12128): Elaborating entity "cntr_0ab" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_in_deserializer:RS232_In_Deserializer|altera_up_sync_fifo:RS232_In_FIFO|scfifo:Sync_FIFO|scfifo_a341:auto_generated|a_dpfifo_tq31:dpfifo|cntr_0ab:wr_ptr"
+Info (12128): Elaborating entity "altera_up_rs232_out_serializer" for hierarchy "Project_uart:u0|Project_uart_rs232_0:rs232_0|altera_up_rs232_out_serializer:RS232_Out_Serializer"
+Info (12128): Elaborating entity "altera_reset_controller" for hierarchy "Project_uart:u0|altera_reset_controller:rst_controller"
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1"
+Info (12128): Elaborating entity "altera_reset_synchronizer" for hierarchy "Project_uart:u0|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_req_sync_uq1"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "uart_ars_readdata[8]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[9]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[10]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[11]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[12]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[13]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[14]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[24]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[25]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[26]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[27]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[28]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[29]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[30]" is stuck at GND
+    Warning (13410): Pin "uart_ars_readdata[31]" is stuck at GND
+    Warning (13410): Pin "led[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 22 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 40 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "uart_ars_address"
+    Warning (15610): No output dependent on input pin "uart_ars_chipselect"
+    Warning (15610): No output dependent on input pin "uart_ars_byteenable[0]"
+    Warning (15610): No output dependent on input pin "uart_ars_byteenable[1]"
+    Warning (15610): No output dependent on input pin "uart_ars_byteenable[2]"
+    Warning (15610): No output dependent on input pin "uart_ars_byteenable[3]"
+    Warning (15610): No output dependent on input pin "uart_ars_read"
+    Warning (15610): No output dependent on input pin "uart_ars_write"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[0]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[1]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[2]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[3]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[4]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[5]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[6]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[7]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[8]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[9]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[10]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[11]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[12]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[13]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[14]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[15]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[16]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[17]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[18]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[19]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[20]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[21]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[22]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[23]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[24]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[25]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[26]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[27]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[28]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[29]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[30]"
+    Warning (15610): No output dependent on input pin "uart_ars_writedata[31]"
+Info (21057): Implemented 253 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 44 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 156 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 695 megabytes
+    Info: Processing ended: Sat Jul 28 23:58:51 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
+
+
