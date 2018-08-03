@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="47" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="166" />
+   <clocksource preferredWidth="166" />
+   <frequency preferredWidth="146" />
+  </columns>
+ </clocktable>
+ <window width="1386" height="792" x="-10" y="-14" />
+ <library
+   expandedCategories="Library/Bridges,Library/Memories and Memory Controllers/External Memory Interfaces/DDR Interfaces,Library/Verification/Simulation,Library/Memories and Memory Controllers/On-Chip,Library/Memories and Memory Controllers/External Memory Interfaces/DDR3 Interfaces,Library/Bridges/Memory-Mapped,Library/Memories and Memory Controllers/External Memory Interfaces/Performance Monitors,Library/Verification,Library/Memories and Memory Controllers,Library/Memories and Memory Controllers/External Memory Interfaces,Library,Project,Library/Memories and Memory Controllers/External Memory Interfaces/DDR2 Interfaces" />
+ <hdlexample language="VERILOG" />
+</preferences>
