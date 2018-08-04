@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at Coprocessor_Edge_Detection.v(45): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Coprocessor_Edge_Detection.v(47): always construct contains both blocking and non-blocking assignments

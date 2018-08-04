@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Coprocessor_Edge_Detection
-Sat Aug  4 00:22:13 2018
+Sat Aug  4 07:52:06 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -15,16 +15,17 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_0mn1:auto_generated
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |Coprocessor_Edge_Detection
- 14. Parameter Settings for User Entity Instance: ccpu_ram:ccpu_ram|altsyncram:altsyncram_component
- 15. altsyncram Parameter Settings by Entity Instance
- 16. Port Connectivity Checks: "ccpu_ram:ccpu_ram"
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_0mn1:auto_generated
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |Coprocessor_Edge_Detection
+ 15. Parameter Settings for User Entity Instance: ccpu_ram:ccpu_ram|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "ccpu_ram:ccpu_ram"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -50,16 +51,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug  4 00:22:13 2018      ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug  4 07:52:06 2018      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Coprocessor_Edge_Detection                 ;
 ; Top-level Entity Name              ; Coprocessor_Edge_Detection                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 23                                         ;
-;     Total combinational functions  ; 23                                         ;
-;     Dedicated logic registers      ; 17                                         ;
-; Total registers                    ; 17                                         ;
-; Total pins                         ; 105                                        ;
+; Total logic elements               ; 24                                         ;
+;     Total combinational functions  ; 24                                         ;
+;     Dedicated logic registers      ; 18                                         ;
+; Total registers                    ; 18                                         ;
+; Total pins                         ; 109                                        ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -190,28 +191,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 23       ;
+; Estimated Total logic elements              ; 24       ;
 ;                                             ;          ;
-; Total combinational functions               ; 23       ;
+; Total combinational functions               ; 24       ;
 ; Logic element usage by number of LUT inputs ;          ;
 ;     -- 4 input functions                    ; 6        ;
 ;     -- 3 input functions                    ; 4        ;
-;     -- <=2 input functions                  ; 13       ;
+;     -- <=2 input functions                  ; 14       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 12       ;
+;     -- normal mode                          ; 13       ;
 ;     -- arithmetic mode                      ; 11       ;
 ;                                             ;          ;
-; Total registers                             ; 17       ;
-;     -- Dedicated logic registers            ; 17       ;
+; Total registers                             ; 18       ;
+;     -- Dedicated logic registers            ; 18       ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
-; I/O pins                                    ; 105      ;
+; I/O pins                                    ; 109      ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; state[1] ;
 ; Maximum fan-out                             ; 19       ;
-; Total fan-out                               ; 252      ;
-; Average fan-out                             ; 1.01     ;
+; Total fan-out                               ; 249      ;
+; Average fan-out                             ; 0.96     ;
 +---------------------------------------------+----------+
 
 
@@ -220,7 +221,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 ; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; |Coprocessor_Edge_Detection ; 23 (23)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |Coprocessor_Edge_Detection ; work         ;
+; |Coprocessor_Edge_Detection ; 24 (24)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 109  ; 0            ; |Coprocessor_Edge_Detection ; work         ;
 +-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -234,14 +235,122 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; clk_done~reg0                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; address_pixel_base[0..11]              ; Lost fanout                            ;
+; pixel[63]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[62]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[61]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[60]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[59]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[58]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[57]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[56]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[55]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[54]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[53]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[52]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[51]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[50]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[49]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[48]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[47]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[46]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[45]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[44]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[43]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[42]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[41]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[40]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[39]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[38]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[37]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[36]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[35]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[34]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[33]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[32]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[31]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[30]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[29]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[28]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[27]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[26]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[25]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[24]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[23]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[22]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[21]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[20]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[19]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[18]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[17]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[16]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[15]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[14]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[13]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[12]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[11]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[10]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; pixel[9]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[8]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[7]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[6]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[5]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[4]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[3]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[1]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[0]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 76 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                         ;
++----------------+---------------------------+----------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------+---------------------------+----------------------------------------+
+; pixel[52]~reg0 ; Stuck at GND              ; pixel[0]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[50]~reg0 ; Stuck at GND              ; pixel[1]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[48]~reg0 ; Stuck at GND              ; pixel[2]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[46]~reg0 ; Stuck at GND              ; pixel[3]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[44]~reg0 ; Stuck at GND              ; pixel[4]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[42]~reg0 ; Stuck at GND              ; pixel[5]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[40]~reg0 ; Stuck at GND              ; pixel[6]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[38]~reg0 ; Stuck at GND              ; pixel[7]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[36]~reg0 ; Stuck at GND              ; pixel[8]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[34]~reg0 ; Stuck at GND              ; pixel[9]~reg0                          ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[32]~reg0 ; Stuck at GND              ; pixel[10]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[30]~reg0 ; Stuck at GND              ; pixel[11]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[28]~reg0 ; Stuck at GND              ; pixel[12]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[26]~reg0 ; Stuck at GND              ; pixel[13]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[24]~reg0 ; Stuck at GND              ; pixel[14]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[22]~reg0 ; Stuck at GND              ; pixel[15]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[20]~reg0 ; Stuck at GND              ; pixel[16]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
+; pixel[18]~reg0 ; Stuck at GND              ; pixel[17]~reg0                         ;
+;                ; due to stuck port data_in ;                                        ;
++----------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -249,9 +358,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 17    ;
-; Number of registers using Synchronous Clear  ; 3     ;
-; Number of registers using Synchronous Load   ; 12    ;
+; Total registers                              ; 18    ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 13    ;
@@ -259,14 +368,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Coprocessor_Edge_Detection|count_line[2]         ;
-; 5:1                ; 12 bits   ; 36 LEs        ; 12 LEs               ; 24 LEs                 ; Yes        ; |Coprocessor_Edge_Detection|address_pixel_base[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |Coprocessor_Edge_Detection|address_pixel_out[0]~reg0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |Coprocessor_Edge_Detection|count_line[2]             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -401,37 +510,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Aug  4 00:22:10 2018
+    Info: Processing started: Sat Aug  4 07:52:02 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Coprocessor_Edge_Detection -c Coprocessor_Edge_Detection
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(72): truncated literal to match 6 bits
-Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(84): truncated literal to match 5 bits
+Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(77): truncated literal to match 6 bits
+Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(90): truncated literal to match 5 bits
 Info (12021): Found 1 design units, including 1 entities, in source file Coprocessor_Edge_Detection.v
     Info (12023): Found entity 1: Coprocessor_Edge_Detection
 Info (12021): Found 1 design units, including 1 entities, in source file ccpu_ram.v
     Info (12023): Found entity 1: ccpu_ram
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/xp.v
+    Info (12023): Found entity 1: xp
+Warning (10236): Verilog HDL Implicit Net warning at Coprocessor_Edge_Detection.v(41): created implicit net for "address_pixel_in"
 Info (12127): Elaborating entity "Coprocessor_Edge_Detection" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(26): object "address_pixel_base_out" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(27): object "address_pixel" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(28): object "row_1" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(32): object "byte_r" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(33): object "byte_g" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(34): object "byte_b" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(43): object "count_position_line" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(44): object "address" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(47): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(56): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(58): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(64): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(69): truncated value with size 32 to match size of target (3)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(74): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(77): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(79): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(88): truncated value with size 3 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(91): truncated value with size 3 to match size of target (2)
-Warning (10199): Verilog HDL Case Statement warning at Coprocessor_Edge_Detection.v(93): case item expression never matches the case expression
-Warning (10034): Output port "pixel" at Coprocessor_Edge_Detection.v(8) has no driver
-Warning (10034): Output port "address_pixel_out" at Coprocessor_Edge_Detection.v(9) has no driver
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(41): object "address_pixel_in" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(27): object "address_pixel_base_out" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(28): object "address_pixel" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(29): object "row_1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(33): object "byte_r" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(34): object "byte_g" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(35): object "byte_b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(45): object "count_position_line" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(46): object "address" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(41): truncated value with size 12 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(49): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(60): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(62): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(69): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(74): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(79): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(82): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(84): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(97): truncated value with size 3 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(100): truncated value with size 3 to match size of target (2)
+Warning (10199): Verilog HDL Case Statement warning at Coprocessor_Edge_Detection.v(102): case item expression never matches the case expression
+Warning (10030): Net "clk_done" at Coprocessor_Edge_Detection.v(7) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "led[2..0]" at Coprocessor_Edge_Detection.v(12) has no driver
 Info (12128): Elaborating entity "ccpu_ram" for hierarchy "ccpu_ram:ccpu_ram"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component"
@@ -535,32 +649,48 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "pixel[61]" is stuck at GND
     Warning (13410): Pin "pixel[62]" is stuck at GND
     Warning (13410): Pin "pixel[63]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[0]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[1]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[2]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[3]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[4]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[5]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[6]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[7]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[8]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[9]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[10]" is stuck at GND
-    Warning (13410): Pin "address_pixel_out[11]" is stuck at GND
+    Warning (13410): Pin "led[0]" is stuck at GND
+    Warning (13410): Pin "led[1]" is stuck at GND
+    Warning (13410): Pin "led[2]" is stuck at GND
+    Warning (13410): Pin "led[3]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 12 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/output_files/Coprocessor_Edge_Detection.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "address_out"
-Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 16 input pins
-    Info (21059): Implemented 89 output pins
-    Info (21061): Implemented 23 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 115 warnings
-    Info: Peak virtual memory: 699 megabytes
-    Info: Processing ended: Sat Aug  4 00:22:13 2018
-    Info: Elapsed time: 00:00:03
+Warning (21074): Design contains 24 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "address_base[0]"
+    Warning (15610): No output dependent on input pin "address_base[1]"
+    Warning (15610): No output dependent on input pin "address_base[2]"
+    Warning (15610): No output dependent on input pin "address_base[3]"
+    Warning (15610): No output dependent on input pin "address_base[4]"
+    Warning (15610): No output dependent on input pin "address_base[5]"
+    Warning (15610): No output dependent on input pin "address_base[6]"
+    Warning (15610): No output dependent on input pin "address_base[7]"
+    Warning (15610): No output dependent on input pin "address_base[8]"
+    Warning (15610): No output dependent on input pin "address_base[9]"
+    Warning (15610): No output dependent on input pin "address_base[10]"
+    Warning (15610): No output dependent on input pin "address_base[11]"
+    Warning (15610): No output dependent on input pin "address_out[0]"
+    Warning (15610): No output dependent on input pin "address_out[1]"
+    Warning (15610): No output dependent on input pin "address_out[2]"
+    Warning (15610): No output dependent on input pin "address_out[3]"
+    Warning (15610): No output dependent on input pin "address_out[4]"
+    Warning (15610): No output dependent on input pin "address_out[5]"
+    Warning (15610): No output dependent on input pin "address_out[6]"
+    Warning (15610): No output dependent on input pin "address_out[7]"
+    Warning (15610): No output dependent on input pin "address_out[8]"
+    Warning (15610): No output dependent on input pin "address_out[9]"
+    Warning (15610): No output dependent on input pin "address_out[10]"
+    Warning (15610): No output dependent on input pin "address_out[11]"
+Info (21057): Implemented 133 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 24 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 133 warnings
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Sat Aug  4 07:52:06 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

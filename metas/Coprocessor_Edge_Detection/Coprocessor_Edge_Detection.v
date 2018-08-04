@@ -3,11 +3,12 @@ module Coprocessor_Edge_Detection(
 	input reset, // Reseta o sistema.
 	input [11:0] address_base, // Endereo base da imagem original.
 	input clk_start, // Espera o pulso para poder comear.
-	input address_out, // Endereo de destino da imagem processada.
+	input [11:0]address_out, // Endereo de destino da imagem processada.
 	output reg clk_done,
+	output reg clk_line,
 	output reg [63:0]pixel,
-	output [11:0]address_pixel_out,
-	output [11:0]address_pixel_in
+	output reg [11:0]address_pixel_out,
+	output [3:0]led
 );
 
 
@@ -38,6 +39,7 @@ module Coprocessor_Edge_Detection(
 	parameter idle = 3'b000, start = 3'b001, getRow = 3'b011, calculate = 3'b010, finish = 3'b110;
 
 	assign address_pixel_in = address_pixel_base;
+	assign led[3] = clk_done;
 
 	reg [2:0] count_line = 3'b0;
 	reg [5:0] count_position_line = 6'b000000; // Identifica a posio no registrador no qual os dados lidos sero gravados
@@ -49,17 +51,20 @@ module Coprocessor_Edge_Detection(
 			case(state)
 				idle:begin
 					address = 12'b000000000000;
+					address_pixel_out = 12'b000000000000;
 					count_position_line = 6'b000000;
 					count_line = 3'b0;
-					clk_done <= 1'b0;
-					if(clk_start) begin
+					//clk_done <= 1'b0;
+					clk_line <= 1'b0;
+					if(~clk_start && ~clk_done) begin
 						state <= start;
 					end else begin
 						state <= idle;
 					end
 				end
 				start:begin
-					address_pixel_base <= address_base; // Salva o endereo base da imagem a ser calculada.
+					//address_pixel_base <= address_base; // Salva o endereo base da imagem a ser calculada.
+					address_pixel_base <= 12'b0; // Teste
 					address_pixel_base_out <= address_out; // Salva o endereo base da imagem resultado.
 					state <= getRow;
 				end
@@ -81,9 +86,13 @@ module Coprocessor_Edge_Detection(
 				end
 				calculate:begin
 					integer i;
+					clk_line <= 1'b0;
 					for (i = 1; i<5'd63; i = i+1) begin
-						row_out[i] = 1'b0;// Faz a convolução.
+						row_out[i] = 1'b0;// Faz a convoluo.
 					end
+					pixel <= row_out;
+					clk_line <= 1'b1;
+					address_pixel_out = address_pixel_out + 1'b1;
 					if (address_pixel_base == 12'b0) begin
 						state <= finish;
 					end
@@ -91,7 +100,7 @@ module Coprocessor_Edge_Detection(
 					state <= getRow;
 				end
 				finish:begin
-					pixel <= row_out;
+					clk_line <= 1'b0;
 					clk_done <= 1'b1;
 					state <= idle;
 				end
