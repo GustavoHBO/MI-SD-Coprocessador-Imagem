@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Coprocessor_Edge_Detection
-Sat Aug  4 23:56:35 2018
+Sun Aug  5 14:18:04 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,8 +10,24 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |Coprocessor_Edge_Detection|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |Coprocessor_Edge_Detection
+ 17. Parameter Settings for User Entity Instance: ccpu_ram:ccpu_ram|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "ccpu_ram:ccpu_ram"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +53,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Aug  4 23:56:35 2018          ;
+; Analysis & Synthesis Status        ; Successful - Sun Aug  5 14:18:04 2018      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Coprocessor_Edge_Detection                 ;
 ; Top-level Entity Name              ; Coprocessor_Edge_Detection                 ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 156                                        ;
+;     Total combinational functions  ; 99                                         ;
+;     Dedicated logic registers      ; 92                                         ;
+; Total registers                    ; 92                                         ;
+; Total pins                         ; 109                                        ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 28,672                                     ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -152,28 +168,593 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                                                                      ; Library ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+; Coprocessor_Edge_Detection.hex   ; yes             ; User Hexadecimal (Intel-Format) File  ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/Coprocessor_Edge_Detection.hex ;         ;
+; Coprocessor_Edge_Detection.v     ; yes             ; User Verilog HDL File                 ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/Coprocessor_Edge_Detection.v   ;         ;
+; ccpu_ram.v                       ; yes             ; User Wizard-Generated File            ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/ccpu_ram.v                     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                                                    ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                             ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                                                       ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                                                    ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                                                    ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                     ;         ;
+; altrom.inc                       ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/altrom.inc                                                        ;         ;
+; altram.inc                       ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/altram.inc                                                        ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                          ; /home/gaut/Programs/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                                                      ;         ;
+; db/altsyncram_bqr1.tdf           ; yes             ; Auto-Generated Megafunction           ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/db/altsyncram_bqr1.tdf         ;         ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 156           ;
+;                                             ;               ;
+; Total combinational functions               ; 99            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 16            ;
+;     -- 3 input functions                    ; 38            ;
+;     -- <=2 input functions                  ; 45            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 47            ;
+;     -- arithmetic mode                      ; 52            ;
+;                                             ;               ;
+; Total registers                             ; 92            ;
+;     -- Dedicated logic registers            ; 92            ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 109           ;
+; Total memory bits                           ; 28672         ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; clk_50M~input ;
+; Maximum fan-out                             ; 99            ;
+; Total fan-out                               ; 795           ;
+; Average fan-out                             ; 1.91          ;
++---------------------------------------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                 ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+; |Coprocessor_Edge_Detection               ; 99 (99)           ; 92 (92)      ; 28672       ; 0            ; 0       ; 0         ; 109  ; 0            ; |Coprocessor_Edge_Detection                                                                                  ; work         ;
+;    |ccpu_ram:ccpu_ram|                    ; 0 (0)             ; 0 (0)        ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Coprocessor_Edge_Detection|ccpu_ram:ccpu_ram                                                                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Coprocessor_Edge_Detection|ccpu_ram:ccpu_ram|altsyncram:altsyncram_component                                ; work         ;
+;          |altsyncram_bqr1:auto_generated| ; 0 (0)             ; 0 (0)        ; 28672       ; 0            ; 0       ; 0         ; 0    ; 0            ; |Coprocessor_Edge_Detection|ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                           ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------------+
+; Name                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                            ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------------+
+; ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 8            ; 4096         ; 8            ; 32768 ; Coprocessor_Edge_Detection.hex ;
++---------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                         ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                               ; IP Include File                                                                                               ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+; Altera ; RAM: 2-PORT  ; 13.1    ; N/A          ; N/A          ; |Coprocessor_Edge_Detection|ccpu_ram:ccpu_ram ; /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/ccpu_ram.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------+
+; State Machine - |Coprocessor_Edge_Detection|state                                         ;
++-----------------+--------------+-----------------+-------------+-----------+--------------+
+; Name            ; state.getRow ; state.calculate ; state.start ; state.000 ; state.finish ;
++-----------------+--------------+-----------------+-------------+-----------+--------------+
+; state.000       ; 0            ; 0               ; 0           ; 0         ; 0            ;
+; state.start     ; 0            ; 0               ; 1           ; 1         ; 0            ;
+; state.calculate ; 0            ; 1               ; 0           ; 1         ; 0            ;
+; state.getRow    ; 1            ; 0               ; 0           ; 1         ; 0            ;
+; state.finish    ; 0            ; 0               ; 0           ; 1         ; 1            ;
++-----------------+--------------+-----------------+-------------+-----------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; count_position_line[0..5]               ; Stuck at GND due to stuck port data_in ;
+; row_1[15]                               ; Lost fanout                            ;
+; row_2[15]                               ; Lost fanout                            ;
+; row_1[14]                               ; Lost fanout                            ;
+; row_2[14]                               ; Lost fanout                            ;
+; row_1[13]                               ; Lost fanout                            ;
+; row_2[13]                               ; Lost fanout                            ;
+; row_1[12]                               ; Lost fanout                            ;
+; row_2[12]                               ; Lost fanout                            ;
+; row_1[11]                               ; Lost fanout                            ;
+; row_2[11]                               ; Lost fanout                            ;
+; row_1[10]                               ; Lost fanout                            ;
+; row_2[10]                               ; Lost fanout                            ;
+; row_1[9]                                ; Lost fanout                            ;
+; row_2[9]                                ; Lost fanout                            ;
+; row_1[8]                                ; Lost fanout                            ;
+; row_2[8]                                ; Lost fanout                            ;
+; row_1[0..7]                             ; Lost fanout                            ;
+; row_2[7]                                ; Lost fanout                            ;
+; row_3[7,15]                             ; Lost fanout                            ;
+; row_2[6]                                ; Lost fanout                            ;
+; row_3[6,14]                             ; Lost fanout                            ;
+; row_2[5]                                ; Lost fanout                            ;
+; row_3[5,13]                             ; Lost fanout                            ;
+; row_2[4]                                ; Lost fanout                            ;
+; row_3[4,12]                             ; Lost fanout                            ;
+; row_2[3]                                ; Lost fanout                            ;
+; row_3[3,11]                             ; Lost fanout                            ;
+; row_2[2]                                ; Lost fanout                            ;
+; row_3[2,10]                             ; Lost fanout                            ;
+; row_2[1]                                ; Lost fanout                            ;
+; row_3[1,9]                              ; Lost fanout                            ;
+; row_2[0]                                ; Lost fanout                            ;
+; row_3[0,8]                              ; Lost fanout                            ;
+; row_1[23]                               ; Lost fanout                            ;
+; row_2[23]                               ; Lost fanout                            ;
+; row_3[23]                               ; Lost fanout                            ;
+; row_1[31]                               ; Lost fanout                            ;
+; row_2[31,39]                            ; Lost fanout                            ;
+; row_3[31,39,47,55,63]                   ; Lost fanout                            ;
+; row_out[1..9,11..63]                    ; Merged with row_out[10]                ;
+; row_3[24]                               ; Merged with row_2[32]                  ;
+; row_2[16]                               ; Merged with row_1[24]                  ;
+; row_3[16]                               ; Merged with row_2[24]                  ;
+; row_3[25]                               ; Merged with row_2[33]                  ;
+; row_3[26]                               ; Merged with row_2[34]                  ;
+; row_3[27]                               ; Merged with row_2[35]                  ;
+; row_3[28]                               ; Merged with row_2[36]                  ;
+; row_3[29]                               ; Merged with row_2[37]                  ;
+; row_3[30]                               ; Merged with row_2[38]                  ;
+; row_3[17]                               ; Merged with row_2[25]                  ;
+; row_3[18]                               ; Merged with row_2[26]                  ;
+; row_3[19]                               ; Merged with row_2[27]                  ;
+; row_3[20]                               ; Merged with row_2[28]                  ;
+; row_3[21]                               ; Merged with row_2[29]                  ;
+; row_3[22]                               ; Merged with row_2[30]                  ;
+; row_2[17]                               ; Merged with row_1[25]                  ;
+; row_2[18]                               ; Merged with row_1[26]                  ;
+; row_2[19]                               ; Merged with row_1[27]                  ;
+; row_2[20]                               ; Merged with row_1[28]                  ;
+; row_2[21]                               ; Merged with row_1[29]                  ;
+; row_2[22]                               ; Merged with row_1[30]                  ;
+; row_out[10]                             ; Stuck at GND due to stuck port data_in ;
+; pixel[63]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[62]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[61]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[60]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[59]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[58]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[57]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[56]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[55]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[54]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[53]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[52]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[51]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[50]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[49]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[48]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[47]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[46]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[45]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[44]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[43]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[42]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[41]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[40]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[39]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[38]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[37]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[36]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[35]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[34]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[33]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[32]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[31]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[30]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[29]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[28]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[27]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[26]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[25]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[24]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[23]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[22]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[21]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[20]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[19]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[18]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[17]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[16]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[15]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[14]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[13]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[12]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[11]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[10]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; pixel[9]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[8]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[7]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[6]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[5]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[4]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[3]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; state~2                                 ; Lost fanout                            ;
+; state~3                                 ; Lost fanout                            ;
+; Total Number of Removed Registers = 214 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+; row_out[10]   ; Stuck at GND              ; pixel[63]~reg0, pixel[62]~reg0, pixel[61]~reg0, pixel[60]~reg0, pixel[59]~reg0,           ;
+;               ; due to stuck port data_in ; pixel[58]~reg0, pixel[57]~reg0, pixel[56]~reg0, pixel[55]~reg0, pixel[54]~reg0,           ;
+;               ;                           ; pixel[53]~reg0, pixel[52]~reg0, pixel[51]~reg0, pixel[50]~reg0, pixel[49]~reg0,           ;
+;               ;                           ; pixel[48]~reg0, pixel[47]~reg0, pixel[46]~reg0, pixel[45]~reg0, pixel[44]~reg0,           ;
+;               ;                           ; pixel[43]~reg0, pixel[42]~reg0, pixel[41]~reg0, pixel[40]~reg0, pixel[39]~reg0,           ;
+;               ;                           ; pixel[38]~reg0, pixel[37]~reg0, pixel[36]~reg0, pixel[35]~reg0, pixel[34]~reg0,           ;
+;               ;                           ; pixel[33]~reg0, pixel[32]~reg0, pixel[31]~reg0, pixel[30]~reg0, pixel[29]~reg0,           ;
+;               ;                           ; pixel[28]~reg0, pixel[27]~reg0, pixel[26]~reg0, pixel[25]~reg0, pixel[24]~reg0,           ;
+;               ;                           ; pixel[23]~reg0, pixel[22]~reg0, pixel[21]~reg0, pixel[20]~reg0, pixel[19]~reg0,           ;
+;               ;                           ; pixel[18]~reg0, pixel[17]~reg0, pixel[16]~reg0, pixel[15]~reg0, pixel[14]~reg0,           ;
+;               ;                           ; pixel[13]~reg0, pixel[12]~reg0, pixel[11]~reg0, pixel[10]~reg0, pixel[9]~reg0,            ;
+;               ;                           ; pixel[8]~reg0, pixel[7]~reg0, pixel[6]~reg0, pixel[5]~reg0, pixel[4]~reg0, pixel[3]~reg0, ;
+;               ;                           ; pixel[2]~reg0, pixel[1]~reg0                                                              ;
+; row_1[15]     ; Lost Fanouts              ; row_2[15], row_3[15], row_3[23], row_3[31]                                                ;
+; row_2[39]     ; Lost Fanouts              ; row_3[39], row_3[47], row_3[55], row_3[63]                                                ;
+; row_1[14]     ; Lost Fanouts              ; row_2[14], row_3[14]                                                                      ;
+; row_1[13]     ; Lost Fanouts              ; row_2[13], row_3[13]                                                                      ;
+; row_1[12]     ; Lost Fanouts              ; row_2[12], row_3[12]                                                                      ;
+; row_1[11]     ; Lost Fanouts              ; row_2[11], row_3[11]                                                                      ;
+; row_1[10]     ; Lost Fanouts              ; row_2[10], row_3[10]                                                                      ;
+; row_1[9]      ; Lost Fanouts              ; row_2[9], row_3[9]                                                                        ;
+; row_1[8]      ; Lost Fanouts              ; row_2[8], row_3[8]                                                                        ;
+; row_1[7]      ; Lost Fanouts              ; row_2[7], row_3[7]                                                                        ;
+; row_1[6]      ; Lost Fanouts              ; row_2[6], row_3[6]                                                                        ;
+; row_1[5]      ; Lost Fanouts              ; row_2[5], row_3[5]                                                                        ;
+; row_1[4]      ; Lost Fanouts              ; row_2[4], row_3[4]                                                                        ;
+; row_1[3]      ; Lost Fanouts              ; row_2[3], row_3[3]                                                                        ;
+; row_1[2]      ; Lost Fanouts              ; row_2[2], row_3[2]                                                                        ;
+; row_1[1]      ; Lost Fanouts              ; row_2[1], row_3[1]                                                                        ;
+; row_1[0]      ; Lost Fanouts              ; row_2[0], row_3[0]                                                                        ;
+; row_1[23]     ; Lost Fanouts              ; row_2[23]                                                                                 ;
+; row_1[31]     ; Lost Fanouts              ; row_2[31]                                                                                 ;
++---------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 13    ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Coprocessor_Edge_Detection|count_line[1]         ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |Coprocessor_Edge_Detection|address_pixel_base[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Coprocessor_Edge_Detection ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; idle           ; 000   ; Unsigned Binary                                                   ;
+; start          ; 001   ; Unsigned Binary                                                   ;
+; getRow         ; 011   ; Unsigned Binary                                                   ;
+; calculate      ; 010   ; Unsigned Binary                                                   ;
+; finish         ; 110   ; Unsigned Binary                                                   ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ccpu_ram:ccpu_ram|altsyncram:altsyncram_component ;
++------------------------------------+--------------------------------+--------------------------+
+; Parameter Name                     ; Value                          ; Type                     ;
++------------------------------------+--------------------------------+--------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                              ; Untyped                  ;
+; AUTO_CARRY_CHAINS                  ; ON                             ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                            ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                ; ON                             ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                            ; IGNORE_CASCADE           ;
+; WIDTH_BYTEENA                      ; 1                              ; Untyped                  ;
+; OPERATION_MODE                     ; DUAL_PORT                      ; Untyped                  ;
+; WIDTH_A                            ; 8                              ; Signed Integer           ;
+; WIDTHAD_A                          ; 12                             ; Signed Integer           ;
+; NUMWORDS_A                         ; 4096                           ; Signed Integer           ;
+; OUTDATA_REG_A                      ; UNREGISTERED                   ; Untyped                  ;
+; ADDRESS_ACLR_A                     ; NONE                           ; Untyped                  ;
+; OUTDATA_ACLR_A                     ; NONE                           ; Untyped                  ;
+; WRCONTROL_ACLR_A                   ; NONE                           ; Untyped                  ;
+; INDATA_ACLR_A                      ; NONE                           ; Untyped                  ;
+; BYTEENA_ACLR_A                     ; NONE                           ; Untyped                  ;
+; WIDTH_B                            ; 8                              ; Signed Integer           ;
+; WIDTHAD_B                          ; 12                             ; Signed Integer           ;
+; NUMWORDS_B                         ; 4096                           ; Signed Integer           ;
+; INDATA_REG_B                       ; CLOCK1                         ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                         ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK1                         ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK0                         ; Untyped                  ;
+; OUTDATA_REG_B                      ; CLOCK0                         ; Untyped                  ;
+; BYTEENA_REG_B                      ; CLOCK1                         ; Untyped                  ;
+; INDATA_ACLR_B                      ; NONE                           ; Untyped                  ;
+; WRCONTROL_ACLR_B                   ; NONE                           ; Untyped                  ;
+; ADDRESS_ACLR_B                     ; NONE                           ; Untyped                  ;
+; OUTDATA_ACLR_B                     ; NONE                           ; Untyped                  ;
+; RDCONTROL_ACLR_B                   ; NONE                           ; Untyped                  ;
+; BYTEENA_ACLR_B                     ; NONE                           ; Untyped                  ;
+; WIDTH_BYTEENA_A                    ; 1                              ; Signed Integer           ;
+; WIDTH_BYTEENA_B                    ; 1                              ; Untyped                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                           ; Untyped                  ;
+; BYTE_SIZE                          ; 8                              ; Untyped                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                      ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ           ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ           ; Untyped                  ;
+; INIT_FILE                          ; Coprocessor_Edge_Detection.hex ; Untyped                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A                         ; Untyped                  ;
+; MAXIMUM_DEPTH                      ; 0                              ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                         ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS                         ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                         ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS                         ; Untyped                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                ; Untyped                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                ; Untyped                  ;
+; ENABLE_ECC                         ; FALSE                          ; Untyped                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                          ; Untyped                  ;
+; WIDTH_ECCSTATUS                    ; 3                              ; Untyped                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E                   ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_bqr1                ; Untyped                  ;
++------------------------------------+--------------------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                              ;
++-------------------------------------------+---------------------------------------------------+
+; Name                                      ; Value                                             ;
++-------------------------------------------+---------------------------------------------------+
+; Number of entity instances                ; 1                                                 ;
+; Entity Instance                           ; ccpu_ram:ccpu_ram|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                         ;
+;     -- WIDTH_A                            ; 8                                                 ;
+;     -- NUMWORDS_A                         ; 4096                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 8                                                 ;
+;     -- NUMWORDS_B                         ; 4096                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                            ;
+;     -- OUTDATA_REG_B                      ; CLOCK0                                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
++-------------------------------------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ccpu_ram:ccpu_ram"                                                                                                                                                           ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                                 ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; q         ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (32 bits) it drives.  The 24 most-significant bit(s) in the port expression will be connected to GND. ;
+; data      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                            ;
+; wraddress ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                            ;
+; wren      ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                            ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Aug  4 23:56:34 2018
+    Info: Processing started: Sun Aug  5 14:18:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Coprocessor_Edge_Detection -c Coprocessor_Edge_Detection
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(95): truncated literal to match 5 bits
+Warning (10229): Verilog HDL Expression warning at Coprocessor_Edge_Detection.v(96): truncated literal to match 5 bits
 Info (12021): Found 1 design units, including 1 entities, in source file Coprocessor_Edge_Detection.v
     Info (12023): Found entity 1: Coprocessor_Edge_Detection
 Info (12021): Found 1 design units, including 1 entities, in source file ccpu_ram.v
     Info (12023): Found entity 1: ccpu_ram
-Warning (10236): Verilog HDL Implicit Net warning at Coprocessor_Edge_Detection.v(41): created implicit net for "address_pixel_in"
-Error (10734): Verilog HDL error at Coprocessor_Edge_Detection.v(97): i is not a constant File: /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/Coprocessor_Edge_Detection.v Line: 97
+Warning (10236): Verilog HDL Implicit Net warning at Coprocessor_Edge_Detection.v(42): created implicit net for "address_pixel_in"
+Info (12127): Elaborating entity "Coprocessor_Edge_Detection" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(42): object "address_pixel_in" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(27): object "address_pixel_base_out" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(28): object "address_pixel" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(33): object "byte_r" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(34): object "byte_g" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(35): object "byte_b" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(36): object "line_buffer" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Coprocessor_Edge_Detection.v(48): object "address" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(42): truncated value with size 12 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(79): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Coprocessor_Edge_Detection.v(84): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "ccpu_ram" for hierarchy "ccpu_ram:ccpu_ram"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK0"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
+    Info (12134): Parameter "init_file" = "Coprocessor_Edge_Detection.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "4096"
+    Info (12134): Parameter "numwords_b" = "4096"
+    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "12"
+    Info (12134): Parameter "widthad_b" = "12"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_bqr1.tdf
+    Info (12023): Found entity 1: altsyncram_bqr1
+Info (12128): Elaborating entity "altsyncram_bqr1" for hierarchy "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "ccpu_ram:ccpu_ram|altsyncram:altsyncram_component|altsyncram_bqr1:auto_generated|q_b[7]"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pixel[1]" is stuck at GND
+    Warning (13410): Pin "pixel[2]" is stuck at GND
+    Warning (13410): Pin "pixel[3]" is stuck at GND
+    Warning (13410): Pin "pixel[4]" is stuck at GND
+    Warning (13410): Pin "pixel[5]" is stuck at GND
+    Warning (13410): Pin "pixel[6]" is stuck at GND
+    Warning (13410): Pin "pixel[7]" is stuck at GND
+    Warning (13410): Pin "pixel[8]" is stuck at GND
+    Warning (13410): Pin "pixel[9]" is stuck at GND
+    Warning (13410): Pin "pixel[10]" is stuck at GND
+    Warning (13410): Pin "pixel[11]" is stuck at GND
+    Warning (13410): Pin "pixel[12]" is stuck at GND
+    Warning (13410): Pin "pixel[13]" is stuck at GND
+    Warning (13410): Pin "pixel[14]" is stuck at GND
+    Warning (13410): Pin "pixel[15]" is stuck at GND
+    Warning (13410): Pin "pixel[16]" is stuck at GND
+    Warning (13410): Pin "pixel[17]" is stuck at GND
+    Warning (13410): Pin "pixel[18]" is stuck at GND
+    Warning (13410): Pin "pixel[19]" is stuck at GND
+    Warning (13410): Pin "pixel[20]" is stuck at GND
+    Warning (13410): Pin "pixel[21]" is stuck at GND
+    Warning (13410): Pin "pixel[22]" is stuck at GND
+    Warning (13410): Pin "pixel[23]" is stuck at GND
+    Warning (13410): Pin "pixel[24]" is stuck at GND
+    Warning (13410): Pin "pixel[25]" is stuck at GND
+    Warning (13410): Pin "pixel[26]" is stuck at GND
+    Warning (13410): Pin "pixel[27]" is stuck at GND
+    Warning (13410): Pin "pixel[28]" is stuck at GND
+    Warning (13410): Pin "pixel[29]" is stuck at GND
+    Warning (13410): Pin "pixel[30]" is stuck at GND
+    Warning (13410): Pin "pixel[31]" is stuck at GND
+    Warning (13410): Pin "pixel[32]" is stuck at GND
+    Warning (13410): Pin "pixel[33]" is stuck at GND
+    Warning (13410): Pin "pixel[34]" is stuck at GND
+    Warning (13410): Pin "pixel[35]" is stuck at GND
+    Warning (13410): Pin "pixel[36]" is stuck at GND
+    Warning (13410): Pin "pixel[37]" is stuck at GND
+    Warning (13410): Pin "pixel[38]" is stuck at GND
+    Warning (13410): Pin "pixel[39]" is stuck at GND
+    Warning (13410): Pin "pixel[40]" is stuck at GND
+    Warning (13410): Pin "pixel[41]" is stuck at GND
+    Warning (13410): Pin "pixel[42]" is stuck at GND
+    Warning (13410): Pin "pixel[43]" is stuck at GND
+    Warning (13410): Pin "pixel[44]" is stuck at GND
+    Warning (13410): Pin "pixel[45]" is stuck at GND
+    Warning (13410): Pin "pixel[46]" is stuck at GND
+    Warning (13410): Pin "pixel[47]" is stuck at GND
+    Warning (13410): Pin "pixel[48]" is stuck at GND
+    Warning (13410): Pin "pixel[49]" is stuck at GND
+    Warning (13410): Pin "pixel[50]" is stuck at GND
+    Warning (13410): Pin "pixel[51]" is stuck at GND
+    Warning (13410): Pin "pixel[52]" is stuck at GND
+    Warning (13410): Pin "pixel[53]" is stuck at GND
+    Warning (13410): Pin "pixel[54]" is stuck at GND
+    Warning (13410): Pin "pixel[55]" is stuck at GND
+    Warning (13410): Pin "pixel[56]" is stuck at GND
+    Warning (13410): Pin "pixel[57]" is stuck at GND
+    Warning (13410): Pin "pixel[58]" is stuck at GND
+    Warning (13410): Pin "pixel[59]" is stuck at GND
+    Warning (13410): Pin "pixel[60]" is stuck at GND
+    Warning (13410): Pin "pixel[61]" is stuck at GND
+    Warning (13410): Pin "pixel[62]" is stuck at GND
+    Warning (13410): Pin "pixel[63]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 61 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/gaut/Documents/Remote Repository/MI-SD-Coprocessador-Imagem/metas/Coprocessor_Edge_Detection/output_files/Coprocessor_Edge_Detection.map.smsg
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 3 warnings
-    Error: Peak virtual memory: 600 megabytes
-    Error: Processing ended: Sat Aug  4 23:56:35 2018
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 25 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "address_base[0]"
+    Warning (15610): No output dependent on input pin "address_base[1]"
+    Warning (15610): No output dependent on input pin "address_base[2]"
+    Warning (15610): No output dependent on input pin "address_base[3]"
+    Warning (15610): No output dependent on input pin "address_base[4]"
+    Warning (15610): No output dependent on input pin "address_base[5]"
+    Warning (15610): No output dependent on input pin "address_base[6]"
+    Warning (15610): No output dependent on input pin "address_base[7]"
+    Warning (15610): No output dependent on input pin "address_base[8]"
+    Warning (15610): No output dependent on input pin "address_base[9]"
+    Warning (15610): No output dependent on input pin "address_base[10]"
+    Warning (15610): No output dependent on input pin "address_base[11]"
+    Warning (15610): No output dependent on input pin "clk_start"
+    Warning (15610): No output dependent on input pin "address_out[0]"
+    Warning (15610): No output dependent on input pin "address_out[1]"
+    Warning (15610): No output dependent on input pin "address_out[2]"
+    Warning (15610): No output dependent on input pin "address_out[3]"
+    Warning (15610): No output dependent on input pin "address_out[4]"
+    Warning (15610): No output dependent on input pin "address_out[5]"
+    Warning (15610): No output dependent on input pin "address_out[6]"
+    Warning (15610): No output dependent on input pin "address_out[7]"
+    Warning (15610): No output dependent on input pin "address_out[8]"
+    Warning (15610): No output dependent on input pin "address_out[9]"
+    Warning (15610): No output dependent on input pin "address_out[10]"
+    Warning (15610): No output dependent on input pin "address_out[11]"
+Info (21057): Implemented 272 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 156 logic cells
+    Info (21064): Implemented 7 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 108 warnings
+    Info: Peak virtual memory: 691 megabytes
+    Info: Processing ended: Sun Aug  5 14:18:04 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+

@@ -95,7 +95,8 @@ module Coprocessor_Edge_Detection(
 					clk_line <= 1'b0;
 					for (i = 8; i<5'd62; i = i+8) begin
 						count_position_line <= count_position_line + 1'b1;
-						if((row_3[i+15:i+8] + row_3[i+7:i] + row_2[i+15:i+8] - row_1[i+7:i] - row_1[i-1:i-8] - row_2[i-1:i-8])<<1'b1 > 6'b111111)// Faz a convoluo.
+						//if((row_3[i+15:i+8] + row_3[i+7:i] + row_2[i+15:i+8] - row_1[i+7:i] - row_1[i-1:i-8] - row_2[i-1:i-8])<<1'b1 > 6'b111111)// Faz a convoluo.
+						if((row_3[i+15-:8] + row_3[i+7-:8] + row_2[i+15-:8] - row_1[i+7-:8] - row_1[i-1-:8] - row_2[i-1-:8])<<1'b1 > 6'b111111)// Faz a convoluo.
 							row_out[count_position_line] <= 1'b1;
 						else 
 							row_out[count_position_line] <= 1'b0;
