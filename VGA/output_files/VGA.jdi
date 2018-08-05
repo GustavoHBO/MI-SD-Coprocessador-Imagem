@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-<sld_project_info>
-  <project>
-    <hash md5_digest_80b="e12d11223174e7756092"/>
-  </project>
-  <file_info>
-    <file device="EP4CE10F17C8" path="VGA.sof" usercode="0xFFFFFFFF"/>
-  </file_info>
-</sld_project_info>
-=======
 <sld_project_info>
   <project>
     <hash md5_digest_80b="74f25f5dc9c072049d87"/>
@@ -16,4 +6,3 @@
     <file device="EP4CE10F17C8" path="VGA.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>
->>>>>>> ac1a6383334e61969ddfbc91bd057c6723e877ec

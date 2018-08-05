@@ -65,20 +65,6 @@ set_global_assignment -name VERILOG_FILE Escrever.v
 set_global_assignment -name HEX_FILE image.hex
 set_global_assignment -name VERILOG_FILE divisor_clock.v
 set_global_assignment -name VERILOG_FILE VGADemo.v
-<<<<<<< HEAD
-set_global_assignment -name VERILOG_FILE hsync_generator.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_location_assignment PIN_E16 -to clk
-set_location_assignment PIN_D1 -to hsync_out
-set_location_assignment PIN_C2 -to vsync_out
-set_location_assignment PIN_B4 -to pixel[0]
-set_location_assignment PIN_F3 -to pixel[1]
-set_location_assignment PIN_D3 -to pixel[2]
-=======
 set_global_assignment -name VERILOG_FILE hsync_generator.v
 set_global_assignment -name QIP_FILE controlador_ram.qip
->>>>>>> ac1a6383334e61969ddfbc91bd057c6723e877ec
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
