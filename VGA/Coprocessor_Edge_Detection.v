@@ -37,7 +37,7 @@ module Coprocessor_Edge_Detection(
 
 	wire [31:0]q;
 
-	parameter idle = 3'b000, start = 3'b001, getRow = 3'b011, calculate = 3'b010, finish = 3'b110;
+	parameter idle = 3'b000, start = 3'b001, getRow = 3'b011, calculate = 3'b010, finish = 3'b110, clkline = 3'b111;
 
 	assign address_pixel_in = address_pixel_base;
 	assign led[3] = clk_done;
@@ -47,21 +47,20 @@ module Coprocessor_Edge_Detection(
 	reg [5:0] count_position_line = 6'b000000; // Identifica a posio no registrador no qual os dados lidos sero gravados
 	reg [11:0] address = 12'b000000000000;
 	always @(posedge clk_50M) begin
-		clk_done <= 1'b0;
 		if(~reset) begin
+			clk_done <= 1'b0;
 			state <= idle;
 		end else begin
 			case(state)
 				idle:begin
 					address <= 12'b000000000000;
-					address_pixel_out <= 12'b000000000000;
 					count_position_line <= 6'b000000;
 					count_line <= 3'b0;
 					address_pixel_base <= 12'b0; // Teste
 					address_pixel_out <= 12'b0;
-					//clk_done <= 1'b0;
+					clk_done <= 1'b0;
 					clk_line <= 1'b0;
-					if(~clk_done) begin //Teste colocar clk_start no lugar
+					if(clk_start) begin //Teste colocar clk_start no lugar
 						state <= start;
 					end else begin
 						state <= idle;
@@ -74,6 +73,7 @@ module Coprocessor_Edge_Detection(
 					state <= getRow;
 				end
 				getRow:begin
+					clk_line <= 1'b0;
 					if(count_line < 3'b011)begin
 						integer i;
 						count_line <= count_line + 1;// Incrementa o contador para identificar a quantidade de linhas carregadas.
@@ -93,17 +93,19 @@ module Coprocessor_Edge_Detection(
 				calculate:begin
 					integer i;
 					clk_line <= 1'b0;
-					for (i = 8; i<5'd62; i = i+8) begin
+					for (i = 8; i<6'd512; i = i+8) begin
 						count_position_line <= count_position_line + 1'b1;
-						//if((row_3[i+15:i+8] + row_3[i+7:i] + row_2[i+15:i+8] - row_1[i+7:i] - row_1[i-1:i-8] - row_2[i-1:i-8])<<1'b1 > 6'b111111)// Faz a convoluo.
 						if((row_3[i+15-:8] + row_3[i+7-:8] + row_2[i+15-:8] - row_1[i+7-:8] - row_1[i-1-:8] - row_2[i-1-:8])<<1'b1 > 6'b111111)// Faz a convolução.
 							row_out[count_position_line] <= 1'b1;
 						else 
 							row_out[count_position_line] <= 1'b0;
 					end
-					//address_pixel_base_out <= address_pixel_base_out+32;
+					address_pixel_base_out <= address_pixel_base_out+1;// Endereco de destino da linha, escrevendo 32 bites
 					count_position_line <= 1'b0;
 					pixel <= row_out;
+					state <= clkline;
+				end
+				clkline:begin
 					clk_line <= 1'b1;
 					if (address_pixel_base == 12'b0) begin
 						state <= finish;
