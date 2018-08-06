@@ -1,6 +1,0 @@
-
-State Machine - |VGADemo|state
-Name state.repouso state.finish state.start 
-state.repouso 0 0 0 
-state.start 1 0 1 
-state.finish 1 1 0 

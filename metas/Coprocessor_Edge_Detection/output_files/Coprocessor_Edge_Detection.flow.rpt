@@ -1,6 +1,6 @@
 Flow report for Coprocessor_Edge_Detection
-Sun Aug  5 14:18:46 2018
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Mon Aug 06 10:27:00 2018
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -40,8 +40,8 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Aug  5 14:18:46 2018      ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Flow Status                        ; Successful - Mon Aug 06 10:27:00 2018      ;
+; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; Coprocessor_Edge_Detection                 ;
 ; Top-level Entity Name              ; Coprocessor_Edge_Detection                 ;
 ; Family                             ; Cyclone IV E                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+----------------------------+
 ; Option            ; Setting                    ;
 +-------------------+----------------------------+
-; Start date & time ; 08/05/2018 14:18:02        ;
+; Start date & time ; 08/06/2018 10:26:33        ;
 ; Main task         ; Compilation                ;
 ; Revision Name     ; Coprocessor_Edge_Detection ;
 +-------------------+----------------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.153348948206013                     ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121375325804.153356199300232          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --             ;
@@ -98,26 +98,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 644 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:16     ; 1.0                     ; 830 MB              ; 00:00:12                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 599 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 610 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 831 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:26     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 360 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 547 MB              ; 00:00:10                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 386 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 328 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:17                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                             ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; gautMachine      ; Ubuntu 16.04.4 ; 16         ; x86_64         ;
-; Fitter                    ; gautMachine      ; Ubuntu 16.04.4 ; 16         ; x86_64         ;
-; Assembler                 ; gautMachine      ; Ubuntu 16.04.4 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; gautMachine      ; Ubuntu 16.04.4 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; gautMachine      ; Ubuntu 16.04.4 ; 16         ; x86_64         ;
-+---------------------------+------------------+----------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; VICTORMUNDU04AA  ; Windows 7 ; 6.1        ; i686           ;
+; Fitter                    ; VICTORMUNDU04AA  ; Windows 7 ; 6.1        ; i686           ;
+; Assembler                 ; VICTORMUNDU04AA  ; Windows 7 ; 6.1        ; i686           ;
+; TimeQuest Timing Analyzer ; VICTORMUNDU04AA  ; Windows 7 ; 6.1        ; i686           ;
+; EDA Netlist Writer        ; VICTORMUNDU04AA  ; Windows 7 ; 6.1        ; i686           ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
