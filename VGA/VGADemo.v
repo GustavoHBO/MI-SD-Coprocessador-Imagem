@@ -38,9 +38,10 @@ module VGADemo(
   	controlador_ram controlador_ram (
 	  .data(out_pixel),
 	  .rdaddress(contador_end),
-	  .clock(clk_25),
+	  .rdclock(clk_25),
 	  .wraddress(wraddress),
 	  .wren(wren),
+	  .wrclock(clk),
 	  .q(dado_memoria)
 	);
    

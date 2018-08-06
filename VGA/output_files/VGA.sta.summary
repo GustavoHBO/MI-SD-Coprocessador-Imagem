@@ -3,108 +3,108 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -2.779
-TNS   : -52.035
+Slack : -7.658
+TNS   : -265.017
 
 Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_clock|clk_out'
 Slack : -2.611
-TNS   : -68.952
+TNS   : -71.322
 
 Type  : Slow 1200mV 85C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
-Slack : -1.226
-TNS   : -5.859
+Slack : -1.268
+TNS   : -6.204
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.063
-TNS   : -0.063
+Slack : -0.115
+TNS   : -0.139
 
 Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_clock|clk_out'
-Slack : 0.452
+Slack : 0.454
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
 Slack : 0.465
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -190.668
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -3.201
-TNS   : -67.823
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -40.175
+TNS   : -61.421
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
 Slack : -1.487
 TNS   : -10.409
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.507
-TNS   : -46.701
+Slack : -6.913
+TNS   : -239.381
 
 Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
 Slack : -2.275
-TNS   : -61.504
+TNS   : -63.188
 
 Type  : Slow 1200mV 0C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
-Slack : -1.014
-TNS   : -4.711
+Slack : -1.079
+TNS   : -5.111
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.026
-TNS   : -0.026
+Slack : -0.084
+TNS   : -0.084
 
 Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
 Slack : 0.401
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
-Slack : 0.417
+Slack : 0.416
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.201
+TNS   : -190.668
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -3.201
-TNS   : -67.823
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -40.175
+TNS   : -61.421
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
 Slack : -1.487
 TNS   : -10.409
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.602
-TNS   : -9.543
+Slack : -2.683
+TNS   : -59.272
 
 Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
-Slack : -0.314
-TNS   : -6.801
+Slack : -0.456
+TNS   : -10.318
 
 Type  : Fast 1200mV 0C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
-Slack : 0.043
+Slack : 0.020
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.217
-TNS   : -0.368
+Slack : -0.208
+TNS   : -0.383
 
 Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
-Slack : 0.186
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
-Slack : 0.194
+Slack : 0.193
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -29.617
+TNS   : -113.095
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -1.000
-TNS   : -41.000
+TNS   : -39.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
 Slack : -1.000
