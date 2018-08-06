@@ -1,11 +1,12 @@
 module Escrever(
     input clock_50MHz,
-    output reg pixel,
+    output reg [32:0]pixel,
     output reg [11:0] wraddress,
     output reg enable,
     output ACABOU
 );
-    reg [11:0] contador = 65;
+
+    reg [11:0] contador = 0;
     reg [1:0] state = MANDAR_PIXEL;
     reg fim = 0;
 
@@ -19,7 +20,7 @@ module Escrever(
         case(state)
             MANDAR_PIXEL:
                 begin
-                    if(contador<4095) begin
+                    if(contador<128) begin
                         contador <= contador + 1;
                         state <= MANDAR_PIXEL;
                     end else begin
@@ -38,14 +39,14 @@ module Escrever(
         case(state)
             MANDAR_PIXEL:
                 begin
-                     pixel <= 1;
+                     pixel <= 32'b11111111111111111111111111111111;
                      enable <= 1;
                      fim <= 0;
                      wraddress <= contador;
                 end
             FIM: 
                 begin
-                    pixel<=0;
+                    pixel<=32'b0;
                     enable <= 0;
                     fim <= 1;
                 end

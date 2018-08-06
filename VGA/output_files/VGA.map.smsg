@@ -1,1 +1,2 @@
-Info (10281): Verilog HDL Declaration information at Escrever.v(10): object "fim" differs only in case from object "FIM" in the same scope
+Warning (10268): Verilog HDL information at Coprocessor_Edge_Detection.v(49): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at Escrever.v(11): object "fim" differs only in case from object "FIM" in the same scope

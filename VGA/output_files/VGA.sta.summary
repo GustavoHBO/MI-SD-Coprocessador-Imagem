@@ -2,112 +2,112 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_clock|clk_out'
-Slack : -2.747
-TNS   : -100.561
-
-Type  : Slow 1200mV 85C Model Setup 'Escrever:Escrever|state.FIM'
-Slack : -0.448
-TNS   : -3.417
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.072
-TNS   : -0.072
+Slack : -2.779
+TNS   : -52.035
 
-Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_clock|clk_out'
-Slack : -0.290
-TNS   : -1.681
+Type  : Slow 1200mV 85C Model Setup 'divisor_clock:divisor_clock|clk_out'
+Slack : -2.611
+TNS   : -68.952
 
-Type  : Slow 1200mV 85C Model Hold 'Escrever:Escrever|state.FIM'
-Slack : -0.127
-TNS   : -0.459
+Type  : Slow 1200mV 85C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : -1.226
+TNS   : -5.859
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.009
+Slack : -0.063
+TNS   : -0.063
+
+Type  : Slow 1200mV 85C Model Hold 'divisor_clock:divisor_clock|clk_out'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : 0.465
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -3.201
-TNS   : -90.355
+TNS   : -67.823
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.487
+TNS   : -40.175
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Escrever:Escrever|state.FIM'
-Slack : 0.380
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
-Slack : -2.395
-TNS   : -88.777
-
-Type  : Slow 1200mV 0C Model Setup 'Escrever:Escrever|state.FIM'
-Slack : -0.320
-TNS   : -2.042
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : -1.487
+TNS   : -10.409
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.014
-TNS   : -0.014
+Slack : -2.507
+TNS   : -46.701
 
-Type  : Slow 1200mV 0C Model Hold 'Escrever:Escrever|state.FIM'
-Slack : -0.221
-TNS   : -1.710
+Type  : Slow 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
+Slack : -2.275
+TNS   : -61.504
 
-Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
-Slack : -0.155
-TNS   : -0.511
+Type  : Slow 1200mV 0C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : -1.014
+TNS   : -4.711
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.014
+Slack : -0.026
+TNS   : -0.026
+
+Type  : Slow 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : 0.417
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -3.201
-TNS   : -90.355
+TNS   : -67.823
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.487
+TNS   : -40.175
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Escrever:Escrever|state.FIM'
-Slack : 0.259
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
-Slack : -0.641
-TNS   : -14.155
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : -1.487
+TNS   : -10.409
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : 0.314
-TNS   : 0.000
+Slack : -0.602
+TNS   : -9.543
 
-Type  : Fast 1200mV 0C Model Setup 'Escrever:Escrever|state.FIM'
-Slack : 0.317
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Setup 'divisor_clock:divisor_clock|clk_out'
+Slack : -0.314
+TNS   : -6.801
 
-Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
-Slack : -0.251
-TNS   : -2.274
+Type  : Fast 1200mV 0C Model Setup 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : 0.043
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.090
-TNS   : -0.090
+Slack : -0.217
+TNS   : -0.368
 
-Type  : Fast 1200mV 0C Model Hold 'Escrever:Escrever|state.FIM'
-Slack : -0.054
-TNS   : -0.271
+Type  : Fast 1200mV 0C Model Hold 'divisor_clock:divisor_clock|clk_out'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : 0.194
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -4.042
+TNS   : -29.617
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor_clock:divisor_clock|clk_out'
 Slack : -1.000
-TNS   : -55.000
+TNS   : -41.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Escrever:Escrever|state.FIM'
-Slack : 0.328
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|clk_line'
+Slack : -1.000
+TNS   : -7.000
 
 ------------------------------------------------------------
