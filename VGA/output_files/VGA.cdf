@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE10F17) Path("Y:/MI-SD-Coprocessador-Imagem/VGA/output_files/") File("VGA.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE10F17) Path("Y:/GitHub/MI-SD-Coprocessador-Imagem/VGA/output_files/") File("VGA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

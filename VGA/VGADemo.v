@@ -1,14 +1,16 @@
 module VGADemo(
   input clk,
-  input reset,
+  input dataa,
+  input datab, 
+  input start, 
   output reg [2:0] pixel,
   output hsync_out,
   output vsync_out,
-  output [3:0]leds
+  output result, 
+  output done
 );
-	wire clk_25;
-  wire clk_on = clk;
 
+  wire clk_25;
   wire dado_memoria;
   wire inDisplayArea;
   wire inImageArea;
@@ -31,24 +33,31 @@ module VGADemo(
     .vga_v_sync(vsync_out),
     .CounterX(CounterX),
     .CounterY(CounterY),
-    .inDisplayArea(inDisplayArea)
-	 //.inImageArea(inImageArea)
+    .inDisplayArea(inDisplayArea),
   );
 
   	controlador_ram controlador_ram (
-	  .data(out_pixel),
+	  .data(dat),
 	  .rdaddress(contador_end),
-	  .rdclock(clk_25),
+	  .clock(clk_25),
 	  .wraddress(wraddress),
 	  .wren(wren),
-	  .wrclock(clk),
 	  .q(dado_memoria)
 	);
    
-	wire [31:0]dat;
+	wire dat;
 	wire wren;
 	wire [11:0] wraddress;
-	  
+	
+	Escrever Escrever(
+    .clock(clk_25),
+    .data(dat),
+    .wraddress(wraddress),
+	 .wren(wren),
+	 .start(~start)
+	);
+ 
+  
 
   always @(posedge clk_25) 
   begin 
@@ -76,47 +85,11 @@ module VGADemo(
 		end else begin
 			pixel <= 3'b000;
 		end
+		
   end
 	 
-  reg [11:0] img_base = 12'b0;
-  reg [11:0] img_base_out = 12'b0;
-  reg [3:0] led = 4'b1;
-  reg img_ready = 1'b0;
-  reg [63:0] pixel_row = 64'b0;
-  reg [6:0] address_out = 7'b0;
-  reg wre =1'b0;
-  assign leds = led;
-
-  wire clk_done;
-  wire clk_line;
-  wire [63:0]pixell;
-  wire [31:0]out_pixel;
   
-  assign out_pixel = pixell[31:0];
-  assign wraddress = img_base_out;
-  assign wren = wre;
-
-	Coprocessor_Edge_Detection Coprocessor_Edge_Detection(
-    .clk_50M(clk), // Clock da placa.
-    .reset(~reset), // Reseta o sistema.
-    .address_base(img_base), // Endereo base da imagem original.
-    //.clk_start(), // Espera o pulso para poder comear.
-    .address_out(img_base), // Endereo de destino da imagem processada.
-    .clk_done(clk_done),
-    .clk_line(clk_line),
-    .pixel(pixell),
-    //.address_pixel_out(address_out),
-    //.led()
-  );
 	 
-  parameter idle = 1'b0, enviar = 1'b1;
-
-  always @(posedge clk_line)begin
-    pixel_row <= pixell;
-    wre <= 1'b1;
-    img_base_out <= img_base_out + 1;
-    pixel_row <= pixel_row >> 32;
-    wre <= 1'b0;
-  end
+	 
 
 endmodule

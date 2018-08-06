@@ -1,8 +1,6 @@
 
-State Machine - |VGADemo|Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|state
-Name state.getRow state.calculate state.start state.000 state.finish 
-state.000 0 0 0 0 0 
-state.start 0 0 1 1 0 
-state.calculate 0 1 0 1 0 
-state.getRow 1 0 0 1 0 
-state.finish 0 0 0 1 1 
+State Machine - |VGADemo|Escrever:Escrever|state
+Name state.idle state.termina state.enviar_dado 
+state.idle 0 0 0 
+state.enviar_dado 1 0 1 
+state.termina 1 1 0 
