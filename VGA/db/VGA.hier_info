@@ -9,7 +9,7 @@ pixel[2] <= pixel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hsync_out <= hvsync_generator:hvsync.vga_h_sync
 vsync_out <= hvsync_generator:hvsync.vga_v_sync
 result <= <GND>
-done <= <GND>
+done <= Escrever:Escrever.done
 
 
 |VGADemo|divisor_clock:divisor_clock

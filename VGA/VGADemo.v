@@ -54,7 +54,8 @@ module VGADemo(
     .data(dat),
     .wraddress(wraddress),
 	 .wren(wren),
-	 .start(~start)
+	 .start(~start),
+	 .done(done)
 	);
  
   
