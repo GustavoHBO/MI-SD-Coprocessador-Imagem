@@ -1,12 +1,15 @@
 module Escrever(
     input clock,
     input start, 
+    input [31:0] dados_in,
+    input [31: 0] endereco_base,
     output reg data,
     output reg [11:0] wraddress,
     output reg wren,
     output reg done
 );
-    reg [11:0] contador = 0;
+    reg [11:0] contador_endereco = endereco_base[11:0];
+    reg [4:0] contador_iteracoes;
     reg [1:0] state = enviar_dado;
      
                                
@@ -23,11 +26,11 @@ module Escrever(
             end 
             enviar_dado:
                 begin
-                    if(contador<4095) begin
-                        contador <= contador + 1;
+                    if(contador_endereco<4095 && contador_iteracoes<32) begin
+                        contador_endereco <= contador_endereco + 1;
                         state <= enviar_dado;
                     end else begin
-                        contador <= 0;
+                        contador_endereco <= 0;
                         state <= termina;
                     end
                 end
@@ -44,7 +47,7 @@ module Escrever(
                 begin
                      data <= 1;
                      wren <= 1;
-                     wraddress <= contador;
+                     wraddress <= contador_endereco;
                 end
             termina: 
                 begin
