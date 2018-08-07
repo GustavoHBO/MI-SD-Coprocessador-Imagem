@@ -1,5 +1,5 @@
 Flow report for VGA
-Mon Aug 06 20:33:42 2018
+Tue Aug 07 11:23:43 2018
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Mon Aug 06 20:33:42 2018      ;
+; Flow Status                        ; Successful - Tue Aug 07 11:23:43 2018      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGA                                        ;
 ; Top-level Entity Name              ; VGADemo                                    ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE10F17C8                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 85 / 10,320 ( < 1 % )                      ;
-;     Total combinational functions  ; 81 / 10,320 ( < 1 % )                      ;
+; Total logic elements               ; 86 / 10,320 ( < 1 % )                      ;
+;     Total combinational functions  ; 83 / 10,320 ( < 1 % )                      ;
 ;     Dedicated logic registers      ; 53 / 10,320 ( < 1 % )                      ;
 ; Total registers                    ; 53                                         ;
 ; Total pins                         ; 11 / 180 ( 6 % )                           ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/06/2018 20:33:20 ;
+; Start date & time ; 08/07/2018 11:23:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121375325804.153359840002968          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121375325804.153365179902656          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --             ;
@@ -102,12 +102,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 356 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 540 MB              ; 00:00:07                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 540 MB              ; 00:00:08                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 350 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 381 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 309 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:14                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 377 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 305 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

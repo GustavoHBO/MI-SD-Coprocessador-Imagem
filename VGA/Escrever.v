@@ -8,10 +8,14 @@ module Escrever(
     output reg wren,
     output reg done
 );
-    reg [11:0] contador_endereco = endereco_base[11:0];
+    reg [11:0] contador_endereco;
+    reg [31: 0] buffer_dados;
+
+	initial contador_endereco = endereco_base[11:0]; 
+    initial buffer_dados = dados_in[31:0];
     reg [4:0] contador_iteracoes;
     reg [1:0] state = enviar_dado;
-     
+    
                                
     
 
@@ -45,12 +49,17 @@ module Escrever(
         case(state)
             enviar_dado:
                 begin
-                     data <= 1;
+                     //data <= buffer_dados[31:31];
+                     //buffer_dados <= buffer_dados << 1;
+                     if(contador_endereco < 1024) data <= 1;
+                     else data <=0;
+                     contador_iteracoes <= contador_iteracoes + 1;
                      wren <= 1;
                      wraddress <= contador_endereco;
                 end
             termina: 
                 begin
+                    contador_iteracoes <= 0;
                     done <= 1;
                     data<=0;
                     wren <= 0;

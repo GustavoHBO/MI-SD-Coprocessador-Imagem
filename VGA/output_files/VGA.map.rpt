@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA
-Mon Aug 06 20:33:22 2018
+Tue Aug 07 11:23:21 2018
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -22,10 +22,11 @@ Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  14. Parameter Settings for User Entity Instance: controlador_ram:controlador_ram|altsyncram:altsyncram_component
  15. Parameter Settings for User Entity Instance: Escrever:Escrever
  16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "hvsync_generator:hvsync"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+ 17. Port Connectivity Checks: "Escrever:Escrever"
+ 18. Port Connectivity Checks: "hvsync_generator:hvsync"
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,13 +52,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 06 20:33:22 2018      ;
+; Analysis & Synthesis Status        ; Successful - Tue Aug 07 11:23:21 2018      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; VGA                                        ;
 ; Top-level Entity Name              ; VGADemo                                    ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 82                                         ;
-;     Total combinational functions  ; 81                                         ;
+; Total logic elements               ; 84                                         ;
+;     Total combinational functions  ; 83                                         ;
 ;     Dedicated logic registers      ; 53                                         ;
 ; Total registers                    ; 53                                         ;
 ; Total pins                         ; 11                                         ;
@@ -194,16 +195,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
-; Estimated Total logic elements              ; 82                                  ;
+; Estimated Total logic elements              ; 84                                  ;
 ;                                             ;                                     ;
-; Total combinational functions               ; 81                                  ;
+; Total combinational functions               ; 83                                  ;
 ; Logic element usage by number of LUT inputs ;                                     ;
 ;     -- 4 input functions                    ; 14                                  ;
-;     -- 3 input functions                    ; 19                                  ;
+;     -- 3 input functions                    ; 21                                  ;
 ;     -- <=2 input functions                  ; 48                                  ;
 ;                                             ;                                     ;
 ; Logic elements by mode                      ;                                     ;
-;     -- normal mode                          ; 43                                  ;
+;     -- normal mode                          ; 45                                  ;
 ;     -- arithmetic mode                      ; 38                                  ;
 ;                                             ;                                     ;
 ; Total registers                             ; 53                                  ;
@@ -215,8 +216,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0                                   ;
 ; Maximum fan-out node                        ; divisor_clock:divisor_clock|clk_out ;
 ; Maximum fan-out                             ; 54                                  ;
-; Total fan-out                               ; 396                                 ;
-; Average fan-out                             ; 2.52                                ;
+; Total fan-out                               ; 403                                 ;
+; Average fan-out                             ; 2.53                                ;
 +---------------------------------------------+-------------------------------------+
 
 
@@ -225,8 +226,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------+--------------+
-; |VGADemo                                  ; 81 (16)           ; 53 (15)      ; 4096        ; 0            ; 0       ; 0         ; 11   ; 0            ; |VGADemo                                                                                                ; work         ;
-;    |Escrever:Escrever|                    ; 32 (32)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGADemo|Escrever:Escrever                                                                              ; work         ;
+; |VGADemo                                  ; 83 (16)           ; 53 (15)      ; 4096        ; 0            ; 0       ; 0         ; 11   ; 0            ; |VGADemo                                                                                                ; work         ;
+;    |Escrever:Escrever|                    ; 34 (34)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGADemo|Escrever:Escrever                                                                              ; work         ;
 ;    |controlador_ram:controlador_ram|      ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGADemo|controlador_ram:controlador_ram                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGADemo|controlador_ram:controlador_ram|altsyncram:altsyncram_component                                ; work         ;
 ;          |altsyncram_iln1:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGADemo|controlador_ram:controlador_ram|altsyncram:altsyncram_component|altsyncram_iln1:auto_generated ; work         ;
@@ -407,6 +408,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-----------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Escrever:Escrever"                                                                                                                                                                         ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; dados_in      ; Input ; Warning  ; Input port expression (33 bits) is wider than the input port (32 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; endereco_base ; Input ; Warning  ; Input port expression (33 bits) is wider than the input port (32 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "hvsync_generator:hvsync"                                                                                                                                                   ;
 +----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -431,7 +442,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Aug 06 20:33:19 2018
+    Info: Processing started: Tue Aug 07 11:23:18 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file ccpu_ram.v
@@ -452,7 +463,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: controlador_ram
 Warning (10236): Verilog HDL Implicit Net warning at Coprocessor_Edge_Detection.v(42): created implicit net for "address_pixel_in"
 Info (12127): Elaborating entity "VGADemo" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VGADemo.v(69): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at VGADemo.v(82): truncated value with size 32 to match size of target (12)
 Warning (10034): Output port "result" at VGADemo.v(9) has no driver
 Info (12128): Elaborating entity "divisor_clock" for hierarchy "divisor_clock:divisor_clock"
 Warning (10036): Verilog HDL or VHDL warning at divisor_clock.v(8): object "contador" assigned a value but never read
@@ -486,32 +497,37 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_iln1
 Info (12128): Elaborating entity "altsyncram_iln1" for hierarchy "controlador_ram:controlador_ram|altsyncram:altsyncram_component|altsyncram_iln1:auto_generated"
 Info (12128): Elaborating entity "Escrever" for hierarchy "Escrever:Escrever"
-Warning (10230): Verilog HDL assignment warning at Escrever.v(27): truncated value with size 32 to match size of target (12)
-Warning (10235): Verilog HDL Always Construct warning at Escrever.v(47): variable "contador" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10270): Verilog HDL Case Statement warning at Escrever.v(42): incomplete case statement has no default case item
-Info (10264): Verilog HDL Case Statement information at Escrever.v(42): all case item expressions in this case statement are onehot
-Warning (10240): Verilog HDL Always Construct warning at Escrever.v(41): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Escrever.v(41): inferring latch(es) for variable "wren", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Escrever.v(41): inferring latch(es) for variable "wraddress", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at Escrever.v(41): inferring latch(es) for variable "done", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "done" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[0]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[1]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[2]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[3]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[4]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[5]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[6]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[7]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[8]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[9]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[10]" at Escrever.v(41)
-Info (10041): Inferred latch for "wraddress[11]" at Escrever.v(41)
-Info (10041): Inferred latch for "wren" at Escrever.v(41)
-Info (10041): Inferred latch for "data" at Escrever.v(41)
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "Escrever:Escrever|data" merged with LATCH primitive "Escrever:Escrever|wren"
+Warning (10036): Verilog HDL or VHDL warning at Escrever.v(12): object "buffer_dados" assigned a value but never read
+Warning (10855): Verilog HDL warning at Escrever.v(14): initial value for variable contador_endereco should be constant
+Warning (10855): Verilog HDL warning at Escrever.v(15): initial value for variable buffer_dados should be constant
+Warning (10230): Verilog HDL assignment warning at Escrever.v(34): truncated value with size 32 to match size of target (12)
+Warning (10235): Verilog HDL Always Construct warning at Escrever.v(54): variable "contador_endereco" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Escrever.v(56): variable "contador_iteracoes" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at Escrever.v(56): truncated value with size 32 to match size of target (5)
+Warning (10235): Verilog HDL Always Construct warning at Escrever.v(58): variable "contador_endereco" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at Escrever.v(49): incomplete case statement has no default case item
+Info (10264): Verilog HDL Case Statement information at Escrever.v(49): all case item expressions in this case statement are onehot
+Warning (10240): Verilog HDL Always Construct warning at Escrever.v(48): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Escrever.v(48): inferring latch(es) for variable "contador_iteracoes", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Escrever.v(48): inferring latch(es) for variable "wren", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Escrever.v(48): inferring latch(es) for variable "wraddress", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Escrever.v(48): inferring latch(es) for variable "done", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "done" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[0]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[1]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[2]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[3]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[4]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[5]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[6]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[7]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[8]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[9]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[10]" at Escrever.v(48)
+Info (10041): Inferred latch for "wraddress[11]" at Escrever.v(48)
+Info (10041): Inferred latch for "wren" at Escrever.v(48)
+Info (10041): Inferred latch for "data" at Escrever.v(48)
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "result" is stuck at GND
     Warning (13410): Pin "done" is stuck at VCC
@@ -522,14 +538,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "dataa"
     Warning (15610): No output dependent on input pin "datab"
-Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 83 logic cells
+    Info (21061): Implemented 85 logic cells
     Info (21064): Implemented 1 RAM segments
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 23 warnings
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 30 warnings
     Info: Peak virtual memory: 363 megabytes
-    Info: Processing ended: Mon Aug 06 20:33:22 2018
+    Info: Processing ended: Tue Aug 07 11:23:21 2018
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

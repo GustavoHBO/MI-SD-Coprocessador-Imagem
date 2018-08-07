@@ -48,17 +48,30 @@ module VGADemo(
 	wire dat;
 	wire wren;
 	wire [11:0] wraddress;
-	
+
+
+	reg [32:0] endereco_base;
+	reg [32:0] dados_in;
+
+
 	Escrever Escrever(
     .clock(clk_25),
     .data(dat),
     .wraddress(wraddress),
-	 .wren(wren),
-	 .start(~start),
-	 .done(done)
+	  .wren(wren),
+	  .start(~start),
+	  .done(done),
+    .dados_in(dados_in),
+    .endereco_base(endereco_base)
 	);
  
-  
+  always @(posedge clk_25) begin
+    if (endereco_base < 4096) begin
+      endereco_base = endereco_base + 32;
+      if(endereco_base<1024) dados_in <= 32'b11111111111111111111111111111111;
+      else dados_in <= 32'b00000000000000000000000000000000;
+    end 
+  end
 
   always @(posedge clk_25) 
   begin 
