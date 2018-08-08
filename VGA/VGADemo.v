@@ -60,13 +60,48 @@ module VGADemo(
     .data(dat),
     .wraddress(wraddress),
 	  .wren(wren),
-	  .start(start),
+	  .start(fio_start),
 	  .done(done),
-    .dados_in(dados_in),
-   // .endereco_base(endereco_base)
+    .dados_in(32'b11111111111111111111111111111111),
+    .endereco_base(endereco_base)
 	);
   
+  
 
+  //testador de máquina de estados
+ 
+  parameter [1:0] escreve = 2'b0, feito = 2'b1, terminou = 2'b10, estado_start = 2'b11;
+  reg [1:0] estado_apagar = estado_start;
+  reg fio_start;
+
+  always @ (posedge clk_25) begin
+    case (estado_apagar) 
+      estado_start: 
+      begin
+        fio_start = 0;
+        estado_apagar <= escreve;
+      end
+      escreve: 
+      begin 
+        fio_start <= 1;
+        endereco_base <= endereco_base + 1;
+        if (endereco_base > 4095) begin 
+            estado_apagar <=terminou;
+        end else begin
+            if(done) estado_apagar <= feito;
+            else estado_apagar <= escreve;
+        end
+      feito:
+      begin
+        done <= 0;
+        estado_apagar <= estado_start;
+      end
+      terminou:
+      begin
+
+      end
+    endcase
+  end 
  /* //parameter [1:0] 
   always @(posedge clk_25) begin
     if (endereco_base < 4096) begin

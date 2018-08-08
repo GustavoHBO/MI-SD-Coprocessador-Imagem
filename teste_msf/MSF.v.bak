@@ -1,0 +1,63 @@
+// Quartus II Verilog Template
+// 4-State Mealy state machine
+
+// A Mealy machine has outputs that depend on both the state and 
+// the inputs.  When the inputs change, the outputs are updated
+// immediately, without waiting for a clock edge.  The outputs
+// can be written more than once per state or per clock cycle.
+
+module MSF
+(
+	input	clk, in, reset, start,
+	output reg [1:0] out, 
+	output done
+);
+
+	// Declare state register
+	reg		[1:0]state;
+
+	// Declare states
+	parameter idle = 0, faz = 1, feito = 2, S3 = 3;
+
+	// Determine the next state synchronously, based on the
+	// current state and the input
+	always @ (posedge clk or posedge reset) begin
+		if (reset)
+			state <= idle;
+		else
+			case (state)
+				idle:
+					if (start)
+					begin
+						state <= faz;
+					end
+					else
+					begin
+						state <= idle;
+					end
+				faz:
+				begin
+					state <= feito;
+				end
+				feito:
+				begin
+					state <= idle;
+				end
+			endcase
+	end
+
+	// Determine the output based only on the current state
+	// and the input (do not wait for a clock edge).
+	always @ (state or in)
+	begin
+			case (state)
+				idle:
+				begin
+					done <= 0;
+				end
+				feito:
+					done <= 1;
+			endcase
+	end
+
+endmodule

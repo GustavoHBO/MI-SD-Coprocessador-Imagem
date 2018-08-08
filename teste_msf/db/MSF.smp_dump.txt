@@ -1,0 +1,6 @@
+
+State Machine - |MSF|state
+Name state.idle state.feito state.faz 
+state.idle 0 0 0 
+state.faz 1 0 1 
+state.feito 1 1 0 

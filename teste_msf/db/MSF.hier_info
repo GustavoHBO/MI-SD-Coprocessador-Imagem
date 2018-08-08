@@ -1,0 +1,11 @@
+|MSF
+clk => state~1.DATAIN
+in => ~NO_FANOUT~
+reset => state~3.DATAIN
+start => Selector1.IN2
+start => Selector2.IN2
+out[0] <= <GND>
+out[1] <= <GND>
+done <= done$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

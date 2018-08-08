@@ -51,8 +51,8 @@ module VGADemo(
 	wire [11:0] wraddress;
 
 
-	reg [32:0] endereco_base;
-	reg [32: 0] dados_in;
+	//reg [32:0] endereco_base;
+	//reg [32: 0] dados_in;
 
 	 
 	Escrever Escrever(
