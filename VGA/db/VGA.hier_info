@@ -2,14 +2,15 @@
 clk => clk.IN1
 dataa => ~NO_FANOUT~
 datab => ~NO_FANOUT~
+start => always0.IN0
 start => _.IN1
-pixel[0] << pixel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-pixel[1] << pixel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-pixel[2] << pixel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-hsync_out << hvsync_generator:hvsync.vga_h_sync
-vsync_out << hvsync_generator:hvsync.vga_v_sync
-result << <GND>
-done << Escrever:Escrever.done
+pixel[0] <= pixel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel[1] <= pixel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel[2] <= pixel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hsync_out <= hvsync_generator:hvsync.vga_h_sync
+vsync_out <= hvsync_generator:hvsync.vga_v_sync
+result <= <GND>
+done <= <GND>
 
 
 |VGADemo|divisor_clock:divisor_clock
@@ -179,21 +180,9 @@ wren_a => ram_block1a0.ENA0
 
 
 |VGADemo|Escrever:Escrever
-clock => contador_endereco[0].CLK
-clock => contador_endereco[1].CLK
-clock => contador_endereco[2].CLK
-clock => contador_endereco[3].CLK
-clock => contador_endereco[4].CLK
-clock => contador_endereco[5].CLK
-clock => contador_endereco[6].CLK
-clock => contador_endereco[7].CLK
-clock => contador_endereco[8].CLK
-clock => contador_endereco[9].CLK
-clock => contador_endereco[10].CLK
-clock => contador_endereco[11].CLK
 clock => state~1.DATAIN
-start => Selector1.IN1
-start => Selector0.IN1
+start => state.DATAB
+start => Selector0.IN2
 dados_in[0] => ~NO_FANOUT~
 dados_in[1] => ~NO_FANOUT~
 dados_in[2] => ~NO_FANOUT~
@@ -226,18 +215,18 @@ dados_in[28] => ~NO_FANOUT~
 dados_in[29] => ~NO_FANOUT~
 dados_in[30] => ~NO_FANOUT~
 dados_in[31] => ~NO_FANOUT~
-endereco_base[0] => ~NO_FANOUT~
-endereco_base[1] => ~NO_FANOUT~
-endereco_base[2] => ~NO_FANOUT~
-endereco_base[3] => ~NO_FANOUT~
-endereco_base[4] => ~NO_FANOUT~
-endereco_base[5] => ~NO_FANOUT~
-endereco_base[6] => ~NO_FANOUT~
-endereco_base[7] => ~NO_FANOUT~
-endereco_base[8] => ~NO_FANOUT~
-endereco_base[9] => ~NO_FANOUT~
-endereco_base[10] => ~NO_FANOUT~
-endereco_base[11] => ~NO_FANOUT~
+endereco_base[0] => wraddress[0]$latch.DATAIN
+endereco_base[1] => wraddress[1]$latch.DATAIN
+endereco_base[2] => wraddress[2]$latch.DATAIN
+endereco_base[3] => wraddress[3]$latch.DATAIN
+endereco_base[4] => wraddress[4]$latch.DATAIN
+endereco_base[5] => wraddress[5]$latch.DATAIN
+endereco_base[6] => wraddress[6]$latch.DATAIN
+endereco_base[7] => wraddress[7]$latch.DATAIN
+endereco_base[8] => wraddress[8]$latch.DATAIN
+endereco_base[9] => wraddress[9]$latch.DATAIN
+endereco_base[10] => wraddress[10]$latch.DATAIN
+endereco_base[11] => wraddress[11]$latch.DATAIN
 endereco_base[12] => ~NO_FANOUT~
 endereco_base[13] => ~NO_FANOUT~
 endereco_base[14] => ~NO_FANOUT~
