@@ -10,7 +10,7 @@ module VGADemo(
   output [31:0] result, 
   output done
 );
-
+  
   wire clk_25;
   wire dado_memoria;
   wire inDisplayArea;
@@ -63,11 +63,12 @@ module VGADemo(
 	  .start(start),
 	  .done(done),
     .dados_in(datab),
-    .endereco_base(dataa)
+    .endereco_base(dataa),
+    .testeapagar(result)
 	);
   
 
-  
+
   always @(posedge clk_25 && start) 
   begin 
     if (contador_end > 4095) begin

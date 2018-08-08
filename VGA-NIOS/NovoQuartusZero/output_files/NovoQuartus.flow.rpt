@@ -1,5 +1,5 @@
 Flow report for NovoQuartus
-Tue Aug 07 21:26:22 2018
+Tue Aug 07 23:24:59 2018
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Tue Aug 07 21:26:22 2018      ;
+; Flow Status                        ; Successful - Tue Aug 07 23:24:59 2018      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; NovoQuartus                                ;
 ; Top-level Entity Name              ; NovoQuartus                                ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE10F17C8                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 1,692 / 10,320 ( 16 % )                    ;
-;     Total combinational functions  ; 1,592 / 10,320 ( 15 % )                    ;
-;     Dedicated logic registers      ; 938 / 10,320 ( 9 % )                       ;
-; Total registers                    ; 938                                        ;
+; Total logic elements               ; 1,697 / 10,320 ( 16 % )                    ;
+;     Total combinational functions  ; 1,598 / 10,320 ( 15 % )                    ;
+;     Dedicated logic registers      ; 936 / 10,320 ( 9 % )                       ;
+; Total registers                    ; 936                                        ;
 ; Total pins                         ; 11 / 180 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 44,034 / 423,936 ( 10 % )                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/07/2018 21:25:06 ;
+; Start date & time ; 08/07/2018 23:23:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; NovoQuartus         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121375325804.153368790601532          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121375325804.153369500302728          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:40     ; 1.0                     ; 451 MB              ; 00:00:34                           ;
-; Fitter                    ; 00:00:15     ; 1.0                     ; 570 MB              ; 00:00:15                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 395 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 336 MB              ; 00:00:05                           ;
-; Total                     ; 00:01:06     ; --                      ; --                  ; 00:01:00                           ;
+; Analysis & Synthesis      ; 00:00:47     ; 1.0                     ; 451 MB              ; 00:00:42                           ;
+; Fitter                    ; 00:00:17     ; 1.0                     ; 566 MB              ; 00:00:17                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 397 MB              ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 336 MB              ; 00:00:07                           ;
+; Total                     ; 00:01:22     ; --                      ; --                  ; 00:01:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

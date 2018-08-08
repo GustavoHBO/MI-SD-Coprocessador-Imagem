@@ -6,13 +6,16 @@ module Escrever(
     output reg data,
     output reg [11:0] wraddress,
     output reg wren,
-    output reg done
+    output reg done,
+    output reg [31:0] testeapagar
 );
    
-    reg [4:0] contador_iteracoes;
-    reg [1:0] state = enviar_dado;
+   
+
+    //reg [4:0] contador_iteracoes;
+    reg [1:0] state = idle;
     
-    initial done = 0;
+    //initial done = 0;
 	 
 
 
@@ -38,17 +41,24 @@ module Escrever(
 
     always @(state) begin
         case(state)
+            idle:
+            begin 
+                testeapagar <= 32'b1110;
+                done <= 0;
+            end 
             enviar_dado:
                 begin
+                     testeapagar <= 32'b1010;
                      wren <= 1;
                      data <= dados_in;
                      wraddress <= endereco_base;
                 end
             termina: 
                 begin
+                    testeapagar <= 32'b1111;
                     done <= 1;
                     data<=0;
-                    wren <= 0;
+                    wren <= 0;  
                 end
         endcase
     end
