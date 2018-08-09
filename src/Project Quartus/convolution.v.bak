@@ -1,6 +1,0 @@
-module convoluation(
-	input clk_in, 
-	input [63:0]matrix_in,
-	output pixel_out
-);
-endmodule 

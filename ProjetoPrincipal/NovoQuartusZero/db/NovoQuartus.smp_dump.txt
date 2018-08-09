@@ -1,0 +1,23 @@
+
+State Machine - |NovoQuartus|Coprocessor_Edge_Detection:Coprocessor_Edge_Detection|state
+Name state.getRow state.calculate state.start state.000 state.finish 
+state.000 0 0 0 0 0 
+state.start 0 0 1 1 0 
+state.calculate 0 1 0 1 0 
+state.getRow 1 0 0 1 0 
+state.finish 0 0 0 1 1 
+
+State Machine - |NovoQuartus|processador:u0|MSF:memoria_vga_0|state
+Name state.idle state.feito state.faz 
+state.idle 0 0 0 
+state.faz 1 0 1 
+state.feito 1 1 0 
+
+State Machine - |NovoQuartus|processador:u0|processador_nios2_qsys_0:nios2_qsys_0|processador_nios2_qsys_0_nios2_oci:the_processador_nios2_qsys_0_nios2_oci|processador_nios2_qsys_0_jtag_debug_module_wrapper:the_processador_nios2_qsys_0_jtag_debug_module_wrapper|processador_nios2_qsys_0_jtag_debug_module_tck:the_processador_nios2_qsys_0_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 

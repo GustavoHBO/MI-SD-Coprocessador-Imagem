@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="Coprocessor">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Coprocessor|ProjectNiosII:processor|ProjectNiosII_nios2_qsys_0:nios2_qsys_0|ProjectNiosII_nios2_qsys_0_nios2_oci:the_ProjectNiosII_nios2_qsys_0_nios2_oci|ProjectNiosII_nios2_qsys_0_nios2_ocimem:the_ProjectNiosII_nios2_qsys_0_nios2_ocimem|ProjectNiosII_nios2_qsys_0_ociram_sp_ram_module:ProjectNiosII_nios2_qsys_0_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_nr91.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Coprocessor|ProjectNiosII:processor|ProjectNiosII_nios2_qsys_0:nios2_qsys_0|ProjectNiosII_nios2_qsys_0_register_bank_a_module:ProjectNiosII_nios2_qsys_0_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_4lh1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Coprocessor|ProjectNiosII:processor|ProjectNiosII_nios2_qsys_0:nios2_qsys_0|ProjectNiosII_nios2_qsys_0_register_bank_b_module:ProjectNiosII_nios2_qsys_0_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_5lh1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Coprocessor|ProjectNiosII:processor|ProjectNiosII_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_lnb1.tdf"/>
-	</PROJECT>
-</LOG_ROOT>
