@@ -66,7 +66,7 @@ module processador_nios2_qsys_0_test_bench (
   input   [  4: 0] R_dst_regnum;
   input            R_wr_dst_reg;
   input            W_valid;
-  input   [ 79: 0] W_vinst;
+  input   [103: 0] W_vinst;
   input   [ 31: 0] W_wr_data;
   input   [ 31: 0] av_ld_data_aligned_unfiltered;
   input            clk;
@@ -135,6 +135,7 @@ module processador_nios2_qsys_0_test_bench (
   wire             D_op_ldl;
   wire             D_op_ldw;
   wire             D_op_ldwio;
+  wire             D_op_memoria_vga_0;
   wire             D_op_mul;
   wire             D_op_muli;
   wire             D_op_mulxss;
@@ -203,7 +204,6 @@ module processador_nios2_qsys_0_test_bench (
   wire             D_op_sub;
   wire             D_op_sync;
   wire             D_op_trap;
-  wire             D_op_vga_load_0;
   wire             D_op_wrctl;
   wire             D_op_wrprs;
   wire             D_op_xor;
@@ -369,7 +369,7 @@ module processador_nios2_qsys_0_test_bench (
   assign D_op_rsvx56 = D_op_opx & (D_iw_opx == 56);
   assign D_op_rsvx60 = D_op_opx & (D_iw_opx == 60);
   assign D_op_rsvx63 = D_op_opx & (D_iw_opx == 63);
-  assign D_op_vga_load_0 = D_op_custom & 1'b1;
+  assign D_op_memoria_vga_0 = D_op_custom & 1'b1;
   assign D_op_opx = D_iw_op == 58;
   assign D_op_custom = D_iw_op == 50;
   assign test_has_ended = 1'b0;

@@ -1,16 +1,16 @@
 |VGADemo
-clk => clk.IN1
+clk => clk.IN2
+reset => reset.IN1
 dataa => ~NO_FANOUT~
 datab => ~NO_FANOUT~
-start => always0.IN0
-start => _.IN1
+start => start.IN1
 pixel[0] <= pixel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel[1] <= pixel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel[2] <= pixel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 hsync_out <= hvsync_generator:hvsync.vga_h_sync
 vsync_out <= hvsync_generator:hvsync.vga_v_sync
 result <= <GND>
-done <= <GND>
+done <= MSF:MSF.done
 
 
 |VGADemo|divisor_clock:divisor_clock
@@ -179,75 +179,14 @@ wren_a => ram_block1a0.PORTAWE
 wren_a => ram_block1a0.ENA0
 
 
-|VGADemo|Escrever:Escrever
-clock => state~1.DATAIN
-start => state.DATAB
+|VGADemo|MSF:MSF
+clk => state~1.DATAIN
+reset => state~3.DATAIN
 start => Selector0.IN2
-dados_in[0] => ~NO_FANOUT~
-dados_in[1] => ~NO_FANOUT~
-dados_in[2] => ~NO_FANOUT~
-dados_in[3] => ~NO_FANOUT~
-dados_in[4] => ~NO_FANOUT~
-dados_in[5] => ~NO_FANOUT~
-dados_in[6] => ~NO_FANOUT~
-dados_in[7] => ~NO_FANOUT~
-dados_in[8] => ~NO_FANOUT~
-dados_in[9] => ~NO_FANOUT~
-dados_in[10] => ~NO_FANOUT~
-dados_in[11] => ~NO_FANOUT~
-dados_in[12] => ~NO_FANOUT~
-dados_in[13] => ~NO_FANOUT~
-dados_in[14] => ~NO_FANOUT~
-dados_in[15] => ~NO_FANOUT~
-dados_in[16] => ~NO_FANOUT~
-dados_in[17] => ~NO_FANOUT~
-dados_in[18] => ~NO_FANOUT~
-dados_in[19] => ~NO_FANOUT~
-dados_in[20] => ~NO_FANOUT~
-dados_in[21] => ~NO_FANOUT~
-dados_in[22] => ~NO_FANOUT~
-dados_in[23] => ~NO_FANOUT~
-dados_in[24] => ~NO_FANOUT~
-dados_in[25] => ~NO_FANOUT~
-dados_in[26] => ~NO_FANOUT~
-dados_in[27] => ~NO_FANOUT~
-dados_in[28] => ~NO_FANOUT~
-dados_in[29] => ~NO_FANOUT~
-dados_in[30] => ~NO_FANOUT~
-dados_in[31] => ~NO_FANOUT~
-endereco_base[0] => wraddress[0]$latch.DATAIN
-endereco_base[1] => wraddress[1]$latch.DATAIN
-endereco_base[2] => wraddress[2]$latch.DATAIN
-endereco_base[3] => wraddress[3]$latch.DATAIN
-endereco_base[4] => wraddress[4]$latch.DATAIN
-endereco_base[5] => wraddress[5]$latch.DATAIN
-endereco_base[6] => wraddress[6]$latch.DATAIN
-endereco_base[7] => wraddress[7]$latch.DATAIN
-endereco_base[8] => wraddress[8]$latch.DATAIN
-endereco_base[9] => wraddress[9]$latch.DATAIN
-endereco_base[10] => wraddress[10]$latch.DATAIN
-endereco_base[11] => wraddress[11]$latch.DATAIN
-endereco_base[12] => ~NO_FANOUT~
-endereco_base[13] => ~NO_FANOUT~
-endereco_base[14] => ~NO_FANOUT~
-endereco_base[15] => ~NO_FANOUT~
-endereco_base[16] => ~NO_FANOUT~
-endereco_base[17] => ~NO_FANOUT~
-endereco_base[18] => ~NO_FANOUT~
-endereco_base[19] => ~NO_FANOUT~
-endereco_base[20] => ~NO_FANOUT~
-endereco_base[21] => ~NO_FANOUT~
-endereco_base[22] => ~NO_FANOUT~
-endereco_base[23] => ~NO_FANOUT~
-endereco_base[24] => ~NO_FANOUT~
-endereco_base[25] => ~NO_FANOUT~
-endereco_base[26] => ~NO_FANOUT~
-endereco_base[27] => ~NO_FANOUT~
-endereco_base[28] => ~NO_FANOUT~
-endereco_base[29] => ~NO_FANOUT~
-endereco_base[30] => ~NO_FANOUT~
-endereco_base[31] => ~NO_FANOUT~
-data <= data$latch.DB_MAX_OUTPUT_PORT_TYPE
+start => state.DATAB
+done <= done$latch.DB_MAX_OUTPUT_PORT_TYPE
+wren <= wren.DB_MAX_OUTPUT_PORT_TYPE
+data <= <VCC>
 wraddress[0] <= wraddress[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 wraddress[1] <= wraddress[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 wraddress[2] <= wraddress[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
@@ -260,7 +199,5 @@ wraddress[8] <= wraddress[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
 wraddress[9] <= wraddress[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
 wraddress[10] <= wraddress[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
 wraddress[11] <= wraddress[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
-wren <= wren$latch.DB_MAX_OUTPUT_PORT_TYPE
-done <= <VCC>
 
 

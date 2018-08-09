@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 32-bit"
 // VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
-// DATE "08/08/2018 08:47:54"
+// DATE "08/08/2018 09:31:39"
 
 // 
 // Device: Altera EP4CE10F17C8 Package FBGA256
@@ -30,22 +30,15 @@
 
 module MSF (
 	clk,
-	in,
 	reset,
 	start,
-	out,
 	done);
 input 	clk;
-input 	in;
 input 	reset;
 input 	start;
-output 	[1:0] out;
 output 	done;
 
 // Design Ports Information
-// in	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// out[0]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// out[1]	=>  Location: PIN_B7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // done	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // start	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // clk	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -67,50 +60,25 @@ tri1 devoe;
 initial $sdf_annotate("MSF_8_1200mv_0c_v_slow.sdo");
 // synopsys translate_on
 
-wire \in~input_o ;
-wire \out[0]~output_o ;
-wire \out[1]~output_o ;
 wire \done~output_o ;
 wire \clk~input_o ;
 wire \clk~inputclkctrl_outclk ;
 wire \start~input_o ;
-wire \state.idle~0_combout ;
+wire \Selector1~0_combout ;
+wire \state.idle~feeder_combout ;
 wire \reset~input_o ;
 wire \reset~inputclkctrl_outclk ;
 wire \state.idle~q ;
-wire \state.faz~0_combout ;
+wire \state~7_combout ;
 wire \state.faz~q ;
+wire \state.feito~feeder_combout ;
+wire \state.feito~q ;
+wire \done$latch~combout ;
 
-
-// Location: IOOBUF_X21_Y24_N16
-cycloneive_io_obuf \out[0]~output (
-	.i(gnd),
-	.oe(vcc),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\out[0]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \out[0]~output .bus_hold = "false";
-defparam \out[0]~output .open_drain_output = "false";
-// synopsys translate_on
-
-// Location: IOOBUF_X11_Y24_N9
-cycloneive_io_obuf \out[1]~output (
-	.i(gnd),
-	.oe(vcc),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\out[1]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \out[1]~output .bus_hold = "false";
-defparam \out[1]~output .open_drain_output = "false";
-// synopsys translate_on
 
 // Location: IOOBUF_X30_Y24_N2
 cycloneive_io_obuf \done~output (
-	.i(!\state.faz~q ),
+	.i(\done$latch~combout ),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -154,21 +122,38 @@ defparam \start~input .bus_hold = "false";
 defparam \start~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LCCOMB_X3_Y21_N2
-cycloneive_lcell_comb \state.idle~0 (
+// Location: LCCOMB_X31_Y21_N18
+cycloneive_lcell_comb \Selector1~0 (
 // Equation(s):
-// \state.idle~0_combout  = (\state.idle~q ) # (!\start~input_o )
+// \Selector1~0_combout  = (!\state.feito~q  & ((\state.idle~q ) # (!\start~input_o )))
+
+	.dataa(gnd),
+	.datab(\start~input_o ),
+	.datac(\state.feito~q ),
+	.datad(\state.idle~q ),
+	.cin(gnd),
+	.combout(\Selector1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector1~0 .lut_mask = 16'h0F03;
+defparam \Selector1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X31_Y21_N20
+cycloneive_lcell_comb \state.idle~feeder (
+// Equation(s):
+// \state.idle~feeder_combout  = \Selector1~0_combout 
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(\state.idle~q ),
-	.datad(\start~input_o ),
+	.datac(gnd),
+	.datad(\Selector1~0_combout ),
 	.cin(gnd),
-	.combout(\state.idle~0_combout ),
+	.combout(\state.idle~feeder_combout ),
 	.cout());
 // synopsys translate_off
-defparam \state.idle~0 .lut_mask = 16'hF0FF;
-defparam \state.idle~0 .sum_lutc_input = "datac";
+defparam \state.idle~feeder .lut_mask = 16'hFF00;
+defparam \state.idle~feeder .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: IOIBUF_X34_Y18_N1
@@ -194,10 +179,10 @@ defparam \reset~inputclkctrl .clock_type = "global clock";
 defparam \reset~inputclkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
-// Location: FF_X3_Y21_N3
+// Location: FF_X31_Y21_N21
 dffeas \state.idle (
 	.clk(\clk~inputclkctrl_outclk ),
-	.d(\state.idle~0_combout ),
+	.d(\state.idle~feeder_combout ),
 	.asdata(vcc),
 	.clrn(\reset~inputclkctrl_outclk ),
 	.aload(gnd),
@@ -213,27 +198,27 @@ defparam \state.idle .is_wysiwyg = "true";
 defparam \state.idle .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X3_Y21_N16
-cycloneive_lcell_comb \state.faz~0 (
+// Location: LCCOMB_X31_Y21_N28
+cycloneive_lcell_comb \state~7 (
 // Equation(s):
-// \state.faz~0_combout  = (\state.faz~q ) # ((!\start~input_o  & !\state.idle~q ))
+// \state~7_combout  = (!\start~input_o  & !\state.idle~q )
 
 	.dataa(gnd),
-	.datab(\start~input_o ),
-	.datac(\state.faz~q ),
+	.datab(gnd),
+	.datac(\start~input_o ),
 	.datad(\state.idle~q ),
 	.cin(gnd),
-	.combout(\state.faz~0_combout ),
+	.combout(\state~7_combout ),
 	.cout());
 // synopsys translate_off
-defparam \state.faz~0 .lut_mask = 16'hF0F3;
-defparam \state.faz~0 .sum_lutc_input = "datac";
+defparam \state~7 .lut_mask = 16'h000F;
+defparam \state~7 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X3_Y21_N17
+// Location: FF_X31_Y21_N29
 dffeas \state.faz (
 	.clk(\clk~inputclkctrl_outclk ),
-	.d(\state.faz~0_combout ),
+	.d(\state~7_combout ),
 	.asdata(vcc),
 	.clrn(\reset~inputclkctrl_outclk ),
 	.aload(gnd),
@@ -249,19 +234,58 @@ defparam \state.faz .is_wysiwyg = "true";
 defparam \state.faz .power_up = "low";
 // synopsys translate_on
 
-// Location: IOIBUF_X34_Y12_N1
-cycloneive_io_ibuf \in~input (
-	.i(in),
-	.ibar(gnd),
-	.o(\in~input_o ));
+// Location: LCCOMB_X31_Y21_N14
+cycloneive_lcell_comb \state.feito~feeder (
+// Equation(s):
+// \state.feito~feeder_combout  = \state.faz~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\state.faz~q ),
+	.cin(gnd),
+	.combout(\state.feito~feeder_combout ),
+	.cout());
 // synopsys translate_off
-defparam \in~input .bus_hold = "false";
-defparam \in~input .simulate_z_as = "z";
+defparam \state.feito~feeder .lut_mask = 16'hFF00;
+defparam \state.feito~feeder .sum_lutc_input = "datac";
 // synopsys translate_on
 
-assign out[0] = \out[0]~output_o ;
+// Location: FF_X31_Y21_N15
+dffeas \state.feito (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\state.feito~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\reset~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.feito~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.feito .is_wysiwyg = "true";
+defparam \state.feito .power_up = "low";
+// synopsys translate_on
 
-assign out[1] = \out[1]~output_o ;
+// Location: LCCOMB_X31_Y21_N22
+cycloneive_lcell_comb done$latch(
+// Equation(s):
+// \done$latch~combout  = (\state.feito~q  & (\done$latch~combout )) # (!\state.feito~q  & ((!\state.faz~q )))
+
+	.dataa(\done$latch~combout ),
+	.datab(gnd),
+	.datac(\state.feito~q ),
+	.datad(\state.faz~q ),
+	.cin(gnd),
+	.combout(\done$latch~combout ),
+	.cout());
+// synopsys translate_off
+defparam done$latch.lut_mask = 16'hA0AF;
+defparam done$latch.sum_lutc_input = "datac";
+// synopsys translate_on
 
 assign done = \done~output_o ;
 

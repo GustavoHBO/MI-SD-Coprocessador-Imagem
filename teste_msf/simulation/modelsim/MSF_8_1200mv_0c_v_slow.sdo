@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "MSF")
-  (DATE "08/08/2018 08:47:54")
+  (DATE "08/08/2018 09:31:40")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 32-bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")
@@ -41,8 +41,8 @@
     (INSTANCE done\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (1578:1578:1578) (1786:1786:1786))
-        (IOPATH i o (2737:2737:2737) (2773:2773:2773))
+        (PORT i (725:725:725) (608:608:608))
+        (IOPATH i o (2773:2773:2773) (2737:2737:2737))
       )
     )
   )
@@ -75,11 +75,24 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE state\.idle\~0)
+    (INSTANCE Selector1\~0)
     (DELAY
       (ABSOLUTE
-        (PORT datad (2924:2924:2924) (2990:2990:2990))
-        (IOPATH datac combout (415:415:415) (429:429:429))
+        (PORT datab (3676:3676:3676) (3681:3681:3681))
+        (PORT datac (2259:2259:2259) (1974:1974:1974))
+        (PORT datad (285:285:285) (343:343:343))
+        (IOPATH datab combout (438:438:438) (455:455:455))
+        (IOPATH datac combout (301:301:301) (283:283:283))
+        (IOPATH datad combout (167:167:167) (143:143:143))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE state\.idle\~feeder)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (227:227:227) (234:234:234))
         (IOPATH datad combout (167:167:167) (143:143:143))
       )
     )
@@ -107,9 +120,9 @@
     (INSTANCE state\.idle)
     (DELAY
       (ABSOLUTE
-        (PORT clk (1477:1477:1477) (1519:1519:1519))
+        (PORT clk (1455:1455:1455) (1499:1499:1499))
         (PORT d (90:90:90) (101:101:101))
-        (PORT clrn (1539:1539:1539) (1466:1466:1466))
+        (PORT clrn (1519:1519:1519) (1444:1444:1444))
         (IOPATH (posedge clk) q (240:240:240) (240:240:240))
         (IOPATH (negedge clrn) q (222:222:222) (222:222:222))
       )
@@ -120,13 +133,12 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE state\.faz\~0)
+    (INSTANCE state\~7)
     (DELAY
       (ABSOLUTE
-        (PORT datab (2984:2984:2984) (3030:3030:3030))
-        (PORT datad (279:279:279) (334:334:334))
-        (IOPATH datab combout (438:438:438) (455:455:455))
-        (IOPATH datac combout (415:415:415) (429:429:429))
+        (PORT datac (3634:3634:3634) (3648:3648:3648))
+        (PORT datad (285:285:285) (343:343:343))
+        (IOPATH datac combout (301:301:301) (283:283:283))
         (IOPATH datad combout (167:167:167) (143:143:143))
       )
     )
@@ -136,15 +148,55 @@
     (INSTANCE state\.faz)
     (DELAY
       (ABSOLUTE
-        (PORT clk (1477:1477:1477) (1519:1519:1519))
+        (PORT clk (1455:1455:1455) (1499:1499:1499))
         (PORT d (90:90:90) (101:101:101))
-        (PORT clrn (1539:1539:1539) (1466:1466:1466))
+        (PORT clrn (1519:1519:1519) (1444:1444:1444))
         (IOPATH (posedge clk) q (240:240:240) (240:240:240))
         (IOPATH (negedge clrn) q (222:222:222) (222:222:222))
       )
     )
     (TIMINGCHECK
       (HOLD d (posedge clk) (195:195:195))
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE state\.feito\~feeder)
+    (DELAY
+      (ABSOLUTE
+        (PORT datad (285:285:285) (343:343:343))
+        (IOPATH datad combout (167:167:167) (143:143:143))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "dffeas")
+    (INSTANCE state\.feito)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1455:1455:1455) (1499:1499:1499))
+        (PORT d (90:90:90) (101:101:101))
+        (PORT clrn (1519:1519:1519) (1444:1444:1444))
+        (IOPATH (posedge clk) q (240:240:240) (240:240:240))
+        (IOPATH (negedge clrn) q (222:222:222) (222:222:222))
+      )
+    )
+    (TIMINGCHECK
+      (HOLD d (posedge clk) (195:195:195))
+    )
+  )
+  (CELL
+    (CELLTYPE "cycloneive_lcell_comb")
+    (INSTANCE done\$latch)
+    (DELAY
+      (ABSOLUTE
+        (PORT dataa (292:292:292) (304:304:304))
+        (PORT datac (297:297:297) (360:360:360))
+        (PORT datad (281:281:281) (339:339:339))
+        (IOPATH dataa combout (420:420:420) (400:400:400))
+        (IOPATH datac combout (301:301:301) (285:285:285))
+        (IOPATH datad combout (167:167:167) (143:143:143))
+      )
     )
   )
 )

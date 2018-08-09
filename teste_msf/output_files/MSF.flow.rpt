@@ -1,5 +1,5 @@
 Flow report for MSF
-Wed Aug 08 08:47:54 2018
+Wed Aug 08 09:31:40 2018
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Aug 08 08:47:54 2018      ;
+; Flow Status                        ; Successful - Wed Aug 08 09:31:40 2018      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; MSF                                        ;
 ; Top-level Entity Name              ; MSF                                        ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE10F17C8                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 2 / 10,320 ( < 1 % )                       ;
-;     Total combinational functions  ; 2 / 10,320 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 2 / 10,320 ( < 1 % )                       ;
-; Total registers                    ; 2                                          ;
-; Total pins                         ; 7 / 180 ( 4 % )                            ;
+; Total logic elements               ; 5 / 10,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 3 / 10,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 3 / 10,320 ( < 1 % )                       ;
+; Total registers                    ; 3                                          ;
+; Total pins                         ; 4 / 180 ( 2 % )                            ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 423,936 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/08/2018 08:47:35 ;
+; Start date & time ; 08/08/2018 09:31:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MSF                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 121375325804.153372885500276 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 121375325804.153373148002404 ; --            ; --          ; --             ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR       ; simulation/modelsim          ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)    ; <None>        ; --          ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 355 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 538 MB              ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 359 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:07     ; 1.0                     ; 546 MB              ; 00:00:06                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 358 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 386 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 370 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 317 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:12                           ;
+; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:11                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

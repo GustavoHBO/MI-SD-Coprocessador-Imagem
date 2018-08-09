@@ -2,7 +2,7 @@ set_global_assignment -entity "processador" -library "processador" -name IP_TOOL
 set_global_assignment -entity "processador" -library "processador" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "processador" -library "processador" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "processador" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../processador.sopcinfo"]
-set_global_assignment -entity "processador" -library "processador" -name SLD_INFO "QSYS_NAME processador HAS_SOPCINFO 1 GENERATION_ID 1533695009"
+set_global_assignment -entity "processador" -library "processador" -name SLD_INFO "QSYS_NAME processador HAS_SOPCINFO 1 GENERATION_ID 1533745940"
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "processador" -name MISC_FILE [file join $::quartus(qip_path) "../../../processador.qsys"]
 
@@ -34,13 +34,7 @@ set_global_assignment -library "processador" -name SYSTEMVERILOG_FILE [file join
 set_global_assignment -library "processador" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_slave_translator.sv"]
 set_global_assignment -library "processador" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/processador_nios2_qsys_0_custom_instruction_master_comb_xconnect.sv"]
 set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_customins_master_translator.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/VGADemo.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/ccpu_ram.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/controlador_ram.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/divisor_clock.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/Escrever.v"]
-set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/hsync_generator.v"]
-set_global_assignment -library "processador" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/image.hex"]
+set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/vga_load.v"]
 set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/processador_jtag_uart_0.v"]
 set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/processador_botao.v"]
 set_global_assignment -library "processador" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/processador_leds.v"]

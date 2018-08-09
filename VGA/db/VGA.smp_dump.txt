@@ -1,6 +1,6 @@
 
-State Machine - |VGADemo|Escrever:Escrever|state
-Name state.idle state.termina state.enviar_dado 
+State Machine - |VGADemo|MSF:MSF|state
+Name state.idle state.feito state.faz 
 state.idle 0 0 0 
-state.enviar_dado 1 0 1 
-state.termina 1 1 0 
+state.faz 1 0 1 
+state.feito 1 1 0 

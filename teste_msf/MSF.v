@@ -8,8 +8,7 @@
 
 module MSF
 (
-	input	clk, in, reset, start,
-	output reg [1:0] out, 
+	input	clk, reset, start,
 	output reg done
 );
    
@@ -28,7 +27,7 @@ module MSF
 	always @ (posedge clk or posedge fio_reset) begin
 		if (fio_reset)
 			state <= idle;
-		else
+		else begin
 			case (state)
 				idle:
 					if (n_start)
@@ -48,6 +47,7 @@ module MSF
 					state <= idle;
 				end
 			endcase
+		end
 	end
 
 	// Determine the output based only on the current state
